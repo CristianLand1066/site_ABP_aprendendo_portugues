@@ -1,0 +1,122 @@
+{
+  "translation": {
+    "app": {
+      "title": "Jogos Educativos",
+      "description": "Gerar PDFs com atividades em {{lang}}"
+    },
+    "actions": {
+      "generate_pdf": "Gerar PDF",
+      "downloading": "Baixando...",
+      "retry": "Tentar novamente"
+    },
+    "pdf": {
+      "cover_title": "Jogos e Atividades",
+      "intro":
+        "Este material contém atividades organizadas por nível: iniciante, intermediário e avançado. Elas podem ser realizadas em casa ou na sala de aula, utilizando recursos simples.",
+      "sections": {
+        "beginner": "Iniciante",
+        "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras e imagens.",
+        "beginner_games": [
+          {
+            "title": "Jogo da Memória – Imagem e Palavra",
+            "summary": "Associe imagens às palavras correspondentes.",
+            "instructions": [
+              "Imprima cartas com imagens e as palavras correspondentes.",
+              "Embaralhe as cartas e coloque-as viradas para baixo sobre a mesa.",
+              "Os jogadores se revezam virando duas cartas para encontrar um par correspondente.",
+              "O jogador com mais pares no final vence."
+            ]
+          },
+          {
+            "title": "Bingo do Alfabeto",
+            "summary": "Reconheça letras do alfabeto por meio da brincadeira.",
+            "instructions": [
+              "Prepare cartelas de bingo com letras do alfabeto.",
+              "O professor ou responsável sorteia letras de um saco e anuncia em voz alta.",
+              "Os jogadores marcam a letra correspondente em sua cartela.",
+              "O primeiro a completar uma linha ou a cartela inteira vence."
+            ]
+          },
+          {
+            "title": "Caça ao Objeto",
+            "summary": "Identifique objetos a partir de pistas escritas ou faladas.",
+            "instructions": [
+              "Escreva nomes simples de objetos (ex.: bola, cadeira, colher).",
+              "Fale a palavra ou mostre o cartão escrito.",
+              "As crianças devem encontrar o objeto no ambiente.",
+              "O primeiro a trazer o objeto correto ganha um ponto."
+            ]
+          }
+        ],
+        "intermediate": "Intermediário",
+        "intermediate_content": "Atividades para ampliar o vocabulário e formar frases simples.",
+        "intermediate_games": [
+          {
+            "title": "Dominó de Palavras",
+            "summary": "Forme palavras combinando sílabas.",
+            "instructions": [
+              "Crie peças de dominó em que um lado tenha uma sílaba e o outro complete uma palavra.",
+              "Distribua as peças entre os jogadores.",
+              "Os jogadores se revezam colocando peças para formar palavras corretas.",
+              "O primeiro a usar todas as peças vence."
+            ]
+          },
+          {
+            "title": "Jogo da Forca (adaptado)",
+            "summary": "Adivinhe a palavra secreta sugerindo letras.",
+            "instructions": [
+              "Escolha uma palavra simples e desenhe espaços em branco no papel.",
+              "Os jogadores sugerem letras uma de cada vez.",
+              "A cada erro, desenhe uma parte da figura (ex.: um boneco de palito).",
+              "O objetivo é adivinhar a palavra antes de completar o desenho."
+            ]
+          },
+          {
+            "title": "Construção de Frases",
+            "summary": "Forme frases simples a partir de cartões com palavras.",
+            "instructions": [
+              "Prepare cartões com substantivos, verbos e adjetivos.",
+              "Distribua os cartões entre os jogadores.",
+              "Os jogadores se revezam formando frases curtas usando pelo menos 3 cartões.",
+              "O grupo vota na frase mais engraçada ou criativa."
+            ]
+          }
+        ],
+        "advanced": "Avançado",
+        "advanced_content": "Atividades para compreensão de texto, raciocínio lógico e narração de histórias.",
+        "advanced_games": [
+          {
+            "title": "Continuação de História",
+            "summary": "Crie uma história colaborativa acrescentando frases em turnos.",
+            "instructions": [
+              "O primeiro jogador inicia uma história com uma frase (ex.: 'Era uma vez uma criança que adorava aventuras').",
+              "Cada jogador continua a história com uma nova frase.",
+              "A história segue até que todos concordem em encerrar.",
+              "No final, leia a história completa em voz alta."
+            ]
+          },
+          {
+            "title": "Caça-Palavras",
+            "summary": "Encontre palavras escondidas em uma grade de letras.",
+            "instructions": [
+              "Prepare uma grade de caça-palavras com palavras de um tema específico (ex.: animais, frutas, escola).",
+              "Distribua as grades aos jogadores.",
+              "Os jogadores devem encontrar e circular todas as palavras listadas.",
+              "O primeiro a encontrar todas vence."
+            ]
+          },
+          {
+            "title": "Desafio de Debate",
+            "summary": "Pratique argumentação e raciocínio em debates.",
+            "instructions": [
+              "Divida os jogadores em dois grupos.",
+              "Escolha um tema simples (ex.: 'Os livros são melhores que a TV').",
+              "Cada grupo prepara 2–3 argumentos.",
+              "Os grupos se revezam apresentando argumentos e o público decide o vencedor."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

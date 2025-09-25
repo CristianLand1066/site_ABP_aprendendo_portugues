@@ -1,0 +1,121 @@
+{
+  "translation": {
+      "app": {
+        "title": "Bildungsspiele",
+        "description": "Erstelle PDFs mit Aktivitäten in {{lang}}"
+      },
+      "actions": {
+      "generate_pdf": "PDF erstellen",
+      "downloading": "Wird heruntergeladen...",
+      "retry": "Erneut versuchen"
+    },
+    "pdf": {
+      "cover_title": "Spiele und Aktivitäten",
+      "intro": "Dieses Material enthält Aktivitäten nach Niveau: Anfänger, Mittelstufe und Fortgeschrittene. Sie können zu Hause oder im Klassenzimmer mit einfachen Mitteln gespielt werden.",
+      "sections": {
+        "beginner": "Anfänger",
+        "beginner_content": "Aktivitäten mit Fokus auf Alphabetisierung und ersten Kontakt mit Wörtern und Bildern.",
+        "beginner_games": [
+          {
+            "title": "Memory-Spiel – Bild und Wort",
+            "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
+            "instructions": [
+              "Karten mit Bildern und Wörtern ausdrucken.",
+              "Die Karten mischen und verdeckt auf den Tisch legen.",
+              "Spieler decken abwechselnd zwei Karten auf, um ein Paar zu finden.",
+              "Der Spieler mit den meisten Paaren gewinnt."
+            ]
+          },
+          {
+            "title": "Alphabet-Bingo",
+            "summary": "Buchstaben des Alphabets spielerisch erkennen.",
+            "instructions": [
+              "Bingo-Karten mit Buchstaben vorbereiten.",
+              "Der Lehrer oder Elternteil zieht einen Buchstaben und sagt ihn an.",
+              "Spieler markieren den entsprechenden Buchstaben.",
+              "Wer zuerst eine Reihe oder die ganze Karte vervollständigt, gewinnt."
+            ]
+          },
+          {
+            "title": "Gegenstandssuche",
+            "summary": "Objekte anhand von gesprochenen oder geschriebenen Hinweisen finden.",
+            "instructions": [
+              "Einfache Objektnamen aufschreiben (z. B. Ball, Stuhl, Löffel).",
+              "Das Wort laut vorlesen oder die Karte zeigen.",
+              "Kinder müssen den Gegenstand im Raum finden.",
+              "Der erste, der den richtigen Gegenstand bringt, bekommt einen Punkt."
+            ]
+          }
+        ],
+        "intermediate": "Mittelstufe",
+        "intermediate_content": "Aktivitäten zum Wortschatzaufbau und zum Bilden einfacher Sätze.",
+        "intermediate_games": [
+          {
+            "title": "Wort-Domino",
+            "summary": "Wörter durch Kombination von Silben bilden.",
+            "instructions": [
+              "Domino-Steine mit einer Silbe auf der einen Seite und einer Wortergänzung auf der anderen erstellen.",
+              "Steine an die Spieler austeilen.",
+              "Spieler legen Steine an, sodass Wörter entstehen.",
+              "Der erste Spieler, der alle Steine verwendet, gewinnt."
+            ]
+          },
+          {
+            "title": "Galgenmännchen (angepasst)",
+            "summary": "Errate das geheime Wort, indem du Buchstaben vorschlägst.",
+            "instructions": [
+              "Ein einfaches Wort auswählen und Striche für die Buchstaben zeichnen.",
+              "Spieler schlagen Buchstaben vor.",
+              "Für jeden Fehler einen Teil der Figur zeichnen.",
+              "Ziel ist es, das Wort zu erraten, bevor die Figur vollständig ist."
+            ]
+          },
+          {
+            "title": "Satzbau",
+            "summary": "Einfache Sätze mit Wortkarten bilden.",
+            "instructions": [
+              "Karten mit Nomen, Verben und Adjektiven vorbereiten.",
+              "Die Karten an die Spieler verteilen.",
+              "Spieler bilden kurze Sätze mit mindestens 3 Karten.",
+              "Die Gruppe stimmt über den kreativsten oder lustigsten Satz ab."
+            ]
+          }
+        ],
+        "advanced": "Fortgeschrittene",
+        "advanced_content": "Aktivitäten für Textverständnis, logisches Denken und Geschichtenerzählen.",
+        "advanced_games": [
+          {
+            "title": "Geschichten fortsetzen",
+            "summary": "Eine gemeinsame Geschichte Satz für Satz erzählen.",
+            "instructions": [
+              "Der erste Spieler beginnt mit einem Satz (z. B. 'Es war einmal ein Kind, das Abenteuer liebte').",
+              "Jeder Spieler fügt einen weiteren Satz hinzu.",
+              "Die Geschichte geht weiter, bis ein Ende gefunden ist.",
+              "Am Ende die ganze Geschichte laut vorlesen."
+            ]
+          },
+          {
+            "title": "Wortsuche",
+            "summary": "Wörter in einem Buchstabengitter finden.",
+            "instructions": [
+              "Ein Suchrätsel mit einem Thema vorbereiten (z. B. Tiere, Früchte, Schule).",
+              "Die Gitter an die Spieler verteilen.",
+              "Spieler suchen die gelisteten Wörter und kreisen sie ein.",
+              "Wer zuerst alle Wörter findet, gewinnt."
+            ]
+          },
+          {
+            "title": "Debatten-Herausforderung",
+            "summary": "Argumentation und logisches Denken in Debatten üben.",
+            "instructions": [
+              "Spieler in zwei Gruppen aufteilen.",
+              "Ein einfaches Thema wählen (z. B. 'Bücher sind besser als Fernsehen').",
+              "Jede Gruppe bereitet 2–3 Argumente vor.",
+              "Gruppen präsentieren abwechselnd, das Publikum wählt den Sieger."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

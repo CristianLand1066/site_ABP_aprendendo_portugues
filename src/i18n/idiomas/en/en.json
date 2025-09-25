@@ -1,0 +1,123 @@
+{
+    "translation": {
+      "app": {
+        "title": "Educational Games",
+        "description": "Generate PDFs with activities in {{lang}}"
+      },
+      "actions": {
+        "generate_pdf": "Generate PDF",
+        "downloading": "Downloading...",
+        "retry": "Try again"
+      },
+      "pdf": {
+        "cover_title": "Games and Activities",
+        "intro":
+          "This material contains activities organized by level: beginner, intermediate and advanced. They can be played at home or in the classroom, using simple resources.",
+        "sections": {
+          "beginner": "Beginner",
+          "beginner_content": "Activities focused on literacy and first contact with words and images.",
+          "beginner_games": [
+            {
+              "title": "Memory Game – Image and Word",
+              "summary": "Match images with their corresponding words.",
+              "instructions": [
+                "Print cards with images and the corresponding words.",
+                "Shuffle the cards and place them face down on a table.",
+                "Players take turns flipping two cards to find a matching pair.",
+                "The player with the most pairs at the end wins."
+              ]
+            },
+            {
+              "title": "Alphabet Bingo",
+              "summary": "Recognize letters of the alphabet through play.",
+              "instructions": [
+                "Prepare bingo cards with letters of the alphabet.",
+                "The teacher or parent draws letters from a bag and announces them.",
+                "Players mark the corresponding letter on their card.",
+                "The first to complete a line or the entire card wins."
+              ]
+            },
+            {
+              "title": "Object Hunt",
+              "summary": "Identify objects based on written or spoken clues.",
+              "instructions": [
+                "Write down simple names of objects (e.g., ball, chair, spoon).",
+                "Call out the word or show the written card.",
+                "Children must find the object in the room.",
+                "The first to bring the correct object earns a point."
+              ]
+            }
+          ],
+          "intermediate": "Intermediate",
+          "intermediate_content": "Activities for vocabulary building and forming simple sentences.",
+          "intermediate_games": [
+            {
+              "title": "Word Domino",
+              "summary": "Form words by combining syllables.",
+              "instructions": [
+                "Create domino tiles where one side has a syllable and the other completes a word.",
+                "Distribute tiles among players.",
+                "Players take turns placing tiles so the syllables form correct words.",
+                "The first to use all their tiles wins."
+              ]
+            },
+            {
+              "title": "Hangman (adapted)",
+              "summary": "Guess the secret word by suggesting letters.",
+              "instructions": [
+                "Choose a simple word and draw blank spaces on paper.",
+                "Players suggest letters one at a time.",
+                "For each incorrect guess, draw part of a figure (e.g., a stick figure).",
+                "The goal is to guess the word before the drawing is complete."
+              ]
+            },
+            {
+              "title": "Sentence Building",
+              "summary": "Form simple sentences from word cards.",
+              "instructions": [
+                "Prepare cards with nouns, verbs, and adjectives.",
+                "Distribute the cards among players.",
+                "Players take turns forming short sentences using at least 3 cards.",
+                "The group votes on the funniest or most creative sentence."
+              ]
+            }
+          ],
+          "advanced": "Advanced",
+          "advanced_content": "Activities for text comprehension, logical reasoning and storytelling.",
+          "advanced_games": [
+            {
+              "title": "Story Continuation",
+              "summary": "Create a collaborative story by taking turns adding sentences.",
+              "instructions": [
+                "The first player starts a story with one sentence (e.g., 'Once upon a time there was a child who loved adventures').",
+                "Each player continues the story with a new sentence.",
+                "The story continues until everyone agrees on an ending.",
+                "At the end, read the full story aloud."
+              ]
+            },
+            {
+              "title": "Word Search",
+              "summary": "Find words hidden in a grid of letters.",
+              "instructions": [
+                "Prepare a word search puzzle with words related to a specific theme (e.g., animals, fruits, school).",
+                "Distribute the grids to players.",
+                "Players must find and circle all the listed words hidden in the grid.",
+                "The first to find all words wins."
+              ]
+            },
+            {
+              "title": "Debate Challenge",
+              "summary": "Practice argumentation and reasoning through debates.",
+              "instructions": [
+                "Divide players into two groups.",
+                "Choose a simple theme (e.g., 'Books are better than TV').",
+                "Each group prepares 2–3 arguments.",
+                "Groups take turns presenting arguments, and the audience decides the winner."
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+  

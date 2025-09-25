@@ -1,0 +1,121 @@
+{
+  "translation": {
+    "app": {
+      "title": "Jeux Éducatifs",
+      "description": "Générer des PDF avec des activités en {{lang}}"
+    },
+    "actions": {
+      "generate_pdf": "Générer PDF",
+      "downloading": "Téléchargement...",
+      "retry": "Réessayer"
+    },
+    "pdf": {
+      "cover_title": "Jeux et Activités",
+      "intro": "Ce matériel contient des activités organisées par niveau : débutant, intermédiaire et avancé. Elles peuvent être réalisées à la maison ou en classe avec des ressources simples.",
+      "sections": {
+        "beginner": "Débutant",
+        "beginner_content": "Activités axées sur l'alphabétisation et le premier contact avec les mots et les images.",
+        "beginner_games": [
+          {
+            "title": "Jeu de Mémoire – Image et Mot",
+            "summary": "Associez des images à leurs mots correspondants.",
+            "instructions": [
+              "Imprimez des cartes avec des images et leurs mots correspondants.",
+              "Mélangez les cartes et placez-les face cachée sur la table.",
+              "Chaque joueur retourne deux cartes pour trouver une paire.",
+              "Le joueur avec le plus de paires gagne."
+            ]
+          },
+          {
+            "title": "Bingo de l'Alphabet",
+            "summary": "Reconnaître les lettres de l'alphabet en jouant.",
+            "instructions": [
+              "Préparez des cartons de bingo avec des lettres de l'alphabet.",
+              "L'enseignant ou le parent tire une lettre et l'annonce.",
+              "Les joueurs marquent la lettre correspondante.",
+              "Le premier à compléter une ligne ou toute la carte gagne."
+            ]
+          },
+          {
+            "title": "Chasse aux Objets",
+            "summary": "Identifiez des objets à partir d'indices écrits ou parlés.",
+            "instructions": [
+              "Écrivez des noms simples d'objets (ex. : balle, chaise, cuillère).",
+              "Annoncez le mot ou montrez la carte.",
+              "Les enfants doivent trouver l'objet dans la pièce.",
+              "Le premier qui rapporte l'objet gagne un point."
+            ]
+          }
+        ],
+        "intermediate": "Intermédiaire",
+        "intermediate_content": "Activités pour enrichir le vocabulaire et former des phrases simples.",
+        "intermediate_games": [
+          {
+            "title": "Domino de Mots",
+            "summary": "Formez des mots en combinant des syllabes.",
+            "instructions": [
+              "Créez des dominos avec une syllabe d'un côté et le reste d'un mot de l'autre.",
+              "Distribuez les dominos aux joueurs.",
+              "Les joueurs posent des dominos pour former des mots corrects.",
+              "Le premier à poser toutes ses pièces gagne."
+            ]
+          },
+          {
+            "title": "Pendu (adapté)",
+            "summary": "Devinez le mot secret en proposant des lettres.",
+            "instructions": [
+              "Choisissez un mot simple et dessinez des espaces vides.",
+              "Les joueurs proposent des lettres une par une.",
+              "Pour chaque erreur, dessinez une partie de la figure (ex. : un bonhomme).",
+              "L'objectif est de deviner avant de compléter le dessin."
+            ]
+          },
+          {
+            "title": "Construction de Phrases",
+            "summary": "Formez des phrases simples à partir de cartes de mots.",
+            "instructions": [
+              "Préparez des cartes avec des noms, verbes et adjectifs.",
+              "Distribuez les cartes aux joueurs.",
+              "Chaque joueur forme une phrase avec au moins 3 cartes.",
+              "Le groupe vote pour la phrase la plus drôle ou créative."
+            ]
+          }
+        ],
+        "advanced": "Avancé",
+        "advanced_content": "Activités pour la compréhension de texte, le raisonnement logique et la narration.",
+        "advanced_games": [
+          {
+            "title": "Suite d'Histoire",
+            "summary": "Créez une histoire collaborative en ajoutant des phrases à tour de rôle.",
+            "instructions": [
+              "Le premier joueur commence par une phrase (ex. : 'Il était une fois un enfant qui aimait les aventures').",
+              "Chaque joueur ajoute une nouvelle phrase.",
+              "L'histoire continue jusqu'à ce qu'un consensus soit atteint.",
+              "À la fin, lisez l'histoire complète à voix haute."
+            ]
+          },
+          {
+            "title": "Mots Cachés",
+            "summary": "Trouvez des mots cachés dans une grille de lettres.",
+            "instructions": [
+              "Préparez une grille avec des mots liés à un thème (ex. : animaux, fruits, école).",
+              "Distribuez les grilles aux joueurs.",
+              "Les joueurs doivent trouver et entourer les mots listés.",
+              "Le premier à tout trouver gagne."
+            ]
+          },
+          {
+            "title": "Défi de Débat",
+            "summary": "Pratiquez l'argumentation et le raisonnement à travers un débat.",
+            "instructions": [
+              "Divisez les joueurs en deux groupes.",
+              "Choisissez un thème simple (ex. : 'Les livres sont meilleurs que la télévision').",
+              "Chaque groupe prépare 2–3 arguments.",
+              "Les groupes débattent et le public vote pour le gagnant."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
