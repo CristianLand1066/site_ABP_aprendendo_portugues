@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import LanguageSelector from "./LanguageSelector";
 
 export default function Layout({ children }: PropsWithChildren) {

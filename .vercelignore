@@ -1,0 +1,15 @@
+.git/
+node_modules/
+.vercel/
+.github/
+.vscode/
+dist/
+coverage/
+tmp/
+temp/
+logs/
+**/*.log
+
+context/
+public/*.map
+src/**/*.map

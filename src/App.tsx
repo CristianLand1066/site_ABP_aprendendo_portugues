@@ -3,7 +3,8 @@ import "./App.css";
 import Layout from "./components/Layout";
 import { useTranslation } from "react-i18next";
 import { generatePdf, downloadBlob } from "./features/pdf/pdf.service";
-import i18n from "./i18n";
+import type { PdfGame } from "./features/pdf/pdf.templates";
+
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -23,22 +24,22 @@ function App() {
             title: t("pdf.sections.beginner"),
             content: t("pdf.sections.beginner_content"),
             contentPt: i18n.getFixedT("pt")("pdf.sections.beginner_content"),
-            games: t("pdf.sections.beginner_games", { returnObjects: true }),
-            gamesPt: i18n.getFixedT("pt")("pdf.sections.beginner_games", { returnObjects: true }),
+            games: t("pdf.sections.beginner_games", { returnObjects: true }) as unknown as PdfGame[],
+            gamesPt: i18n.getFixedT("pt")("pdf.sections.beginner_games", { returnObjects: true }) as unknown as PdfGame[],
           },
           {
             title: t("pdf.sections.intermediate"),
             content: t("pdf.sections.intermediate_content"),
             contentPt: i18n.getFixedT("pt")("pdf.sections.intermediate_content"),
-            games: t("pdf.sections.intermediate_games", { returnObjects: true }),
-            gamesPt: i18n.getFixedT("pt")("pdf.sections.intermediate_games", { returnObjects: true }),
+            games: t("pdf.sections.intermediate_games", { returnObjects: true }) as unknown as PdfGame[],
+            gamesPt: i18n.getFixedT("pt")("pdf.sections.intermediate_games", { returnObjects: true }) as unknown as PdfGame[],
           },
           {
             title: t("pdf.sections.advanced"),
             content: t("pdf.sections.advanced_content"),
             contentPt: i18n.getFixedT("pt")("pdf.sections.advanced_content"),
-            games: t("pdf.sections.advanced_games", { returnObjects: true }),
-            gamesPt: i18n.getFixedT("pt")("pdf.sections.advanced_games", { returnObjects: true }),
+            games: t("pdf.sections.advanced_games", { returnObjects: true }) as unknown as PdfGame[],
+            gamesPt: i18n.getFixedT("pt")("pdf.sections.advanced_games", { returnObjects: true }) as unknown as PdfGame[],
           },
         ],
       };
