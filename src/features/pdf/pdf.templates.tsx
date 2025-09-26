@@ -152,11 +152,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             </View>
           ))}
 
-          {gameImages.map((src, idx) => (
-            <View key={`game-img-${idx}`}>
-              <Image style={styles.image} src={src} />
-            </View>
-          ))}
+          
         </Page>
       )}
     </Document>
