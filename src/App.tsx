@@ -52,12 +52,12 @@ function App() {
                 width: 420,
               },
               {
-                src: "../public/imagens/capa.jpg",
+                src: "../public/imagens/capa1.jpg",
                 caption: t("pdf.sections.beginner_games.1.title"),
                 width: 420,
               },
               {
-                src: "../public/imagens/capa.jpg",
+                src: "../public/imagens/capa2.jpg",
                 caption: t("pdf.sections.beginner_games.2.title"),
                 width: 420,
               }
