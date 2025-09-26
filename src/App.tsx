@@ -43,10 +43,12 @@ function App() {
         }) as unknown as PdfGame[]
       );
 
-      const [img1, img2, img3] = await Promise.all([
+      const [img1, img2, img3, img4, img5] = await Promise.all([
         fetchAsDataUrl(abs("/imagens/capa.jpg")),
         fetchAsDataUrl(abs("/imagens/image.jpg")),
         fetchAsDataUrl(abs("/imagens/image.png")),
+        fetchAsDataUrl(abs("/imagens/moldes/mala_superior.jpg")),
+        fetchAsDataUrl(abs("/imagens/moldes/mala_inferior.jpg")),
       ]);
 
       const data = {
@@ -57,11 +59,17 @@ function App() {
           // Cover-like section that only renders an image (from public/imagens)
           {
             title: t("pdf.cover_title"),
-            images: [
-              { src: img1, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
-              { src: img2, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
-              { src: img3, caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
-            ],
+            images: {
+              images: [
+                { src: img1, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
+                { src: img2, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
+                { src: img3, caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
+              ],
+              moldes: [
+                { src: img4, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
+                { src: img5, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
+              ],
+            },
           },
           {
             title: t("pdf.sections.beginner"),

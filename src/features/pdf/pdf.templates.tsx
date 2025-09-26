@@ -16,7 +16,10 @@ export interface PdfSection {
   games?: PdfGame[];
   contentPt?: string;
   gamesPt?: PdfGame[];
-  images?: PdfImage[];
+  images?: {
+    images: PdfImage[];
+    moldes: PdfImage[];
+  };
 }
 
 export interface PdfData {
@@ -55,6 +58,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Helvetica",
   },
+  molde: {
+    padding: 0,
+    fontSize: 12,
+    fontFamily: "Helvetica",
+  },
   h1: { fontSize: 24, marginBottom: 8 },
   h2: { fontSize: 18, marginTop: 16, marginBottom: 6 },
   p: { marginBottom: 8, lineHeight: 1.4 },
@@ -84,8 +92,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  bingoText: { fontSize: 10, fontWeight: 600 },
-  bingoCard: { marginBottom: 16 },
+  bingoText: { fontSize: 10, fontWeight: 500 },
+  bingoCard: { marginBottom: 10 },
 });
 
 const DEFAULT_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -138,12 +146,12 @@ function renderGrid(grid: string[][], styles: any) {
 
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   // Aggregate all images to render together on a dedicated page at the end
-  const sectionImages = (data.sections || []).flatMap(
-    (sec) => sec.images || []
+  const sectionImagesImages: PdfImage[] = (data.sections || []).flatMap(
+    (sec) => sec.images?.images || []
   );
-  const gameImages = (data.sections || []).flatMap((sec) =>
-    (sec.games || []).map((g) => g.imageSrc).filter(Boolean)
-  ) as string[];
+  const sectionImagesMoldes: PdfImage[] = (data.sections || []).flatMap(
+    (sec) => sec.images?.moldes || []
+  );
 
   const imagesTitle =
     data.locale === "pt"
@@ -234,10 +242,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       </Page>
 
       {/* Page 2: images aggregated */}
-      {(sectionImages.length > 0 || gameImages.length > 0) && (
+      {sectionImagesImages.length > 0 && (
         <Page size="A4" style={styles.page}>
           <Text style={styles.h2}>{imagesTitle}</Text>
-          {sectionImages.map((img, idxImg) => (
+          {sectionImagesImages.map((img, idxImg) => (
             <View key={`sec-img-${idxImg}`}>
               <Image
                 style={styles.image}
@@ -265,7 +273,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               return (
                 <View
                   key={`bingo-${cardIdx}`}
-                  style={{ width: "50%", padding: 3 }}
+                  style={{ width: "50%", padding: 1 }}
                 >
                   <Text style={styles.h2}>
                     {bingoTitle} #{cardIdx + 1}
@@ -285,7 +293,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               return (
                 <View
                   key={`bingo-${cardIdx}`}
-                  style={{ width: "50%", padding: 3 }}
+                  style={{ width: "50%", padding: 1 }}
                 >
                   <Text style={styles.h2}>
                     {bingoTitle} #{cardIdx + 1}
@@ -297,6 +305,21 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       )}
+
+      {(sectionImagesMoldes.length > 0) &&
+        sectionImagesMoldes.map((img, idxImg) => (
+          <Page size="A4" style={styles.molde}>
+            <View key={`sec-img-${idxImg}`}>
+              <Image
+                style={styles.image}
+                src={img.src}
+                {...(img.width || img.height
+                  ? { width: img.width, height: img.height }
+                  : {})}
+              />
+            </View>
+          </Page>
+        ))}
     </Document>
   );
 }
