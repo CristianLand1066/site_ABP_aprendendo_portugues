@@ -15,7 +15,7 @@
         "Este material contém atividades organizadas por nível: iniciante, intermediário e avançado. Elas podem ser realizadas em casa ou na sala de aula, utilizando recursos simples.",
       "sections": {
         "beginner": "Iniciante",
-        "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras e imagens.",
+        "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras.",
         "beginner_games": [
           {
             "title": "Jogo da Memória – Imagem e Palavra",
