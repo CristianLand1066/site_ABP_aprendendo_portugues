@@ -93,6 +93,13 @@ function App() {
             }) as unknown as PdfGame[],
           },
         ],
+        bingo: {
+          enabled: true,
+          rows: 3,
+          cols: 3,
+          letters: undefined,
+          cards: 6,
+        }
       };
       const blob = await generatePdf(data);
       const fileName = `jogos-${data.locale}.pdf`;
