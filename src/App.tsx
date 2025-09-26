@@ -9,6 +9,9 @@ function App() {
   const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const abs = (p: string) => new URL(p, window.location.origin).href;
+
+  
 
   async function handleGeneratePdf() {
     setLoading(true);
@@ -46,21 +49,9 @@ function App() {
           {
             title: t("pdf.cover_title"),
             images: [
-              {
-                src: "/imagens/capa.jpg",
-                caption: t("pdf.sections.beginner_games.0.title"),
-                width: 420,
-              },
-              {
-                src: "/imagens/capa1.jpg",
-                caption: t("pdf.sections.beginner_games.1.title"),
-                width: 420,
-              },
-              {
-                src: "/imagens/capa2.jpg",
-                caption: t("pdf.sections.beginner_games.2.title"),
-                width: 420,
-              }
+              { src: abs("/imagens/capa.jpg"), caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
+              { src: abs("/imagens/capa1.jpg"), caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
+              { src: abs("/imagens/capa.jpg"), caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
             ],
           },
           {
