@@ -11,7 +11,16 @@ function App() {
   const [error, setError] = useState<string | null>(null);
   const abs = (p: string) => new URL(p, window.location.origin).href;
 
-  
+  async function fetchAsDataUrl(url: string): Promise<string> {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Falha ao buscar imagem: ${url}`);
+    const blob = await res.blob();
+    return await new Promise<string>((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+  }
 
   async function handleGeneratePdf() {
     setLoading(true);
@@ -22,23 +31,23 @@ function App() {
         t("pdf.sections.beginner_games", {
           returnObjects: true,
         }) as unknown as PdfGame[]
-      ).map((g, idx) =>
-        idx === 0 ? { ...g, imageSrc: "/imagens/iniciante-jogo1.jpg" } : g
       );
       const intermediateGames = (
         t("pdf.sections.intermediate_games", {
           returnObjects: true,
         }) as unknown as PdfGame[]
-      ).map((g, idx) =>
-        idx === 0 ? { ...g, imageSrc: "/imagens/intermediario-jogo1.jpg" } : g
       );
       const advancedGames = (
         t("pdf.sections.advanced_games", {
           returnObjects: true,
         }) as unknown as PdfGame[]
-      ).map((g, idx) =>
-        idx === 0 ? { ...g, imageSrc: "/imagens/avancado-jogo1.jpg" } : g
       );
+
+      const [img1, img2, img3] = await Promise.all([
+        fetchAsDataUrl(abs("/imagens/capa.jpg")),
+        fetchAsDataUrl(abs("/imagens/capa1.jpg")),
+        fetchAsDataUrl(abs("/imagens/capa2.jpg")),
+      ]);
 
       const data = {
         locale: i18n.language ?? "pt",
@@ -49,9 +58,9 @@ function App() {
           {
             title: t("pdf.cover_title"),
             images: [
-              { src: abs("/imagens/capa.jpg"), caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
-              { src: abs("/imagens/capa1.jpg"), caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
-              { src: abs("/imagens/capa.jpg"), caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
+              { src: img1, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
+              { src: img2, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
+              { src: img3, caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
             ],
           },
           {
