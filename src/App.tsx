@@ -45,8 +45,8 @@ function App() {
 
       const [img1, img2, img3] = await Promise.all([
         fetchAsDataUrl(abs("/imagens/capa.jpg")),
-        fetchAsDataUrl(abs("/imagens/capa1.jpg")),
-        fetchAsDataUrl(abs("/imagens/capa2.jpg")),
+        fetchAsDataUrl(abs("/imagens/image.jpg")),
+        fetchAsDataUrl(abs("/imagens/image.png")),
       ]);
 
       const data = {
