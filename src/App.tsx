@@ -3,7 +3,7 @@ import "./App.css";
 import Layout from "./components/Layout";
 import { useTranslation } from "react-i18next";
 import { generatePdf, downloadBlob } from "./features/pdf/pdf.service";
-import type { PdfGame } from "./features/pdf/pdf.templates";
+import type { PdfGame, PdfDebateCategory } from "./features/pdf/pdf.templates";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -27,21 +27,15 @@ function App() {
     setError(null);
     try {
       // Prepare games with an image on the first game of each section
-      const beginnerGames = (
-        t("pdf.sections.beginner_games", {
-          returnObjects: true,
-        }) as unknown as PdfGame[]
-      );
-      const intermediateGames = (
-        t("pdf.sections.intermediate_games", {
-          returnObjects: true,
-        }) as unknown as PdfGame[]
-      );
-      const advancedGames = (
-        t("pdf.sections.advanced_games", {
-          returnObjects: true,
-        }) as unknown as PdfGame[]
-      );
+      const beginnerGames = t("pdf.sections.beginner_games", {
+        returnObjects: true,
+      }) as unknown as PdfGame[];
+      const intermediateGames = t("pdf.sections.intermediate_games", {
+        returnObjects: true,
+      }) as unknown as PdfGame[];
+      const advancedGames = t("pdf.sections.advanced_games", {
+        returnObjects: true,
+      }) as unknown as PdfGame[];
 
       const [img1, img2, img3, img4, img5] = await Promise.all([
         fetchAsDataUrl(abs("/imagens/capa.jpg")),
@@ -50,6 +44,10 @@ function App() {
         fetchAsDataUrl(abs("/imagens/moldes/mala_superior.jpg")),
         fetchAsDataUrl(abs("/imagens/moldes/mala_inferior.jpg")),
       ]);
+
+      const cardsDebateCategories = t("pdf.cardsDebate.0.cards", {
+        returnObjects: true,
+      }) as unknown as PdfDebateCategory[];
 
       const data = {
         locale: i18n.language ?? "pt",
@@ -61,13 +59,33 @@ function App() {
             title: t("pdf.cover_title"),
             images: {
               images: [
-                { src: img1, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
-                { src: img2, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
-                { src: img3, caption: t("pdf.sections.beginner_games.2.title"), width: 420 },
+                {
+                  src: img1,
+                  caption: t("pdf.sections.beginner_games.0.title"),
+                  width: 420,
+                },
+                {
+                  src: img2,
+                  caption: t("pdf.sections.beginner_games.1.title"),
+                  width: 420,
+                },
+                {
+                  src: img3,
+                  caption: t("pdf.sections.beginner_games.2.title"),
+                  width: 420,
+                },
               ],
               moldes: [
-                { src: img4, caption: t("pdf.sections.beginner_games.0.title"), width: 420 },
-                { src: img5, caption: t("pdf.sections.beginner_games.1.title"), width: 420 },
+                {
+                  src: img4,
+                  caption: t("pdf.sections.beginner_games.0.title"),
+                  width: 420,
+                },
+                {
+                  src: img5,
+                  caption: t("pdf.sections.beginner_games.1.title"),
+                  width: 420,
+                },
               ],
             },
           },
@@ -107,7 +125,11 @@ function App() {
           cols: 3,
           letters: undefined,
           cards: 6,
-        }
+        },
+        cardsDebate: {
+          enabled: true,
+          categories: cardsDebateCategories,
+        },
       };
       const blob = await generatePdf(data);
       const fileName = `jogos-${data.locale}.pdf`;
