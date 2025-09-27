@@ -22,6 +22,13 @@ export interface PdfSection {
   };
 }
 
+interface WordCard {
+  title: string;
+  color: string;
+  colorText: string;
+  words: string[];
+}
+
 export interface PdfDebateCategory {
   title: string;
   summary: string;
@@ -30,6 +37,12 @@ export interface PdfDebateCategory {
   icon: string;
   phrases: string[];
 }
+
+interface DominoPiece {
+  left: string;
+  right: string;
+}
+
 
 export interface PdfData {
   locale: (typeof languages)[0]["code"];
@@ -40,6 +53,14 @@ export interface PdfData {
   cardsDebate?: {
     enabled: boolean;
     categories: PdfDebateCategory[];
+  };
+  wordCards?: {
+    enabled: boolean;
+    categories: WordCard[];
+  };
+  domino?: {
+    enabled: boolean;
+    syllables: string[];
   };
 }
 
@@ -71,9 +92,19 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "Helvetica",
   },
+  bingo: {
+    padding: 0,
+    fontSize: 12,
+    fontFamily: "Helvetica",
+  },
   molde: {
     padding: 0,
     fontSize: 12,
+    fontFamily: "Helvetica",
+  },
+  domino: {
+    padding: 0,
+    fontSize: 10,
     fontFamily: "Helvetica",
   },
   h1: { fontSize: 24, marginBottom: 8 },
@@ -110,6 +141,8 @@ const styles = StyleSheet.create({
 });
 
 const DEFAULT_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const DEFAULT_NUMBERS = Array.from({ length: 1001 }, (_, i) => i.toString());
+
 
 function shuffleArray<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -118,6 +151,16 @@ function shuffleArray<T>(arr: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+function buildDominoPieces(syllables: string[]): DominoPiece[] {
+  const pieces: DominoPiece[] = [];
+  for (let i = 0; i < syllables.length; i++) {
+    for (let j = i + 1; j < syllables.length; j++) {
+      pieces.push({ left: syllables[i], right: syllables[j] });
+    }
+  }
+  return pieces.sort(() => Math.random() - 0.5).slice(0, 90);
 }
 
 function makeLettersPool(letters: string[], total: number): string[] {
@@ -188,8 +231,45 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       ? "Bingo"
       : "Bingo";
 
+  const cardsDebateTitle = 
+    data.locale === "pt"
+      ? "Cartas de Debate"
+      : data.locale === "es"
+      ? "Cartas de Debate"
+      : data.locale === "fr"
+      ? "Cartes de Débat"
+      : data.locale === "de"
+      ? "Debattenkarten"
+      : "Debate Cards";
+
+  const dominoTitle =
+    data.locale === "pt"
+      ? "Dominó de Sílabas"
+      : data.locale === "es"
+      ? "Dominó de Silabas"
+      : data.locale === "fr"
+      ? "Dominó des Syllabes"
+      : data.locale === "de"
+      ? "Dominos der Silben"
+      : "Dominó de Sílabas";
+
+    const wordCardsTitle =
+      data.locale === "pt"
+        ? "Cartões de Frases"
+        : data.locale === "es"
+        ? "Cartas de Debate"
+        : data.locale === "fr"
+        ? "Cartes de Débat"
+        : data.locale === "de"
+        ? "Debattenkarten"
+        : "Debate Cards";
   return (
     <Document>
+
+
+
+
+
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -275,9 +355,12 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
-        <Page size="A4" style={styles.page}>
+        <Page size="A4" style={styles.bingo}>
+          <Text style={styles.h1}>
+            {bingoTitle}
+          </Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map((_, cardIdx) => {
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = data.bingo?.rows ?? 3;
               const cols = data.bingo?.cols ?? 3;
               const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
@@ -285,19 +368,16 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
               return (
                 <View
-                  key={`bingo-${cardIdx}`}
+                  key={`bingo-3X3`}
                   style={{ width: "50%", padding: 1 }}
                 >
-                  <Text style={styles.h2}>
-                    {bingoTitle} #{cardIdx + 1}
-                  </Text>
                   {renderGrid(grid, styles)}
                 </View>
               );
             })}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map((_, cardIdx) => {
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = 4;
               const cols = 4;
               const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
@@ -305,12 +385,26 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
               return (
                 <View
-                  key={`bingo-${cardIdx}`}
+                  key={`bingo-4X4`}
                   style={{ width: "50%", padding: 1 }}
                 >
-                  <Text style={styles.h2}>
-                    {bingoTitle} #{cardIdx + 1}
-                  </Text>
+                  {renderGrid(grid, styles)}
+                </View>
+              );
+            })}
+          </View>
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
+              const rows = 4; // maior que 3x3 para caber mais números
+              const cols = 4;
+              const letters = data.bingo?.letters ?? DEFAULT_NUMBERS;
+              const grid = buildBingoGrid(rows, cols, letters);
+
+              return (
+                <View
+                  key={`bingo-5X5`}
+                  style={{ width: "50%", padding: 1 }}
+                >
                   {renderGrid(grid, styles)}
                 </View>
               );
@@ -319,34 +413,11 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {sectionImagesMoldes.length > 0 &&
-        sectionImagesMoldes.map((img, idxImg) => (
-          <Page size="A4" style={styles.molde}>
-            <View key={`sec-img-${idxImg}`}>
-              <Image
-                style={styles.image}
-                src={img.src}
-                {...(img.width || img.height
-                  ? { width: img.width, height: img.height }
-                  : {})}
-              />
-            </View>
-          </Page>
-        ))}
-
       {/* Optional: cardsDebate pages */}
       {data.cardsDebate?.enabled && data.cardsDebate.categories?.length > 0 && (
         <Page size="A4" style={styles.page}>
           <Text style={styles.h1}>
-            {data.locale === "pt"
-              ? "Cartas de Debate"
-              : data.locale === "es"
-              ? "Cartas de Debate"
-              : data.locale === "fr"
-              ? "Cartes de Débat"
-              : data.locale === "de"
-              ? "Debattenkarten"
-              : "Debate Cards"}
+            {cardsDebateTitle}
           </Text>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
@@ -395,6 +466,113 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       )}
+
+      {data.domino?.enabled && (
+        <Page size="A4" style={styles.domino}>
+          <Text style={styles.h1}>{dominoTitle}</Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "16%", // 4 peças por linha
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  margin: 1,
+                  flexDirection: "row",
+                  height: 50,
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    borderRightWidth: 1,
+                    borderColor: "#000",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: 2,
+                  }}
+                >
+                  <Text style={{ fontSize: 12, fontWeight: "bold" }}>
+                    {piece.left}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontSize: 12, fontWeight: "bold" }}>
+                    {piece.right}
+                  </Text>
+                </View>
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
+      {data.wordCards?.enabled && (
+        <Page size="A4" style={styles.molde}>
+          <Text style={styles.h1}>{wordCardsTitle}</Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.wordCards.categories?.flatMap((cat) =>
+              cat.words.map((word, idx) => (
+                <View
+                  key={`${cat.title}-${idx}`}
+                  style={{
+                    width: "16%",       // ~5 cartões por linha
+                    height: 50,         // altura do cartão
+                    borderWidth: 1,
+                    borderColor: "#000",
+                    margin: 6,
+                    padding: 6,
+                    borderRadius: 6,
+                    backgroundColor: cat.color,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "bold",
+                      color: cat.colorText,
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {word}
+                  </Text>
+                </View>
+              ))
+            )}
+          </View>
+        </Page>
+      )}
+
+      {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
+        <Page size="A4" style={styles.molde}>
+          <View key={`sec-img-${idxImg}`}>
+            <Image
+              style={styles.image}
+              src={img.src}
+              {...(img.width || img.height
+                ? { width: img.width, height: img.height }
+                : {})}
+            />
+          </View>
+        </Page>
+      ))}
+
+
+
+
+
+
     </Document>
   );
 }
