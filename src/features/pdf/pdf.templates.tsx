@@ -22,12 +22,25 @@ export interface PdfSection {
   };
 }
 
+export interface PdfDebateCategory {
+  title: string;
+  summary: string;
+  color: string;
+  colorText: string;
+  icon: string;
+  phrases: string[];
+}
+
 export interface PdfData {
   locale: (typeof languages)[0]["code"];
   coverTitle: string;
   intro: string;
   sections: PdfSection[];
   bingo?: PdfBingoConfig;
+  cardsDebate?: {
+    enabled: boolean;
+    categories: PdfDebateCategory[];
+  };
 }
 
 export interface PdfGame {
@@ -306,7 +319,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {(sectionImagesMoldes.length > 0) &&
+      {sectionImagesMoldes.length > 0 &&
         sectionImagesMoldes.map((img, idxImg) => (
           <Page size="A4" style={styles.molde}>
             <View key={`sec-img-${idxImg}`}>
@@ -320,6 +333,68 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             </View>
           </Page>
         ))}
+
+      {/* Optional: cardsDebate pages */}
+      {data.cardsDebate?.enabled && data.cardsDebate.categories?.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <Text style={styles.h1}>
+            {data.locale === "pt"
+              ? "Cartas de Debate"
+              : data.locale === "es"
+              ? "Cartas de Debate"
+              : data.locale === "fr"
+              ? "Cartes de Débat"
+              : data.locale === "de"
+              ? "Debattenkarten"
+              : "Debate Cards"}
+          </Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
+            {data.cardsDebate.categories.map((cat, idx) => (
+              <View
+                key={idx}
+                style={{
+                  marginBottom: 16,
+                  borderWidth: 1,
+                  borderColor: "#ddd",
+                  borderRadius: 6,
+                  padding: 8,
+                  backgroundColor: cat.color,
+                  width: "48%",
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    color: cat.colorText,
+                  }}
+                >
+                  {cat.title}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 12,
+                    fontStyle: "italic",
+                    marginBottom: 6,
+                    color: cat.colorText,
+                  }}
+                >
+                  {cat.summary}
+                </Text>
+                {cat.phrases.map((p, pi) => (
+                  <Text
+                    key={pi}
+                    style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}
+                  >
+                    - {p}
+                  </Text>
+                ))}
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
     </Document>
   );
 }
