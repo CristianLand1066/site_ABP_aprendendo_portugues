@@ -11,39 +11,40 @@
     },
     "pdf": {
       "cover_title": "Jeux et Activités",
-      "intro": "Ce matériel contient des activités organisées par niveau : débutant, intermédiaire et avancé. Elles peuvent être réalisées à la maison ou en classe avec des ressources simples.",
+      "intro":
+        "Ce matériel contient des activités organisées par niveau : débutant, intermédiaire et avancé. Elles peuvent être réalisées à la maison ou en classe, en utilisant des ressources simples.",
       "sections": {
         "beginner": "Débutant",
-        "beginner_content": "Activités axées sur l'alphabétisation et le premier contact avec les mots et les images.",
+        "beginner_content": "Activités axées sur l’alphabétisation et le premier contact avec les mots.",
         "beginner_games": [
           {
             "title": "Jeu de Mémoire – Image et Mot",
-            "summary": "Associez des images à leurs mots correspondants.",
+            "summary": "Associez des images avec leurs mots correspondants.",
             "instructions": [
-              "Imprimez des cartes avec des images et leurs mots correspondants.",
+              "Imprimez des cartes avec des images et les mots correspondants.",
               "Mélangez les cartes et placez-les face cachée sur la table.",
-              "Chaque joueur retourne deux cartes pour trouver une paire.",
-              "Le joueur avec le plus de paires gagne."
+              "Les joueurs retournent deux cartes à tour de rôle pour trouver une paire correspondante.",
+              "Le joueur avec le plus de paires à la fin gagne."
             ]
           },
           {
             "title": "Bingo de l'Alphabet",
-            "summary": "Reconnaître les lettres de l'alphabet en jouant.",
+            "summary": "Reconnaissez les lettres de l’alphabet en jouant.",
             "instructions": [
-              "Préparez des cartons de bingo avec des lettres de l'alphabet.",
-              "L'enseignant ou le parent tire une lettre et l'annonce.",
-              "Les joueurs marquent la lettre correspondante.",
-              "Le premier à compléter une ligne ou toute la carte gagne."
+              "Préparez des cartons de bingo avec les lettres de l’alphabet.",
+              "L’enseignant ou l’adulte tire des lettres d’un sac et les annonce à voix haute.",
+              "Les joueurs marquent la lettre correspondante sur leur carton.",
+              "Le premier à compléter une ligne ou tout le carton gagne."
             ]
           },
           {
-            "title": "Chasse aux Objets",
-            "summary": "Identifiez des objets à partir d'indices écrits ou parlés.",
+            "title": "Chasse à l’Objet",
+            "summary": "Identifiez des objets à partir d’indices écrits ou oraux.",
             "instructions": [
-              "Écrivez des noms simples d'objets (ex. : balle, chaise, cuillère).",
-              "Annoncez le mot ou montrez la carte.",
-              "Les enfants doivent trouver l'objet dans la pièce.",
-              "Le premier qui rapporte l'objet gagne un point."
+              "Écrivez des noms simples d’objets (ex. : balle, chaise, cuillère).",
+              "Dites le mot ou montrez la carte écrite.",
+              "Les enfants doivent trouver l’objet dans l’environnement.",
+              "Le premier à apporter le bon objet gagne un point."
             ]
           }
         ],
@@ -54,68 +55,139 @@
             "title": "Domino de Mots",
             "summary": "Formez des mots en combinant des syllabes.",
             "instructions": [
-              "Créez des dominos avec une syllabe d'un côté et le reste d'un mot de l'autre.",
-              "Distribuez les dominos aux joueurs.",
-              "Les joueurs posent des dominos pour former des mots corrects.",
-              "Le premier à poser toutes ses pièces gagne."
+              "Créez des pièces de domino où un côté contient une syllabe et l’autre complète un mot.",
+              "Distribuez les pièces entre les joueurs.",
+              "Les joueurs posent les pièces à tour de rôle pour former des mots corrects.",
+              "Le premier à utiliser toutes ses pièces gagne."
             ]
           },
           {
-            "title": "Pendu (adapté)",
+            "title": "Jeu du Pendu (adapté)",
             "summary": "Devinez le mot secret en proposant des lettres.",
             "instructions": [
-              "Choisissez un mot simple et dessinez des espaces vides.",
+              "Choisissez un mot simple et dessinez des espaces vides sur le papier.",
               "Les joueurs proposent des lettres une par une.",
-              "Pour chaque erreur, dessinez une partie de la figure (ex. : un bonhomme).",
-              "L'objectif est de deviner avant de compléter le dessin."
+              "Pour chaque erreur, dessinez une partie de la figure (ex. : un bonhomme bâton).",
+              "L’objectif est de deviner le mot avant de compléter le dessin."
             ]
           },
           {
             "title": "Construction de Phrases",
-            "summary": "Formez des phrases simples à partir de cartes de mots.",
+            "summary": "Formez des phrases simples avec des cartes de mots.",
             "instructions": [
               "Préparez des cartes avec des noms, verbes et adjectifs.",
               "Distribuez les cartes aux joueurs.",
-              "Chaque joueur forme une phrase avec au moins 3 cartes.",
-              "Le groupe vote pour la phrase la plus drôle ou créative."
+              "Les joueurs forment à tour de rôle des phrases courtes en utilisant au moins 3 cartes.",
+              "Le groupe vote pour la phrase la plus drôle ou la plus créative."
             ]
           }
         ],
         "advanced": "Avancé",
-        "advanced_content": "Activités pour la compréhension de texte, le raisonnement logique et la narration.",
+        "advanced_content": "Activités pour la compréhension de texte, le raisonnement logique et la narration d’histoires.",
         "advanced_games": [
           {
-            "title": "Suite d'Histoire",
+            "title": "Suite d’Histoire",
             "summary": "Créez une histoire collaborative en ajoutant des phrases à tour de rôle.",
             "instructions": [
-              "Le premier joueur commence par une phrase (ex. : 'Il était une fois un enfant qui aimait les aventures').",
-              "Chaque joueur ajoute une nouvelle phrase.",
-              "L'histoire continue jusqu'à ce qu'un consensus soit atteint.",
-              "À la fin, lisez l'histoire complète à voix haute."
+              "Le premier joueur commence une histoire par une phrase (ex. : 'Il était une fois un enfant qui adorait les aventures').",
+              "Chaque joueur continue l’histoire avec une nouvelle phrase.",
+              "L’histoire continue jusqu’à ce que tous conviennent de l’arrêter.",
+              "À la fin, lisez l’histoire complète à voix haute."
             ]
           },
           {
             "title": "Mots Cachés",
             "summary": "Trouvez des mots cachés dans une grille de lettres.",
             "instructions": [
-              "Préparez une grille avec des mots liés à un thème (ex. : animaux, fruits, école).",
+              "Préparez une grille de mots cachés avec des mots d’un thème spécifique (ex. : animaux, fruits, école).",
               "Distribuez les grilles aux joueurs.",
-              "Les joueurs doivent trouver et entourer les mots listés.",
-              "Le premier à tout trouver gagne."
+              "Les joueurs doivent trouver et entourer tous les mots de la liste.",
+              "Le premier à tous les trouver gagne."
             ]
           },
           {
-            "title": "Défi de Débat",
-            "summary": "Pratiquez l'argumentation et le raisonnement à travers un débat.",
+            "title": "Débat Amusant",
+            "summary": "Pratiquez l’argumentation et le raisonnement par des débats.",
             "instructions": [
               "Divisez les joueurs en deux groupes.",
-              "Choisissez un thème simple (ex. : 'Les livres sont meilleurs que la télévision').",
+              "Choisissez un sujet simple (ex. : 'Les livres sont meilleurs que la télévision').",
               "Chaque groupe prépare 2–3 arguments.",
-              "Les groupes débattent et le public vote pour le gagnant."
+              "Les groupes présentent leurs arguments à tour de rôle et le public décide du gagnant."
             ]
           }
         ]
-      }
+      },
+      "cardsDebate": [
+        {
+          "title": "Débat Amusant",
+          "summary": "Pratiquez l’argumentation et le raisonnement par des débats.",
+          "cards": [
+            {
+              "title": "École et apprentissage",
+              "color": "#4A90E2",
+              "colorText": "#000",
+              "phrases": [
+                "Il est mieux d’étudier le matin que l’après-midi.",
+                "Lire des livres est plus amusant que regarder des dessins animés.",
+                "Les devoirs devraient être plus courts.",
+                "Il est mieux d’écrire au crayon qu’au stylo.",
+                "Il est mieux d’étudier en silence qu’avec de la musique."
+              ]
+            },
+            {
+              "title": "Maison et famille",
+              "color": "#50C878",
+              "colorText": "#000",
+              "phrases": [
+                "Se coucher tôt est mieux que se coucher tard.",
+                "Aider à la maison est amusant.",
+                "Il est mieux de jouer seul qu’avec des amis.",
+                "Un chien est un meilleur animal de compagnie qu’un chat.",
+                "Il est plus agréable de manger en famille que seul."
+              ]
+            },
+            {
+              "title": "Jeux et divertissements",
+              "color": "#F5C518",
+              "colorText": "#000",
+              "phrases": [
+                "Il est plus amusant de jouer dehors qu’à l’intérieur.",
+                "Les jeux de société sont meilleurs que les jeux vidéo.",
+                "Sauter à la corde est plus amusant que jouer au ballon.",
+                "Il est mieux de jouer au parc que dans le jardin.",
+                "Dessiner est plus amusant que peindre."
+              ]
+            },
+            {
+              "title": "Aliments",
+              "color": "#E63946",
+              "colorText": "#fff",
+              "phrases": [
+                "La glace est meilleure que le gâteau.",
+                "Le fruit est plus savoureux que les bonbons.",
+                "Le soda est meilleur que le jus.",
+                "Il est plus agréable de déjeuner que de dîner.",
+                "La pizza est meilleure que le hamburger."
+              ]
+            },
+            {
+              "title": "Vie quotidienne et imagination",
+              "color": "#9B59B6",
+              "colorText": "#fff",
+              "phrases": [
+                "Il est mieux de vivre à la campagne qu’en ville.",
+                "Les super-héros sont plus cool que les princesses.",
+                "Faire du vélo est mieux que conduire une voiture.",
+                "Aller à la plage est plus amusant qu’aller au centre commercial.",
+                "Voyager est mieux que rester à la maison."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "domino": {
+      "title": "Domino de Mots"
     }
   }
 }
