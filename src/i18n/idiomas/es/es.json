@@ -2,7 +2,7 @@
   "translation": {
     "app": {
       "title": "Juegos Educativos",
-      "description": "Generar PDFs con actividades en {{lang}}"
+      "description": "Generar PDF con actividades en {{lang}}"
     },
     "actions": {
       "generate_pdf": "Generar PDF",
@@ -11,111 +11,183 @@
     },
     "pdf": {
       "cover_title": "Juegos y Actividades",
-      "intro": "Este material contiene actividades organizadas por nivel: principiante, intermedio y avanzado. Pueden realizarse en casa o en el aula utilizando recursos simples.",
+      "intro":
+        "Este material contiene actividades organizadas por nivel: principiante, intermedio y avanzado. Se pueden realizar en casa o en el aula, utilizando recursos simples.",
       "sections": {
         "beginner": "Principiante",
-        "beginner_content": "Actividades centradas en la alfabetización y el primer contacto con palabras e imágenes.",
+        "beginner_content": "Actividades enfocadas en la alfabetización y el primer contacto con palabras.",
         "beginner_games": [
           {
             "title": "Juego de Memoria – Imagen y Palabra",
-            "summary": "Relaciona imágenes con sus palabras correspondientes.",
+            "summary": "Asocia imágenes con las palabras correspondientes.",
             "instructions": [
-              "Imprime cartas con imágenes y palabras correspondientes.",
+              "Imprime cartas con imágenes y las palabras correspondientes.",
               "Baraja las cartas y colócalas boca abajo sobre la mesa.",
-              "Los jugadores voltean dos cartas por turno para encontrar un par coincidente.",
+              "Los jugadores se turnan para voltear dos cartas y encontrar un par correspondiente.",
               "El jugador con más pares al final gana."
             ]
           },
           {
             "title": "Bingo del Alfabeto",
-            "summary": "Reconocer letras del alfabeto mediante el juego.",
+            "summary": "Reconoce letras del alfabeto mediante el juego.",
             "instructions": [
               "Prepara cartones de bingo con letras del alfabeto.",
-              "El profesor o adulto saca letras de una bolsa y las anuncia.",
+              "El profesor o adulto responsable saca letras de una bolsa y las anuncia en voz alta.",
               "Los jugadores marcan la letra correspondiente en su cartón.",
-              "El primero en completar una línea o todo el cartón gana."
+              "El primero en completar una línea o el cartón completo gana."
             ]
           },
           {
-            "title": "Búsqueda de Objetos",
+            "title": "Búsqueda del Objeto",
             "summary": "Identifica objetos a partir de pistas escritas o habladas.",
             "instructions": [
-              "Escribe nombres sencillos de objetos (ej.: pelota, silla, cuchara).",
+              "Escribe nombres simples de objetos (ej.: pelota, silla, cuchara).",
               "Di la palabra o muestra la tarjeta escrita.",
-              "Los niños deben encontrar el objeto en la habitación.",
+              "Los niños deben encontrar el objeto en el ambiente.",
               "El primero en traer el objeto correcto gana un punto."
             ]
           }
         ],
         "intermediate": "Intermedio",
-        "intermediate_content": "Actividades para ampliar vocabulario y formar frases simples.",
+        "intermediate_content": "Actividades para ampliar el vocabulario y formar frases simples.",
         "intermediate_games": [
           {
             "title": "Dominó de Palabras",
             "summary": "Forma palabras combinando sílabas.",
             "instructions": [
               "Crea fichas de dominó donde un lado tenga una sílaba y el otro complete una palabra.",
-              "Reparte las fichas entre los jugadores.",
-              "Los jugadores colocan las fichas para formar palabras correctas.",
+              "Distribuye las fichas entre los jugadores.",
+              "Los jugadores se turnan colocando fichas para formar palabras correctas.",
               "El primero en usar todas sus fichas gana."
             ]
           },
           {
-            "title": "Ahorcado (adaptado)",
+            "title": "Juego del Ahorcado (adaptado)",
             "summary": "Adivina la palabra secreta sugiriendo letras.",
             "instructions": [
-              "Elige una palabra simple y dibuja espacios en blanco.",
+              "Elige una palabra simple y dibuja espacios en blanco en el papel.",
               "Los jugadores sugieren letras una por una.",
-              "Por cada error, dibuja una parte de la figura (ej.: un monigote).",
-              "El objetivo es adivinar antes de completar el dibujo."
+              "Por cada error, dibuja una parte de la figura (ej.: un muñeco de palitos).",
+              "El objetivo es adivinar la palabra antes de completar el dibujo."
             ]
           },
           {
             "title": "Construcción de Frases",
-            "summary": "Forma frases simples con tarjetas de palabras.",
+            "summary": "Forma frases simples a partir de tarjetas con palabras.",
             "instructions": [
               "Prepara tarjetas con sustantivos, verbos y adjetivos.",
-              "Reparte las tarjetas entre los jugadores.",
-              "Cada jugador forma frases cortas con al menos 3 tarjetas.",
+              "Distribuye las tarjetas entre los jugadores.",
+              "Los jugadores se turnan formando frases cortas usando al menos 3 tarjetas.",
               "El grupo vota por la frase más divertida o creativa."
             ]
           }
         ],
         "advanced": "Avanzado",
-        "advanced_content": "Actividades para comprensión de texto, razonamiento lógico y narración.",
+        "advanced_content": "Actividades para comprensión de texto, razonamiento lógico y narración de historias.",
         "advanced_games": [
           {
             "title": "Continuación de Historia",
-            "summary": "Crea una historia colaborativa agregando frases por turnos.",
+            "summary": "Crea una historia colaborativa añadiendo frases por turnos.",
             "instructions": [
-              "El primer jugador comienza con una frase (ej.: 'Érase una vez un niño que amaba las aventuras').",
-              "Cada jugador añade una nueva frase.",
-              "La historia continúa hasta que todos acuerden un final.",
+              "El primer jugador inicia una historia con una frase (ej.: 'Érase una vez un niño que adoraba las aventuras').",
+              "Cada jugador continúa la historia con una nueva frase.",
+              "La historia sigue hasta que todos acuerden finalizar.",
               "Al final, lean la historia completa en voz alta."
             ]
           },
           {
             "title": "Sopa de Letras",
-            "summary": "Encuentra palabras escondidas en una cuadrícula.",
+            "summary": "Encuentra palabras escondidas en una cuadrícula de letras.",
             "instructions": [
-              "Prepara una sopa de letras con un tema (ej.: animales, frutas, escuela).",
-              "Reparte las cuadrículas a los jugadores.",
-              "Los jugadores buscan y rodean las palabras listadas.",
+              "Prepara una sopa de letras con palabras de un tema específico (ej.: animales, frutas, escuela).",
+              "Entrega las cuadrículas a los jugadores.",
+              "Los jugadores deben encontrar y rodear todas las palabras de la lista.",
               "El primero en encontrarlas todas gana."
             ]
           },
           {
-            "title": "Desafío de Debate",
-            "summary": "Practica argumentación y razonamiento mediante debates.",
+            "title": "Debate divertido",
+            "summary": "Practica la argumentación y el razonamiento en debates.",
             "instructions": [
               "Divide a los jugadores en dos grupos.",
               "Elige un tema simple (ej.: 'Los libros son mejores que la televisión').",
               "Cada grupo prepara 2–3 argumentos.",
-              "Los grupos presentan sus argumentos y el público decide al ganador."
+              "Los grupos se turnan presentando argumentos y el público decide el ganador."
             ]
           }
         ]
-      }
+      },
+      "cardsDebate": [
+        {
+          "title": "Debate divertido",
+          "summary": "Practica la argumentación y el razonamiento en debates.",
+          "cards": [
+            {
+              "title": "Escuela y aprendizaje",
+              "color": "#4A90E2",
+              "colorText": "#000",
+              "phrases": [
+                "Es mejor estudiar por la mañana que por la tarde.",
+                "Leer libros es más divertido que ver dibujos animados.",
+                "La tarea debería ser más corta.",
+                "Es mejor escribir con lápiz que con bolígrafo.",
+                "Es mejor estudiar en silencio que con música."
+              ]
+            },
+            {
+              "title": "Casa y familia",
+              "color": "#50C878",
+              "colorText": "#000",
+              "phrases": [
+                "Dormir temprano es mejor que dormir tarde.",
+                "Ayudar en casa es divertido.",
+                "Es mejor jugar solo que con amigos.",
+                "El perro es una mejor mascota que el gato.",
+                "Es más agradable comer en familia que solo."
+              ]
+            },
+            {
+              "title": "Juegos y diversión",
+              "color": "#F5C518",
+              "colorText": "#000",
+              "phrases": [
+                "Es más divertido jugar al aire libre que en casa.",
+                "Los juegos de mesa son mejores que los videojuegos.",
+                "Saltar la cuerda es más divertido que jugar al fútbol.",
+                "Es mejor jugar en el parque que en el patio.",
+                "Dibujar es más divertido que pintar."
+              ]
+            },
+            {
+              "title": "Alimentos",
+              "color": "#E63946",
+              "colorText": "#fff",
+              "phrases": [
+                "El helado es mejor que el pastel.",
+                "La fruta es más sabrosa que los dulces.",
+                "El refresco es mejor que el jugo.",
+                "Es más agradable almorzar que cenar.",
+                "La pizza es mejor que la hamburguesa."
+              ]
+            },
+            {
+              "title": "Vida cotidiana e imaginación",
+              "color": "#9B59B6",
+              "colorText": "#fff",
+              "phrases": [
+                "Es mejor vivir en el campo que en la ciudad.",
+                "Los superhéroes son más geniales que las princesas.",
+                "Andar en bicicleta es mejor que andar en coche.",
+                "Ir a la playa es más divertido que ir al centro comercial.",
+                "Viajar es mejor que quedarse en casa."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "domino": {
+      "title": "Dominó de Palabras"
     }
   }
-} 
+}
