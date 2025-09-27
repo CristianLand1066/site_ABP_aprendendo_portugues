@@ -9,6 +9,7 @@ import {
 } from "@react-pdf/renderer";
 import languages from "../../i18n/languages";
 import type { DocumentProps } from "@react-pdf/renderer";
+import { useTranslation } from "react-i18next";
 
 export interface PdfSection {
   title: string;
@@ -201,6 +202,7 @@ function renderGrid(grid: string[][], styles: any) {
 }
 
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
+  const { t, i18n } = useTranslation();
   // Aggregate all images to render together on a dedicated page at the end
   const sectionImagesImages: PdfImage[] = (data.sections || []).flatMap(
     (sec) => sec.images?.images || []
@@ -453,14 +455,28 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 >
                   {cat.summary}
                 </Text>
-                {cat.phrases.map((p, pi) => (
-                  <Text
-                    key={pi}
-                    style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}
-                  >
-                    - {p}
-                  </Text>
-                ))}
+                {cat.phrases.map((p, pi) => {
+  // Get Portuguese version of this phrase
+  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.0.cards.${idx}.phrases`, {
+    returnObjects: true,
+  }) as string[];
+  const ptPhrase = ptPhrases?.[pi];
+  
+  return (
+    <React.Fragment key={pi}>
+      <Text style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}>
+        - {ptPhrase || p}
+      </Text>
+      {data.locale !== "pt" && (
+        <Text
+          style={{ fontSize: 8, marginBottom: 2, color: cat.colorText }}
+        >
+          - {p}
+        </Text>
+      )}
+    </React.Fragment>
+  );
+})}
               </View>
             ))}
           </View>
