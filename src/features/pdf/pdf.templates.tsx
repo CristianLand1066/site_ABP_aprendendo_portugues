@@ -184,26 +184,6 @@ function buildBingoGrid(
   return grid;
 }
 
-function buildWordCards(
-  substantivos: string[],
-  verbos: string[],
-  adjetivos: string[],
-  limit = 18 // número máximo de cartões por página
-): WordCard[] {
-  const cards: WordCard[] = [];
-  const max = Math.min(substantivos.length, verbos.length, adjetivos.length, limit);
-
-  for (let i = 0; i < max; i++) {
-    cards.push({
-      substantivo: substantivos[i],
-      verbo: verbos[i],
-      adjetivo: adjetivos[i],
-    });
-  }
-
-  return cards;
-}
-
 function renderGrid(grid: string[][], styles: any) {
   return (
     <View style={styles.bingoGrid}>
