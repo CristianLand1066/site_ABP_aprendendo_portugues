@@ -23,9 +23,10 @@ export interface PdfSection {
 }
 
 interface WordCard {
-  substantivo: string;
-  verbo: string;
-  adjetivo: string;
+  title: string;
+  color: string;
+  colorText: string;
+  words: string[];
 }
 
 export interface PdfDebateCategory {
