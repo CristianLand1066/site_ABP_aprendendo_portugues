@@ -360,7 +360,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             {bingoTitle}
           </Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map((_, cardIdx) => {
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = data.bingo?.rows ?? 3;
               const cols = data.bingo?.cols ?? 3;
               const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
@@ -377,7 +377,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             })}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map((_, cardIdx) => {
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = 4;
               const cols = 4;
               const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
@@ -394,7 +394,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             })}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map((_, cardIdx) => {
+            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = 4; // maior que 3x3 para caber mais números
               const cols = 4;
               const letters = data.bingo?.letters ?? DEFAULT_NUMBERS;
@@ -517,7 +517,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
-          <Text style={styles.h1}>✍️ Cartões de Palavras</Text>
+          <Text style={styles.h1}>{wordCardsTitle}</Text>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {data.wordCards.categories?.flatMap((cat) =>
