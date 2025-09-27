@@ -133,8 +133,39 @@ function App() {
         domino: {
           enabled: true,
           syllables: ["CA", "BO", "SA", "PA", "TO", "MA", "PE", "LA", "ME", "SE", "TE", "LE", "NE", "DE", "FE", "GE", "VO", "LO"],
-        }
-        
+        },
+        wordCards: {
+          enabled: true,
+          categories: [
+            {
+              title: "Substantivos",
+              color: "#1E90FF",
+              colorText: "#000",
+              words: [
+                "cachorro","gato","menina","menino","bola","livro","escola","casa","árvore","carro",
+                "pássaro","flor","sapato","peixe","sol","lua","pão","leite","mesa","cadeira"
+              ]
+            },
+            {
+              title: "Verbos",
+              color: "#32CD32",
+              colorText: "#fff",
+              words: [
+                "correr","pular","cantar","dançar","dormir","comer","beber","brincar","escrever","desenhar",
+                "ler","olhar","abrir","fechar","falar","escutar","ajudar","jogar","sorrir","chorar"
+              ]
+            },
+            {
+              title: "Adjetivos",
+              color: "#FFD700",
+              colorText: "#000",
+              words: [
+                "feliz","triste","grande","pequeno","bonito","feio","rápido","lento","alto","baixo",
+                "forte","fraco","quente","frio","novo","velho","vermelho","azul","branco","preto"
+              ]
+            }
+          ]
+        }        
       };
       const blob = await generatePdf(data);
       const fileName = `jogos-${data.locale}.pdf`;
