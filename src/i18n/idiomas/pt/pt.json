@@ -185,6 +185,9 @@
           ]
         }
       ]
+    },
+    "domino": {
+      "title": "Dominó de Palavras"
     }
   }
 }

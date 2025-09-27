@@ -130,6 +130,11 @@ function App() {
           enabled: true,
           categories: cardsDebateCategories,
         },
+        domino: {
+          enabled: true,
+          syllables: ["CA", "BO", "SA", "PA", "TO", "MA", "PE", "LA", "ME", "SE", "TE", "LE", "NE", "DE", "FE", "GE", "VO", "LO"],
+        }
+        
       };
       const blob = await generatePdf(data);
       const fileName = `jogos-${data.locale}.pdf`;
