@@ -128,7 +128,7 @@ function App() {
         },
         cardsDebate: {
           enabled: true,
-          categories: cardsDebateCategories,
+          cards: cardsDebateCategories,
         },
         domino: {
           enabled: true,
