@@ -117,12 +117,11 @@
           }
         ]
       },
-      "cardsDebate": [
-        {
-          "title": "Debate divertido",
-          "summary": "Pratique argumentação e raciocínio em debates.",
-          "cards": [
-            {
+      "cardsDebate": {
+        "title": "Debate divertido",
+        "summary": "Pratique argumentação e raciocínio em debates.",
+        "cards": [
+          {
               "title": "Escola e aprendizagem",
               "color":"#4A90E2",
               "colorText":"#000",
@@ -183,11 +182,19 @@
               ]
             }
           ]
+        },
+        "domino": {
+          "title": "Dominó de Palavras"
+        },
+        "bingo": {
+          "title": "Bingo de Letras e números"
+        },
+        "images": {
+          "title": "Imagens"
+        },
+        "wordCards": {
+          "title": "Cartões de Palavras"
         }
-      ]
-    },
-    "domino": {
-      "title": "Dominó de Palavras"
+      }
     }
-  }
 }
