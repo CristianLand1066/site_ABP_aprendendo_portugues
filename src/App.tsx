@@ -45,7 +45,7 @@ function App() {
         fetchAsDataUrl(abs("/imagens/moldes/mala_inferior.jpg")),
       ]);
 
-      const cardsDebateCategories = t("pdf.cardsDebate.0.cards", {
+      const cardsDebateCategories = t("pdf.cardsDebate.cards", {
         returnObjects: true,
       }) as unknown as PdfDebateCategory[];
 

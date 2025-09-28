@@ -32,10 +32,8 @@ interface WordCard {
 
 export interface PdfDebateCategory {
   title: string;
-  summary: string;
   color: string;
   colorText: string;
-  icon: string;
   phrases: string[];
 }
 
