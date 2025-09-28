@@ -202,7 +202,7 @@ function renderGrid(grid: string[][], styles: any) {
 }
 
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
-  const i18n = useTranslation();
+  const { i18n } = useTranslation();
   // Aggregate all images to render together on a dedicated page at the end
   const sectionImagesImages: PdfImage[] = (data.sections || []).flatMap(
     (sec) => sec.images?.images || []
