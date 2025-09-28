@@ -9,6 +9,7 @@ import {
 } from "@react-pdf/renderer";
 import languages from "../../i18n/languages";
 import type { DocumentProps } from "@react-pdf/renderer";
+import { useTranslation } from "react-i18next";
 
 export interface PdfSection {
   title: string;
@@ -31,10 +32,8 @@ interface WordCard {
 
 export interface PdfDebateCategory {
   title: string;
-  summary: string;
   color: string;
   colorText: string;
-  icon: string;
   phrases: string[];
 }
 
@@ -52,7 +51,7 @@ export interface PdfData {
   bingo?: PdfBingoConfig;
   cardsDebate?: {
     enabled: boolean;
-    categories: PdfDebateCategory[];
+    cards: PdfDebateCategory[];
   };
   wordCards?: {
     enabled: boolean;
@@ -107,12 +106,12 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Helvetica",
   },
-  h1: { fontSize: 24, marginBottom: 8 },
+  h1: { fontSize: 24, marginBottom: 6 },
   h2: { fontSize: 18, marginTop: 16, marginBottom: 6 },
   p: { marginBottom: 8, lineHeight: 1.4 },
   list: { marginLeft: 12 },
   caption: {
-    marginBottom: 8,
+    marginBottom: 5,
     lineHeight: 1.4,
     fontStyle: "italic",
     fontSize: 10,
@@ -120,9 +119,10 @@ const styles = StyleSheet.create({
   },
   captionLabel: {
     fontStyle: "italic",
-    fontSize: 10,
+    fontSize: 8,
     color: "#555",
     fontWeight: 700,
+    marginBottom: 2,
   },
   image: { marginTop: 6, marginBottom: 6, alignSelf: "center" },
   //bingo styles
@@ -200,7 +200,10 @@ function renderGrid(grid: string[][], styles: any) {
   );
 }
 
+
+
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
+  const { i18n } = useTranslation();
   // Aggregate all images to render together on a dedicated page at the end
   const sectionImagesImages: PdfImage[] = (data.sections || []).flatMap(
     (sec) => sec.images?.images || []
@@ -209,60 +212,25 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
     (sec) => sec.images?.moldes || []
   );
 
-  const imagesTitle =
-    data.locale === "pt"
-      ? "Imagens"
-      : data.locale === "es"
-      ? "Imágenes"
-      : data.locale === "fr"
-      ? "Images"
-      : data.locale === "de"
-      ? "Bilder"
-      : "Images";
-
-  const bingoTitle =
-    data.locale === "pt"
-      ? "Bingo"
-      : data.locale === "es"
-      ? "Bingo"
-      : data.locale === "fr"
-      ? "Bingo"
-      : data.locale === "de"
-      ? "Bingo"
-      : "Bingo";
-
-  const cardsDebateTitle = 
-    data.locale === "pt"
-      ? "Cartas de Debate"
-      : data.locale === "es"
-      ? "Cartas de Debate"
-      : data.locale === "fr"
-      ? "Cartes de Débat"
-      : data.locale === "de"
-      ? "Debattenkarten"
-      : "Debate Cards";
-
-  const dominoTitle =
-    data.locale === "pt"
-      ? "Dominó de Sílabas"
-      : data.locale === "es"
-      ? "Dominó de Silabas"
-      : data.locale === "fr"
-      ? "Dominó des Syllabes"
-      : data.locale === "de"
-      ? "Dominos der Silben"
-      : "Dominó de Sílabas";
-
-    const wordCardsTitle =
-      data.locale === "pt"
-        ? "Cartões de Frases"
-        : data.locale === "es"
-        ? "Cartas de Debate"
-        : data.locale === "fr"
-        ? "Cartes de Débat"
-        : data.locale === "de"
-        ? "Debattenkarten"
-        : "Debate Cards";
+  function getTraduction(data: PdfData, text: string, type: string) {
+    if (type === "title") {
+      const translation = i18n.getFixedT("pt")(text);
+      return (
+        <Text style={styles.h1}>
+          {translation}
+        </Text>
+      );
+    }
+    const translation = i18n.getFixedT(data.locale)(text);
+    if (data.locale !== "pt") {
+      return (
+        <Text style={styles.captionLabel}>
+          ({translation})
+        </Text>
+      );
+    }
+    return null;
+  }
   return (
     <Document>
 
@@ -337,7 +305,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Page 2: images aggregated */}
       {sectionImagesImages.length > 0 && (
         <Page size="A4" style={styles.page}>
-          <Text style={styles.h2}>{imagesTitle}</Text>
+          {getTraduction(data, "pdf.images.title", "title")}
+          {getTraduction(data, "pdf.images.title", "caption")}
           {sectionImagesImages.map((img, idxImg) => (
             <View key={`sec-img-${idxImg}`}>
               <Image
@@ -356,9 +325,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
-          <Text style={styles.h1}>
-            {bingoTitle}
-          </Text>
+          {getTraduction(data, "pdf.bingo.title", "title")}
+          {getTraduction(data, "pdf.bingo.title", "caption")}
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
             {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
               const rows = data.bingo?.rows ?? 3;
@@ -414,14 +382,13 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       )}
 
       {/* Optional: cardsDebate pages */}
-      {data.cardsDebate?.enabled && data.cardsDebate.categories?.length > 0 && (
+      {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
         <Page size="A4" style={styles.page}>
-          <Text style={styles.h1}>
-            {cardsDebateTitle}
-          </Text>
+          {getTraduction(data, "pdf.cardsDebate.title", "title")}
+          {getTraduction(data, "pdf.cardsDebate.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
-            {data.cardsDebate.categories.map((cat, idx) => (
+            {data.cardsDebate.cards.map((cat, idx) => (
               <View
                 key={idx}
                 style={{
@@ -451,16 +418,28 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                     color: cat.colorText,
                   }}
                 >
-                  {cat.summary}
                 </Text>
-                {cat.phrases.map((p, pi) => (
-                  <Text
-                    key={pi}
-                    style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}
-                  >
-                    - {p}
-                  </Text>
-                ))}
+                {cat.phrases.map((p, pi) => {
+                  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.cards.${idx}.phrases`, {
+                    returnObjects: true,
+                  }) as string[];
+                  const ptPhrase = ptPhrases?.[pi];
+                  
+                  return (
+                    <React.Fragment key={pi}>
+                      <Text style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}>
+                        - {ptPhrase || p}
+                      </Text>
+                      {data.locale !== "pt" && (
+                        <Text
+                          style={{ fontSize: 8, marginBottom: 2, color: cat.colorText, fontStyle: "italic" }}
+                        >
+                          - {p}
+                        </Text>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
               </View>
             ))}
           </View>
@@ -469,7 +448,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.domino?.enabled && (
         <Page size="A4" style={styles.domino}>
-          <Text style={styles.h1}>{dominoTitle}</Text>
+          {getTraduction(data, "pdf.domino.title", "title")}
+          {getTraduction(data, "pdf.domino.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
@@ -517,7 +497,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
-          <Text style={styles.h1}>{wordCardsTitle}</Text>
+          {getTraduction(data, "pdf.wordCards.title", "title")}
+          {getTraduction(data, "pdf.wordCards.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {data.wordCards.categories?.flatMap((cat) =>

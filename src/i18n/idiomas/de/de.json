@@ -1,8 +1,8 @@
 {
   "translation": {
     "app": {
-      "title": "Lernspiele",
-      "description": "Erstelle PDFs mit Aktivitäten in {{lang}}"
+      "title": "Bildungsspiele",
+      "description": "PDFs mit Aktivitäten in {{lang}} erstellen"
     },
     "actions": {
       "generate_pdf": "PDF erstellen",
@@ -19,56 +19,56 @@
         "beginner_games": [
           {
             "title": "Memory-Spiel – Bild und Wort",
-            "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
+            "summary": "Bilder den entsprechenden Wörtern zuordnen.",
             "instructions": [
               "Karten mit Bildern und den entsprechenden Wörtern ausdrucken.",
               "Die Karten mischen und verdeckt auf den Tisch legen.",
               "Die Spieler decken abwechselnd zwei Karten auf, um ein passendes Paar zu finden.",
-              "Der Spieler mit den meisten Paaren gewinnt."
+              "Der Spieler mit den meisten Paaren am Ende gewinnt."
             ]
           },
           {
             "title": "Alphabet-Bingo",
-            "summary": "Erkenne die Buchstaben des Alphabets spielerisch.",
+            "summary": "Buchstaben des Alphabets spielerisch erkennen.",
             "instructions": [
-              "Bingo-Karten mit Buchstaben des Alphabets vorbereiten.",
-              "Der Lehrer oder Erwachsene zieht Buchstaben aus einem Beutel und liest sie laut vor.",
+              "Bingo-Karten mit Buchstaben vorbereiten.",
+              "Der Lehrer oder Spielleiter zieht Buchstaben aus einem Beutel und sagt sie laut an.",
               "Die Spieler markieren den entsprechenden Buchstaben auf ihrer Karte.",
               "Der Erste, der eine Reihe oder die ganze Karte vervollständigt, gewinnt."
             ]
           },
           {
             "title": "Gegenstandssuche",
-            "summary": "Erkenne Gegenstände anhand von geschriebenen oder gesprochenen Hinweisen.",
+            "summary": "Finde Gegenstände anhand geschriebener oder gesprochener Hinweise.",
             "instructions": [
-              "Einfache Namen von Gegenständen aufschreiben (z. B. Ball, Stuhl, Löffel).",
-              "Sag das Wort oder zeige die geschriebene Karte.",
+              "Einfache Namen von Gegenständen aufschreiben (z. B.: Ball, Stuhl, Löffel).",
+              "Das Wort sagen oder die Karte zeigen.",
               "Die Kinder müssen den Gegenstand in der Umgebung finden.",
               "Der Erste, der den richtigen Gegenstand bringt, bekommt einen Punkt."
             ]
           }
         ],
         "intermediate": "Mittelstufe",
-        "intermediate_content": "Aktivitäten zur Erweiterung des Wortschatzes und zum Bilden einfacher Sätze.",
+        "intermediate_content": "Aktivitäten zum Ausbau des Wortschatzes und zum Bilden einfacher Sätze.",
         "intermediate_games": [
           {
-            "title": "Wort-Domino",
-            "summary": "Wörter bilden, indem man Silben kombiniert.",
+            "title": "Wortdomino",
+            "summary": "Wörter durch das Kombinieren von Silben bilden.",
             "instructions": [
-              "Domino-Steine erstellen, bei denen eine Seite eine Silbe enthält und die andere ein Wort vervollständigt.",
-              "Die Steine unter den Spielern verteilen.",
+              "Domino-Steine erstellen, bei denen eine Seite eine Silbe und die andere die Wortergänzung enthält.",
+              "Die Steine an die Spieler austeilen.",
               "Die Spieler legen abwechselnd Steine, um richtige Wörter zu bilden.",
-              "Der Erste, der alle seine Steine ablegt, gewinnt."
+              "Der Erste, der alle seine Steine verwendet, gewinnt."
             ]
           },
           {
             "title": "Galgenmännchen (angepasst)",
-            "summary": "Errate das geheime Wort, indem du Buchstaben vorschlägst.",
+            "summary": "Das geheime Wort erraten, indem Buchstaben vorgeschlagen werden.",
             "instructions": [
-              "Ein einfaches Wort auswählen und leere Felder auf Papier zeichnen.",
-              "Die Spieler schlagen jeweils einen Buchstaben vor.",
-              "Für jeden Fehler wird ein Teil einer Figur gezeichnet (z. B. Strichmännchen).",
-              "Das Ziel ist es, das Wort zu erraten, bevor die Zeichnung fertig ist."
+              "Ein einfaches Wort auswählen und leere Felder auf das Papier zeichnen.",
+              "Die Spieler schlagen nacheinander Buchstaben vor.",
+              "Für jeden Fehler wird ein Teil der Figur gezeichnet (z. B.: Strichmännchen).",
+              "Ziel ist es, das Wort zu erraten, bevor die Figur fertig ist."
             ]
           },
           {
@@ -77,117 +77,124 @@
             "instructions": [
               "Karten mit Substantiven, Verben und Adjektiven vorbereiten.",
               "Die Karten an die Spieler verteilen.",
-              "Die Spieler bilden abwechselnd kurze Sätze mit mindestens 3 Karten.",
+              "Die Spieler bilden kurze Sätze mit mindestens 3 Karten.",
               "Die Gruppe stimmt über den lustigsten oder kreativsten Satz ab."
             ]
           }
         ],
-        "advanced": "Fortgeschrittene",
+        "advanced": "Fortgeschritten",
         "advanced_content": "Aktivitäten für Textverständnis, logisches Denken und Geschichtenerzählen.",
         "advanced_games": [
           {
             "title": "Geschichte fortsetzen",
-            "summary": "Eine gemeinsame Geschichte bilden, indem man abwechselnd Sätze hinzufügt.",
+            "summary": "Eine gemeinsame Geschichte bilden, indem jeder Spieler Sätze hinzufügt.",
             "instructions": [
-              "Der erste Spieler beginnt eine Geschichte mit einem Satz (z. B.: 'Es war einmal ein Kind, das Abenteuer liebte').",
-              "Jeder Spieler setzt die Geschichte mit einem neuen Satz fort.",
+              "Der erste Spieler beginnt die Geschichte mit einem Satz (z. B.: 'Es war einmal ein Kind, das Abenteuer liebte').",
+              "Jeder Spieler fügt einen neuen Satz hinzu.",
               "Die Geschichte geht weiter, bis alle beschließen, sie zu beenden.",
-              "Am Ende wird die komplette Geschichte laut vorgelesen."
+              "Am Ende die gesamte Geschichte laut vorlesen."
             ]
           },
           {
             "title": "Wortsuche",
             "summary": "Finde versteckte Wörter in einem Buchstabengitter.",
             "instructions": [
-              "Ein Suchsel mit Wörtern zu einem bestimmten Thema vorbereiten (z. B. Tiere, Früchte, Schule).",
+              "Ein Buchstabengitter mit Wörtern zu einem bestimmten Thema vorbereiten (z. B.: Tiere, Früchte, Schule).",
               "Die Gitter an die Spieler verteilen.",
-              "Die Spieler müssen alle Wörter in der Liste finden und einkreisen.",
+              "Die Spieler müssen alle aufgelisteten Wörter finden und einkreisen.",
               "Der Erste, der alle Wörter findet, gewinnt."
             ]
           },
           {
             "title": "Lustige Debatte",
-            "summary": "Argumentation und logisches Denken in Debatten üben.",
+            "summary": "Argumentieren und logisches Denken in Debatten üben.",
             "instructions": [
               "Die Spieler in zwei Gruppen aufteilen.",
-              "Ein einfaches Thema auswählen (z. B.: 'Bücher sind besser als Fernsehen').",
+              "Ein einfaches Thema wählen (z. B.: 'Bücher sind besser als Fernsehen').",
               "Jede Gruppe bereitet 2–3 Argumente vor.",
-              "Die Gruppen präsentieren ihre Argumente abwechselnd und das Publikum entscheidet über den Gewinner."
+              "Die Gruppen präsentieren abwechselnd ihre Argumente, und das Publikum entscheidet über den Gewinner."
             ]
           }
         ]
       },
-      "cardsDebate": [
-        {
-          "title": "Lustige Debatte",
-          "summary": "Argumentation und logisches Denken in Debatten üben.",
-          "cards": [
-            {
-              "title": "Schule und Lernen",
-              "color": "#4A90E2",
-              "colorText": "#000",
-              "phrases": [
-                "Es ist besser, morgens zu lernen als nachmittags.",
-                "Bücher zu lesen macht mehr Spaß als Zeichentrickfilme zu schauen.",
-                "Hausaufgaben sollten kürzer sein.",
-                "Es ist besser, mit Bleistift als mit Kugelschreiber zu schreiben.",
-                "Es ist besser, in Ruhe zu lernen als mit Musik."
-              ]
-            },
-            {
-              "title": "Zuhause und Familie",
-              "color": "#50C878",
-              "colorText": "#000",
-              "phrases": [
-                "Früh schlafen gehen ist besser als spät schlafen gehen.",
-                "Zu Hause helfen macht Spaß.",
-                "Es ist besser, alleine zu spielen als mit Freunden.",
-                "Ein Hund ist ein besseres Haustier als eine Katze.",
-                "Es ist schöner, mit der Familie zu essen als allein."
-              ]
-            },
-            {
-              "title": "Spiele und Spaß",
-              "color": "#F5C518",
-              "colorText": "#000",
-              "phrases": [
-                "Draußen spielen macht mehr Spaß als drinnen.",
-                "Brettspiele sind besser als Videospiele.",
-                "Seilspringen macht mehr Spaß als Ballspielen.",
-                "Es ist besser, im Park zu spielen als im Garten.",
-                "Malen macht mehr Spaß als Ausmalen."
-              ]
-            },
-            {
-              "title": "Essen",
-              "color": "#E63946",
-              "colorText": "#fff",
-              "phrases": [
-                "Eis ist besser als Kuchen.",
-                "Obst schmeckt besser als Süßigkeiten.",
-                "Limonade ist besser als Saft.",
-                "Mittagessen ist schöner als Abendessen.",
-                "Pizza ist besser als Hamburger."
-              ]
-            },
-            {
-              "title": "Alltag und Fantasie",
-              "color": "#9B59B6",
-              "colorText": "#fff",
-              "phrases": [
-                "Auf dem Land zu leben ist besser als in der Stadt.",
-                "Superhelden sind cooler als Prinzessinnen.",
-                "Radfahren ist besser als Autofahren.",
-                "An den Strand zu gehen macht mehr Spaß als ins Einkaufszentrum.",
-                "Reisen ist besser als zu Hause zu bleiben."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "domino": {
-      "title": "Wort-Domino"
+      "cardsDebate": {
+        "title": "Lustige Debatte",
+        "summary": "Argumentieren und logisches Denken in Debatten üben.",
+        "cards": [
+          {
+            "title": "Schule und Lernen",
+            "color": "#4A90E2",
+            "colorText": "#000",
+            "phrases": [
+              "Am Morgen zu lernen ist besser als am Nachmittag.",
+              "Bücher zu lesen macht mehr Spaß als Zeichentrickfilme zu schauen.",
+              "Hausaufgaben sollten kürzer sein.",
+              "Es ist besser, mit Bleistift als mit Kugelschreiber zu schreiben.",
+              "Es ist besser, in Ruhe als mit Musik zu lernen."
+            ]
+          },
+          {
+            "title": "Zuhause und Familie",
+            "color": "#50C878",
+            "colorText": "#000",
+            "phrases": [
+              "Früh schlafen zu gehen ist besser als spät schlafen zu gehen.",
+              "Im Haushalt zu helfen macht Spaß.",
+              "Allein zu spielen ist besser als mit Freunden.",
+              "Ein Hund ist ein besseres Haustier als eine Katze.",
+              "Mit der Familie zu essen ist schöner als allein."
+            ]
+          },
+          {
+            "title": "Spiele und Freizeit",
+            "color": "#F5C518",
+            "colorText": "#000",
+            "phrases": [
+              "Draußen zu spielen macht mehr Spaß als drinnen.",
+              "Brettspiele sind besser als Videospiele.",
+              "Seilspringen macht mehr Spaß als Ballspielen.",
+              "Es ist besser, im Park als im Garten zu spielen.",
+              "Zeichnen macht mehr Spaß als Malen."
+            ]
+          },
+          {
+            "title": "Lebensmittel",
+            "color": "#E63946",
+            "colorText": "#fff",
+            "phrases": [
+              "Eis ist besser als Kuchen.",
+              "Obst schmeckt besser als Süßigkeiten.",
+              "Limonade ist besser als Saft.",
+              "Mittagessen ist besser als Abendessen.",
+              "Pizza ist besser als Hamburger."
+            ]
+          },
+          {
+            "title": "Alltag und Fantasie",
+            "color": "#9B59B6",
+            "colorText": "#fff",
+            "phrases": [
+              "Auf dem Land zu leben ist besser als in der Stadt.",
+              "Superhelden sind cooler als Prinzessinnen.",
+              "Fahrradfahren ist besser als Autofahren.",
+              "An den Strand zu gehen macht mehr Spaß als ins Einkaufszentrum.",
+              "Reisen ist besser als zu Hause zu bleiben."
+            ]
+          }
+        ]
+      },
+      "domino": {
+        "title": "Wortdomino"
+      },
+      "bingo": {
+        "title": "Buchstaben- und Zahlen-Bingo"
+      },
+      "images": {
+        "title": "Bilder"
+      },
+      "wordCards": {
+        "title": "Wortkarten"
+      }
     }
   }
 }

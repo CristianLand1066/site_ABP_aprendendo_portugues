@@ -12,10 +12,10 @@
     "pdf": {
       "cover_title": "Games and Activities",
       "intro":
-        "This material contains activities organized by level: beginner, intermediate and advanced. They can be done at home or in the classroom, using simple resources.",
+        "This material contains activities organized by level: beginner, intermediate, and advanced. They can be carried out at home or in the classroom, using simple resources.",
       "sections": {
         "beginner": "Beginner",
-        "beginner_content": "Activities focused on literacy and the first contact with words.",
+        "beginner_content": "Activities focused on literacy and first contact with words.",
         "beginner_games": [
           {
             "title": "Memory Game – Image and Word",
@@ -32,7 +32,7 @@
             "summary": "Recognize letters of the alphabet through play.",
             "instructions": [
               "Prepare bingo cards with letters of the alphabet.",
-              "The teacher or adult draws letters from a bag and announces them aloud.",
+              "The teacher or leader draws letters from a bag and announces them aloud.",
               "Players mark the corresponding letter on their card.",
               "The first to complete a line or the entire card wins."
             ]
@@ -41,15 +41,15 @@
             "title": "Object Hunt",
             "summary": "Identify objects from written or spoken clues.",
             "instructions": [
-              "Write simple names of objects (e.g., ball, chair, spoon).",
+              "Write simple object names (e.g., ball, chair, spoon).",
               "Say the word or show the written card.",
               "Children must find the object in the environment.",
-              "The first to bring the correct object earns a point."
+              "The first to bring the correct object scores a point."
             ]
           }
         ],
         "intermediate": "Intermediate",
-        "intermediate_content": "Activities to expand vocabulary and form simple sentences.",
+        "intermediate_content": "Activities to expand vocabulary and build simple sentences.",
         "intermediate_games": [
           {
             "title": "Word Domino",
@@ -67,8 +67,8 @@
             "instructions": [
               "Choose a simple word and draw blank spaces on paper.",
               "Players suggest letters one at a time.",
-              "For each mistake, draw part of a figure (e.g., a stick figure).",
-              "The goal is to guess the word before completing the drawing."
+              "For each mistake, draw a part of the figure (e.g., stick figure).",
+              "The goal is to guess the word before the drawing is complete."
             ]
           },
           {
@@ -83,24 +83,24 @@
           }
         ],
         "advanced": "Advanced",
-        "advanced_content": "Activities for reading comprehension, logical reasoning, and storytelling.",
+        "advanced_content": "Activities for text comprehension, logical reasoning, and storytelling.",
         "advanced_games": [
           {
             "title": "Story Continuation",
             "summary": "Create a collaborative story by adding sentences in turns.",
             "instructions": [
-              "The first player starts a story with a sentence (e.g., 'Once upon a time there was a child who loved adventures').",
+              "The first player starts the story with a sentence (e.g., 'Once upon a time there was a child who loved adventures').",
               "Each player continues the story with a new sentence.",
-              "The story goes on until everyone agrees to end it.",
+              "The story continues until everyone agrees to end it.",
               "At the end, read the full story aloud."
             ]
           },
           {
             "title": "Word Search",
-            "summary": "Find hidden words in a letter grid.",
+            "summary": "Find hidden words in a grid of letters.",
             "instructions": [
               "Prepare a word search grid with words from a specific theme (e.g., animals, fruits, school).",
-              "Hand out the grids to the players.",
+              "Distribute the grids to the players.",
               "Players must find and circle all the listed words.",
               "The first to find them all wins."
             ]
@@ -117,77 +117,84 @@
           }
         ]
       },
-      "cardsDebate": [
-        {
-          "title": "Fun Debate",
-          "summary": "Practice argumentation and reasoning in debates.",
-          "cards": [
-            {
-              "title": "School and Learning",
-              "color": "#4A90E2",
-              "colorText": "#000",
-              "phrases": [
-                "It is better to study in the morning than in the afternoon.",
-                "Reading books is more fun than watching cartoons.",
-                "Homework should be shorter.",
-                "It is better to write with a pencil than with a pen.",
-                "It is better to study in silence than with music."
-              ]
-            },
-            {
-              "title": "Home and Family",
-              "color": "#50C878",
-              "colorText": "#000",
-              "phrases": [
-                "Going to bed early is better than going to bed late.",
-                "Helping at home is fun.",
-                "It is better to play alone than with friends.",
-                "A dog is a better pet than a cat.",
-                "It is nicer to eat with family than alone."
-              ]
-            },
-            {
-              "title": "Games and Play",
-              "color": "#F5C518",
-              "colorText": "#000",
-              "phrases": [
-                "It is more fun to play outdoors than indoors.",
-                "Board games are better than video games.",
-                "Jumping rope is more fun than playing ball.",
-                "It is better to play in the park than in the backyard.",
-                "Drawing is more fun than painting."
-              ]
-            },
-            {
-              "title": "Food",
-              "color": "#E63946",
-              "colorText": "#fff",
-              "phrases": [
-                "Ice cream is better than cake.",
-                "Fruit is tastier than candy.",
-                "Soda is better than juice.",
-                "Lunch is nicer than dinner.",
-                "Pizza is better than hamburgers."
-              ]
-            },
-            {
-              "title": "Daily Life and Imagination",
-              "color": "#9B59B6",
-              "colorText": "#fff",
-              "phrases": [
-                "It is better to live in the countryside than in the city.",
-                "Superheroes are cooler than princesses.",
-                "Riding a bike is better than riding a car.",
-                "Going to the beach is more fun than going to the mall.",
-                "Traveling is better than staying at home."
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "domino": {
-      "title": "Word Domino"
+      "cardsDebate": {
+        "title": "Fun Debate",
+        "summary": "Practice argumentation and reasoning in debates.",
+        "cards": [
+          {
+            "title": "School and Learning",
+            "color": "#4A90E2",
+            "colorText": "#000",
+            "phrases": [
+              "It is better to study in the morning than in the afternoon.",
+              "Reading books is more fun than watching cartoons.",
+              "Homework should be shorter.",
+              "It is better to write with a pencil than with a pen.",
+              "It is better to study in silence than with music."
+            ]
+          },
+          {
+            "title": "Home and Family",
+            "color": "#50C878",
+            "colorText": "#000",
+            "phrases": [
+              "Sleeping early is better than sleeping late.",
+              "Helping at home is fun.",
+              "It is better to play alone than with friends.",
+              "A dog is a better pet than a cat.",
+              "It is nicer to eat with family than alone."
+            ]
+          },
+          {
+            "title": "Games and Play",
+            "color": "#F5C518",
+            "colorText": "#000",
+            "phrases": [
+              "It is more fun to play outdoors than indoors.",
+              "Board games are better than video games.",
+              "Jumping rope is more fun than playing ball.",
+              "It is better to play in the park than in the backyard.",
+              "Drawing is more fun than painting."
+            ]
+          },
+          {
+            "title": "Food",
+            "color": "#E63946",
+            "colorText": "#fff",
+            "phrases": [
+              "Ice cream is better than cake.",
+              "Fruit tastes better than candy.",
+              "Soda is better than juice.",
+              "Lunch is better than dinner.",
+              "Pizza is better than a hamburger."
+            ]
+          },
+          {
+            "title": "Everyday Life and Imagination",
+            "color": "#9B59B6",
+            "colorText": "#fff",
+            "phrases": [
+              "It is better to live in the countryside than in the city.",
+              "Superheroes are cooler than princesses.",
+              "Riding a bike is better than riding a car.",
+              "Going to the beach is more fun than going to the mall.",
+              "Traveling is better than staying at home."
+            ]
+          }
+        ]
+      },
+      "domino": {
+        "title": "Word Domino"
+      },
+      "bingo": {
+        "title": "Letter and Number Bingo"
+      },
+      "images": {
+        "title": "Images"
+      },
+      "wordCards": {
+        "title": "Word Cards"
+      }
     }
   }
 }
