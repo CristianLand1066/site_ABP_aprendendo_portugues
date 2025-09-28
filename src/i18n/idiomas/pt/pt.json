@@ -291,6 +291,18 @@
         "wordSearch": {
           "title": "Caça-Palavras"
         },
+        "hangman": {
+          "title": "Jogo da Forca"
+        },
+        "memoryGame": {
+          "title": "Jogo da Memória"
+        },
+        "storyGame": {
+          "title": "Contos"
+        },
+        "objectHunt": {
+          "title": "Caça ao Objeto"
+        },
         "moldes": {
           "moldeMaleta": "Molde de Maleta"
         }

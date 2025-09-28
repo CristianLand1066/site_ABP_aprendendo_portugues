@@ -213,10 +213,43 @@ function App() {
     return shuffled.slice(0, count);
   }  
 
+  const ALL_PAIRS = [
+    { word: "Bola", image: "/imagens/moldes/parte_0_0.jpg" },
+    { word: "Cadeira", image: "/imagens/moldes/parte_0_1.jpg" },
+    { word: "Livro", image: "/imagens/moldes/parte_0_2.jpg" },
+    { word: "Lápis", image: "/imagens/moldes/parte_1_0.jpg" },
+    { word: "Peixe", image: "/imagens/moldes/parte_1_1.jpg" },
+    { word: "Gato", image: "/imagens/moldes/parte_1_2.jpg" },
+    { word: "Bola", image: "/imagens/moldes/parte_2_0.jpg" },
+    { word: "Cadeira", image: "/imagens/moldes/parte_2_1.jpg" },
+    { word: "Livro", image: "/imagens/moldes/parte_2_2.jpg" },
+    { word: "Lápis", image: "/imagens/moldes/parte_2_3.jpg" },
+    { word: "Peixe", image: "/imagens/moldes/parte_2_4.jpg" },
+    { word: "Gato", image: "/imagens/moldes/parte_2_5.jpg" },
+  ];
+  
+  
+  function generateMemoryPairs(
+    allPairs: { word: string; image?: string }[],
+  ) {
+    const shuffled = shuffleArray(allPairs);
+    const count = 12;
+    return shuffled.slice(0, count);
+  }  
+
   async function handleGeneratePdf() {
     setLoading(true);
     setError(null);
     try {
+      const selectedPairs = generateMemoryPairs(ALL_PAIRS);
+
+      // agora resolve só quando necessário
+      const memoryPairs = await Promise.all(
+        selectedPairs.map(async (p) => ({
+          word: p.word,
+          image: p.image ? await fetchAsDataUrl(abs(p.image)) : undefined,
+        }))
+      );
       // Prepare games with an image on the first game of each section
       const beginnerGames = t("pdf.sections.beginner_games", {
         returnObjects: true,
@@ -384,6 +417,13 @@ function App() {
         objectHunt: {
           enabled: true,
           objects: generateObjects(ALL_OBJECTS)
+        },
+        memoryGame: {
+          enabled: true,
+          pairs: memoryPairs
+        },
+        hangman: {
+          enabled: true
         }
       };
       const blob = await generatePdf(data);

@@ -84,6 +84,16 @@ export interface PdfData {
     enabled: boolean;
     objects: string[]; // lista de objetos sorteados
   };
+  memoryGame?: {
+    enabled: boolean;
+    pairs: {
+      word: string;
+      image?: string; // opcional: se tiver imagem correspondente
+    }[];
+  };
+  hangman?: {
+    enabled: boolean;
+  };
 }
 
 export interface PdfGame {
@@ -135,7 +145,17 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Helvetica",
   },
+  hangman: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
   objectHunt: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
+  memoryGame: {
     padding: 0,
     fontSize: 10,
     fontFamily: "Helvetica",
@@ -244,6 +264,40 @@ function renderGrid(grid: string[][], styles: any) {
   );
 }
 
+function generateHangman() {
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between", // garante espaçamento entre as colunas
+        marginTop: 20,
+      }}
+    >
+      {Array.from({ length: 8 }).map((_, i) => (
+        <View
+          key={i}
+          style={{
+            width: "48%", // 2 por linha
+            marginBottom: 20,
+            alignItems: "center",
+            border: "1px solid #000", // opcional: caixa delimitadora
+            padding: 10,
+          }}
+        >
+          <Image
+            src={"/imagens/forca.png"}
+            style={{ width: 200, height: 150, objectFit: "contain" }}
+          />
+        </View>
+      ))}
+    </View>
+  );
+}
+
+
+
+
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   const { i18n } = useTranslation();
   // Aggregate all images to render together on a dedicated page at the end
@@ -275,49 +329,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   }
   return (
     <Document>
-
-{data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
-  <Page size="A4" style={styles.objectHunt}>
-    <Text style={styles.h1}>
-      {data.locale === "pt"
-        ? "Caça ao Objeto"
-        : data.locale === "es"
-        ? "Búsqueda del Objeto"
-        : data.locale === "fr"
-        ? "Chasse à l’Objet"
-        : data.locale === "de"
-        ? "Gegenstandssuche"
-        : "Object Hunt"}
-    </Text>
-
-    <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
-      {data.objectHunt.objects.map((obj, idx) => (
-        <View
-          key={idx}
-          style={{
-            width: "30%",      // 3 cartões por linha
-            minHeight: 50,
-            borderWidth: 1,
-            borderColor: "#000",
-            borderRadius: 8,
-            padding: 8,
-            margin: 6,
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
-          }}
-        >
-          <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
-            {obj}
-          </Text>
-        </View>
-      ))}
-    </View>
-  </Page>
-)}
-
-
-
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -673,17 +684,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
         <Page size="A4" style={styles.storyGame}>
-          <Text style={styles.h1}>
-            {data.locale === "pt"
-              ? "Continuação de História"
-              : data.locale === "es"
-              ? "Continuación de Historia"
-              : data.locale === "fr"
-              ? "Histoire Collaborative"
-              : data.locale === "de"
-              ? "Fortsetzungsgeschichte"
-              : "Story Continuation"}
-          </Text>
+          {getTraduction(data, "pdf.storyGame.title", "title")}
+          {getTraduction(data, "pdf.storyGame.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {data.storyGame.prompts.map((phrase, idx) => (
@@ -717,6 +719,104 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
+        <Page size="A4" style={styles.objectHunt}>
+          {getTraduction(data, "pdf.objectHunt.title", "title")}
+          {getTraduction(data, "pdf.objectHunt.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.objectHunt.objects.map((obj, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "30%",      // 3 cartões por linha
+                  minHeight: 50,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  padding: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
+                }}
+              >
+                <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
+                  {obj}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
+      {data.hangman?.enabled && (
+        <Page size="A4" style={styles.hangman}>
+          {getTraduction(data, "pdf.hangman.title", "title")}
+          {getTraduction(data, "pdf.hangman.title", "caption")}
+
+          {/* Imagem da forca */}
+          {generateHangman()}
+        </Page>
+      )}
+
+      {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
+        <Page size="A4" style={styles.memoryGame}>
+          {getTraduction(data, "pdf.memoryGame.title", "title")}
+          {getTraduction(data, "pdf.memoryGame.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.memoryGame.pairs.flatMap((pair) => [
+              // Cartão com palavra
+              <View
+                key={`${pair.word}-word`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#f1f8e9"
+                }}
+              >
+                <Text style={{ fontSize: 16, fontWeight: "bold" }}>{pair.word}</Text>
+              </View>,
+
+              // Cartão com imagem
+              <View
+                key={`${pair.word}-img`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#fff3e0"
+                }}
+              >
+                {pair.image ? (
+                  <Image
+                    src={pair.image}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover" // preenche e corta o excesso para ocupar todo o cartão
+                    }}
+                  />
+                ) : (
+                  <Text>[Imagem]</Text>
+                )}
+              </View>
+            ])}
+          </View>
+        </Page>
+      )}
       {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
         <Page size="A4" style={styles.molde}>
           <View key={`sec-img-${idxImg}`}>
@@ -730,12 +830,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       ))}
-
-
-
-
-
-
     </Document>
   );
 }
