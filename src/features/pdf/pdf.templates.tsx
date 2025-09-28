@@ -23,6 +23,12 @@ export interface PdfSection {
   };
 }
 
+export interface PdfInstruction {
+  title: string;
+  content?: string;
+  games?: PdfGame[];
+}
+
 interface WordCard {
   title: string;
   color: string;
@@ -42,12 +48,14 @@ interface DominoPiece {
   right: string;
 }
 
-
 export interface PdfData {
   locale: (typeof languages)[0]["code"];
   coverTitle: string;
   intro: string;
+  coverInstructions: string;
+  introInstructions: string;
   sections: PdfSection[];
+  instructions: PdfInstruction[];
   bingo?: PdfBingoConfig;
   cardsDebate?: {
     enabled: boolean;
@@ -68,6 +76,12 @@ export interface PdfGame {
   summary: string;
   instructions: string[];
   imageSrc?: string;
+}
+
+export interface PdfInstruction {
+  title: string;
+  summary?: string;        // usar no lugar de content
+  instructions?: string[]; // lista de passos
 }
 
 export interface PdfImage {
@@ -97,7 +111,7 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica",
   },
   molde: {
-    padding: 0,
+    padding: 20,
     fontSize: 12,
     fontFamily: "Helvetica",
   },
@@ -297,6 +311,33 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   </View>
                 )}
               </View>
+            ))}
+          </View>
+        ))}
+      </Page>
+
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.h1}>{data.coverInstructions}</Text>
+        <Text style={styles.p}>{data.introInstructions}</Text>
+
+        {data.instructions.map((sec) => (
+          <View key={sec.title} wrap>
+            <Text style={styles.h2}>{sec.title}</Text>
+
+            {sec.content && <Text style={styles.p}>{sec.content}</Text>}
+
+            {data.locale !== "pt" && (
+              <Text style={styles.caption}>
+                <Text style={styles.captionLabel}>(Português) </Text>
+                {sec.content}
+              </Text>
+            )}
+
+            <Text style={styles.p}>{sec.summary}</Text>
+            {sec.instructions?.map((inst, idx2) => (
+              <Text key={idx2} style={styles.list}>
+                - {inst}
+              </Text>
             ))}
           </View>
         ))}
