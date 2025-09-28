@@ -121,13 +121,92 @@
       },
       "instruction_games": [
         {
+          "title": "Jogo da Memória",
+          "summary": "Associe imagens às palavras correspondentes.",
+          "instructions": [
+            "Imprima a página com imagens e as palavras correspondentes.",
+            "Cole-a em um material de cartão.",
+            "Recorte os cartões"
+          ]
+        },
+        {
+          "title": "Bingo do Alfabeto",
+          "summary": "Reconheça letras do alfabeto por meio da brincadeira.",
+          "instructions": [
+            "Imprima a página com cartelas de bingo.",
+            "Cole-a em um material de cartão.",
+            "Recorte as cartelas"
+          ]
+        },
+        {
+          "title": "Caça ao Objeto",
+          "summary": "Identifique objetos a partir de pistas escritas ou faladas.",
+          "instructions": [
+            "Imprima a página com os cartões de caça ao objeto.",
+            "Cole-a em um material de cartão.",
+            "Recorte os cartões"
+          ]
+        },
+        {
+          "title": "Dominó de Palavras",
+          "summary": "Forme palavras combinando sílabas.",
+          "instructions": [
+            "Imprima a página com as peças de dominó.",
+            "Cole-a em um material de cartão.",
+            "Recorte as peças"
+          ]
+        },
+        {
+          "title": "Jogo da Forca",
+          "summary": "Adivinhe a palavra secreta sugerindo letras.",
+          "instructions": [
+            "Imprima a página com as peças de dominó.",
+            "Cole-a em um material de cartão.",
+            "Recorte as peças"
+          ]
+        },
+        {
+          "title": "Construção de Frases",
+          "summary": "Forme frases simples a partir de cartões com palavras.",
+          "instructions": [
+            "Imprima a página com as peças de palavras (substantivos em azul, verbos em verde e adjetivos em amarelo).",
+            "Cole-a em um material de cartão.",
+            "Recorte as peças"
+          ]
+        },
+        {
+          "title": "Continuação de História",
+          "summary": "Crie uma história colaborativa acrescentando frases em turnos.",
+          "instructions": [
+            "Imprima a página com as peças de frases.",
+            "Cole-a em um material de cartão.",
+            "Recorte as peças"
+          ]
+        },
+        {
+          "title": "Caça-Palavras",
+          "summary": "Encontre palavras escondidas em uma grade de letras.",
+          "instructions": [
+            "Imprima a página com as cartelas de caça-palavras.",
+            "Recorte as cartelas"
+          ]
+        },
+        {
           "title": "Debate divertido",
           "summary": "Pratique argumentação e raciocínio em debates.",
           "instructions": [
-            "Divida os jogadores em dois grupos.",
-            "Escolha um tema simples (ex.: 'Os livros são melhores que a TV').",
-            "Cada grupo prepara 2–3 argumentos.",
-            "Os grupos se revezam apresentando argumentos e o público decide o vencedor."
+            "Imprima a página com as cartelas de debates.",
+            "Cole-a em um material de cartão.",
+            "Recorte as cartelas"
+          ]
+        },
+        {
+          "title": "Maleta para organizar",
+          "summary": "Maleta para organizar as cartelas de jogos.",
+          "instructions": [
+            "Imprima as páginas com as partes da maleta.",
+            "Cole-as em um material de cartão seguindo o modelo da maleta (imagem 'Molde de Maleta').",
+            "Recorte o molde da maleta"
           ]
         }
       ],
@@ -208,6 +287,9 @@
         },
         "wordCards": {
           "title": "Cartões de Palavras"
+        },
+        "moldes": {
+          "moldeMaleta": "Molde de Maleta"
         }
       }
     }

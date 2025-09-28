@@ -37,10 +37,7 @@ function App() {
         returnObjects: true,
       }) as unknown as PdfGame[];
 
-      const [img1, img2, img3, img4] = await Promise.all([
-        fetchAsDataUrl(abs("/imagens/capa.jpg")),
-        fetchAsDataUrl(abs("/imagens/image.jpg")),
-        fetchAsDataUrl(abs("/imagens/image.png")),
+      const [img1] = await Promise.all([
         fetchAsDataUrl(abs("/imagens/moldes/mala.jpg")),
       ]);
 
@@ -52,6 +49,12 @@ function App() {
           fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_2.jpg`)),
         );
       }
+
+      const instructionItems = t("pdf.instruction_games", { returnObjects: true }) as Array<{
+        title: string;
+        summary: string;
+        instructions: string[];
+      }>;
       
 
       // Await and map to PdfImage[]
@@ -80,22 +83,7 @@ function App() {
               images: [
                 {
                   src: img1,
-                  caption: t("pdf.sections.beginner_games.0.title"),
-                  width: 420,
-                },
-                {
-                  src: img2,
-                  caption: t("pdf.sections.beginner_games.1.title"),
-                  width: 420,
-                },
-                {
-                  src: img3,
-                  caption: t("pdf.sections.beginner_games.2.title"),
-                  width: 420,
-                },
-                {
-                  src: img4,
-                  caption: t("pdf.sections.beginner_games.2.title"),
+                  caption: t("pdf.moldes.moldeMaleta"),
                   width: 420,
                 },
               ],
@@ -132,15 +120,11 @@ function App() {
             }) as unknown as PdfGame[],
           },
         ],
-        instructions: [
-          {
-            title: t("pdf.instruction_games.0.title"), // Add this required property
-            content: t("pdf.instruction_games.0.summary"),
-            instructions: t("pdf.instruction_games.0.instructions", {
-              returnObjects: true,
-            }) as unknown as string[],
-          },
-        ],
+        instructions: instructionItems.map(it => ({
+          title: it.title,
+          summary: it.summary,
+          instructions: it.instructions,
+        })),
         bingo: {
           enabled: true,
           rows: 3,
