@@ -13,6 +13,8 @@
       "cover_title": "Jogos e Atividades",
       "intro":
         "Este material contém atividades organizadas por nível: iniciante, intermediário e avançado. Elas podem ser realizadas em casa ou na sala de aula, utilizando recursos simples.",
+      "cover_instructions": "Instruções de montagem",
+      "intro_instructions": "Essa página contém instruções para montar os jogos.",
       "sections": {
         "beginner": "Iniciante",
         "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras.",
@@ -117,6 +119,18 @@
           }
         ]
       },
+      "instruction_games": [
+        {
+          "title": "Debate divertido",
+          "summary": "Pratique argumentação e raciocínio em debates.",
+          "instructions": [
+            "Divida os jogadores em dois grupos.",
+            "Escolha um tema simples (ex.: 'Os livros são melhores que a TV').",
+            "Cada grupo prepara 2–3 argumentos.",
+            "Os grupos se revezam apresentando argumentos e o público decide o vencedor."
+          ]
+        }
+      ],
       "cardsDebate": {
         "title": "Debate divertido",
         "summary": "Pratique argumentação e raciocínio em debates.",

@@ -37,13 +37,30 @@ function App() {
         returnObjects: true,
       }) as unknown as PdfGame[];
 
-      const [img1, img2, img3, img4, img5] = await Promise.all([
+      const [img1, img2, img3, img4] = await Promise.all([
         fetchAsDataUrl(abs("/imagens/capa.jpg")),
         fetchAsDataUrl(abs("/imagens/image.jpg")),
         fetchAsDataUrl(abs("/imagens/image.png")),
-        fetchAsDataUrl(abs("/imagens/moldes/mala_superior.jpg")),
-        fetchAsDataUrl(abs("/imagens/moldes/mala_inferior.jpg")),
+        fetchAsDataUrl(abs("/imagens/moldes/mala.jpg")),
       ]);
+
+      const moldePromises: Promise<string>[] = [];
+      for (let i = 0; i < 3; i++) {
+        moldePromises.push(
+          fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_0.jpg`)),
+          fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_1.jpg`)),
+          fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_2.jpg`)),
+        );
+      }
+      
+
+      // Await and map to PdfImage[]
+      const moldeSrcs = await Promise.all(moldePromises);
+      const moldes: { src: string; caption?: string; width?: number }[] = moldeSrcs.map((src) => ({
+        src,
+        width: 420,
+      }));
+
 
       const cardsDebateCategories = t("pdf.cardsDebate.cards", {
         returnObjects: true,
@@ -53,6 +70,8 @@ function App() {
         locale: i18n.language ?? "pt",
         coverTitle: t("pdf.cover_title"),
         intro: t("pdf.intro"),
+        coverInstructions: t("pdf.cover_instructions"),
+        introInstructions: t("pdf.intro_instructions"),
         sections: [
           // Cover-like section that only renders an image (from public/imagens)
           {
@@ -74,19 +93,13 @@ function App() {
                   caption: t("pdf.sections.beginner_games.2.title"),
                   width: 420,
                 },
-              ],
-              moldes: [
                 {
                   src: img4,
-                  caption: t("pdf.sections.beginner_games.0.title"),
-                  width: 420,
-                },
-                {
-                  src: img5,
-                  caption: t("pdf.sections.beginner_games.1.title"),
+                  caption: t("pdf.sections.beginner_games.2.title"),
                   width: 420,
                 },
               ],
+              moldes: moldes,
             },
           },
           {
@@ -117,6 +130,15 @@ function App() {
             gamesPt: i18n.getFixedT("pt")("pdf.sections.advanced_games", {
               returnObjects: true,
             }) as unknown as PdfGame[],
+          },
+        ],
+        instructions: [
+          {
+            title: t("pdf.instruction_games.0.title"), // Add this required property
+            content: t("pdf.instruction_games.0.summary"),
+            instructions: t("pdf.instruction_games.0.instructions", {
+              returnObjects: true,
+            }) as unknown as string[],
           },
         ],
         bingo: {
