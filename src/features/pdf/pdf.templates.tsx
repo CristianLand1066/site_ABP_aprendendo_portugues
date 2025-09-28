@@ -418,10 +418,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                     color: cat.colorText,
                   }}
                 >
-                  {cat.summary}
                 </Text>
                 {cat.phrases.map((p, pi) => {
-                  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.0.cards.${idx}.phrases`, {
+                  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.cards.${idx}.phrases`, {
                     returnObjects: true,
                   }) as string[];
                   const ptPhrase = ptPhrases?.[pi];
