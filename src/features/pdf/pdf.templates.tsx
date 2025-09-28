@@ -80,6 +80,10 @@ export interface PdfData {
     enabled: boolean;
     prompts: string[]; // frases sorteadas
   };
+  objectHunt?: {
+    enabled: boolean;
+    objects: string[]; // lista de objetos sorteados
+  };
 }
 
 export interface PdfGame {
@@ -127,6 +131,16 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica",
   },
   domino: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
+  objectHunt: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
+  storyGame: {
     padding: 0,
     fontSize: 10,
     fontFamily: "Helvetica",
@@ -262,27 +276,27 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   return (
     <Document>
 
-{data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
-  <Page size="A4" style={styles.domino}>
+{data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
+  <Page size="A4" style={styles.objectHunt}>
     <Text style={styles.h1}>
       {data.locale === "pt"
-        ? "Continuação de História"
+        ? "Caça ao Objeto"
         : data.locale === "es"
-        ? "Continuación de Historia"
+        ? "Búsqueda del Objeto"
         : data.locale === "fr"
-        ? "Histoire Collaborative"
+        ? "Chasse à l’Objet"
         : data.locale === "de"
-        ? "Fortsetzungsgeschichte"
-        : "Story Continuation"}
+        ? "Gegenstandssuche"
+        : "Object Hunt"}
     </Text>
 
     <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
-      {data.storyGame.prompts.map((phrase, idx) => (
+      {data.objectHunt.objects.map((obj, idx) => (
         <View
           key={idx}
           style={{
-            width: "45%",      // 2 cartões por linha
-            minHeight: 80,     // altura mínima
+            width: "30%",      // 3 cartões por linha
+            minHeight: 50,
             borderWidth: 1,
             borderColor: "#000",
             borderRadius: 8,
@@ -290,24 +304,17 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             margin: 6,
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
+            backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
           }}
         >
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            {phrase}
+          <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
+            {obj}
           </Text>
         </View>
       ))}
     </View>
   </Page>
 )}
-
 
 
 
@@ -661,6 +668,52 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               </Text>
             </View>
           ))}
+        </Page>
+      )}
+
+      {data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
+        <Page size="A4" style={styles.storyGame}>
+          <Text style={styles.h1}>
+            {data.locale === "pt"
+              ? "Continuação de História"
+              : data.locale === "es"
+              ? "Continuación de Historia"
+              : data.locale === "fr"
+              ? "Histoire Collaborative"
+              : data.locale === "de"
+              ? "Fortsetzungsgeschichte"
+              : "Story Continuation"}
+          </Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.storyGame.prompts.map((phrase, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "45%",      // 2 cartões por linha
+                  minHeight: 80,     // altura mínima
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  padding: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 12,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  {phrase}
+                </Text>
+              </View>
+            ))}
+          </View>
         </Page>
       )}
 

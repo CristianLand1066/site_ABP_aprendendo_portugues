@@ -189,7 +189,29 @@ function App() {
     return shuffled.slice(0, count);
   }
   
-  
+  const ALL_OBJECTS = [
+  "Bola", "Cadeira", "Colher", "Livro", "Lápis",
+  "Mesa", "Copo", "Sapato", "Chave", "Janela",
+  "Relógio", "Telefone", "Caderno", "Tesoura",
+  "Gaveta", "Bolso", "Mochila", "Bolso", "Mochila",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+];
+
+  function generateObjects(
+    allObjects: string[],
+  ): string[] {
+    const shuffled = shuffleArray(allObjects);
+    const count = 36;
+    return shuffled.slice(0, count);
+  }  
 
   async function handleGeneratePdf() {
     setLoading(true);
@@ -358,6 +380,10 @@ function App() {
         storyGame: {
           enabled: true,
           prompts: generateStoryPrompts()
+        },
+        objectHunt: {
+          enabled: true,
+          objects: generateObjects(ALL_OBJECTS)
         }
       };
       const blob = await generatePdf(data);
