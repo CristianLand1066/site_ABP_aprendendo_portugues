@@ -22,6 +22,72 @@ function App() {
     });
   }
 
+  function generateWordSearch(
+    allWords: string[],
+    gridSize = 10,
+    minWords = 3,
+    maxWords = 6
+  ) {
+    const count = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
+    const words = shuffleArray(allWords).slice(0, count);
+  
+    const grid: string[][] = Array.from({ length: gridSize }, () =>
+      Array(gridSize).fill("")
+    );
+  
+    for (const word of words) {
+      placeWordInGrid(grid, word.toUpperCase());
+    }
+  
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (let r = 0; r < gridSize; r++) {
+      for (let c = 0; c < gridSize; c++) {
+        if (!grid[r][c]) {
+          grid[r][c] = alphabet[Math.floor(Math.random() * alphabet.length)];
+        }
+      }
+    }
+  
+    return { words, grid };
+  }
+  
+  function placeWordInGrid(grid: string[][], word: string) {
+    const size = grid.length;
+    let placed = false;
+    let tries = 0;
+  
+    while (!placed && tries < 100) {
+      tries++;
+      const horizontal = Math.random() > 0.5;
+      const row = Math.floor(Math.random() * size);
+      const col = Math.floor(Math.random() * size);
+  
+      if (horizontal) {
+        if (col + word.length > size) continue;
+        if (word.split("").every((ch, i) => !grid[row][col + i] || grid[row][col + i] === ch)) {
+          word.split("").forEach((ch, i) => (grid[row][col + i] = ch));
+          placed = true;
+        }
+      } else {
+        if (row + word.length > size) continue;
+        if (word.split("").every((ch, i) => !grid[row + i][col] || grid[row + i][col] === ch)) {
+          word.split("").forEach((ch, i) => (grid[row + i][col] = ch));
+          placed = true;
+        }
+      }
+    }
+  }
+  
+  function shuffleArray<T>(arr: T[]): T[] {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  
+
   async function handleGeneratePdf() {
     setLoading(true);
     setError(null);
@@ -171,7 +237,21 @@ function App() {
               ]
             }
           ]
-        }        
+        },
+        wordSearch: {
+          enabled: true,
+          themes: [
+            {
+              ...generateWordSearch(["GATO","LEAO","CAVALO","PASSARO","PEIXE","SAPO","RATO","CACHORRO"])
+            },
+            {
+              ...generateWordSearch(["MACA","BANANA","UVA","MELAO","LARANJA","PERA","ABACAXI","KIWI"])
+            },
+            {
+              ...generateWordSearch(["GAVETA","CADEIRA","MESA","LIVRO","BOLSA","MOCHILA","BOLSA","MOCHILA","BOLSA","MOCHILA"])
+            },
+          ]
+        }      
       };
       const blob = await generatePdf(data);
       const fileName = `jogos-${data.locale}.pdf`;

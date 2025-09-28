@@ -288,6 +288,9 @@
         "wordCards": {
           "title": "Cartões de Palavras"
         },
+        "wordSearch": {
+          "title": "Caça-Palavras"
+        },
         "moldes": {
           "moldeMaleta": "Molde de Maleta"
         }

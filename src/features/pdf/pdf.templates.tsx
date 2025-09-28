@@ -69,6 +69,13 @@ export interface PdfData {
     enabled: boolean;
     syllables: string[];
   };
+  wordSearch?: {
+    enabled: boolean;
+    themes: {
+      words: string[];
+      grid: string[][];
+    }[];
+  };
 }
 
 export interface PdfGame {
@@ -116,6 +123,11 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica",
   },
   domino: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
+  wordSearch: {
     padding: 0,
     fontSize: 10,
     fontFamily: "Helvetica",
@@ -214,8 +226,6 @@ function renderGrid(grid: string[][], styles: any) {
   );
 }
 
-
-
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   const { i18n } = useTranslation();
   // Aggregate all images to render together on a dedicated page at the end
@@ -247,7 +257,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   }
   return (
     <Document>
-
 
 
 
@@ -573,6 +582,35 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               ))
             )}
           </View>
+        </Page>
+      )}
+      
+      {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
+        <Page size="A4" style={styles.wordSearch}>
+          {getTraduction(data, "pdf.wordSearch.title", "title")}
+          {getTraduction(data, "pdf.wordSearch.title", "caption")}
+
+          {data.wordSearch.themes.map((theme, idx) => (
+            <View key={idx} style={{ marginBottom: 16 }}>
+
+              {/* Renderiza a grade */}
+              <View style={styles.bingoGrid}>
+                {theme.grid.map((row, r) => (
+                  <View key={r} style={styles.bingoRow}>
+                    {row.map((cell, c) => (
+                      <View key={c} style={styles.bingoCell}>
+                        <Text style={styles.bingoText}>{cell}</Text>
+                      </View>
+                    ))}
+                  </View>
+                ))}
+              </View>
+
+              <Text style={{ marginTop: 8, fontSize: 10 }}>
+                Palavras: {theme.words.join(", ")}
+              </Text>
+            </View>
+          ))}
         </Page>
       )}
 
