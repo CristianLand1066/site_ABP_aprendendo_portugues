@@ -76,6 +76,10 @@ export interface PdfData {
       grid: string[][];
     }[];
   };
+  storyGame?: {
+    enabled: boolean;
+    prompts: string[]; // frases sorteadas
+  };
 }
 
 export interface PdfGame {
@@ -257,6 +261,52 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   }
   return (
     <Document>
+
+{data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
+  <Page size="A4" style={styles.domino}>
+    <Text style={styles.h1}>
+      {data.locale === "pt"
+        ? "Continuação de História"
+        : data.locale === "es"
+        ? "Continuación de Historia"
+        : data.locale === "fr"
+        ? "Histoire Collaborative"
+        : data.locale === "de"
+        ? "Fortsetzungsgeschichte"
+        : "Story Continuation"}
+    </Text>
+
+    <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+      {data.storyGame.prompts.map((phrase, idx) => (
+        <View
+          key={idx}
+          style={{
+            width: "45%",      // 2 cartões por linha
+            minHeight: 80,     // altura mínima
+            borderWidth: 1,
+            borderColor: "#000",
+            borderRadius: 8,
+            padding: 8,
+            margin: 6,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 12,
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            {phrase}
+          </Text>
+        </View>
+      ))}
+    </View>
+  </Page>
+)}
 
 
 
