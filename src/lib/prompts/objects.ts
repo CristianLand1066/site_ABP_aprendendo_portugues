@@ -1,0 +1,15 @@
+export default [
+    "Bola", "Cadeira", "Colher", "Livro", "Lápis",
+    "Mesa", "Copo", "Sapato", "Chave", "Janela",
+    "Relógio", "Telefone", "Caderno", "Tesoura",
+    "Gaveta", "Bolso", "Mochila", "Bolso", "Mochila",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+    "Bolso", "Mochila", "Bolso", "Mochila", "Bolso",
+  ];
