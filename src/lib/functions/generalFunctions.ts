@@ -6,3 +6,8 @@ export function shuffleArray<T>(arr: T[]): T[] {
     }
     return a;
   }
+
+  export function getRandomCards(arr: string[], count: number): string[] {
+    const shuffled = shuffleArray(arr);
+    return shuffled.slice(0, count);
+  }

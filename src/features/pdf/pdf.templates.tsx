@@ -14,8 +14,8 @@ import getExportedLists from "../../lib/prompts/getExportedLists";
 import { getTraduction } from "../../components/translate";
 import { renderGrid} from "../../components/renderGrid";
 import { generateHangman } from "../../components/generateHangMan";
-import { buildDominoPieces } from "../../lib/functions/generateGames";
-import { buildBingoGrid } from "../../lib/functions/renderGrid";
+import { buildDominoPieces, buildPortugueseLetters } from "../../lib/functions/generateGames";
+import { buildMultipleBingoGrids } from "../../lib/functions/renderGrid";
 
 export interface PdfSection {
   title: string;
@@ -95,6 +95,10 @@ export interface PdfData {
   hangman?: {
     enabled: boolean;
   };
+  portugueseLetters?: {
+    enabled: boolean;
+    syllables: string[];
+  };
 }
 
 export interface PdfGame {
@@ -136,6 +140,28 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   const sectionImagesMoldes: PdfImage[] = (data.sections || []).flatMap(
     (sec) => sec.images?.moldes || []
   );
+
+  const { grids: grids3x3, usedItems: used3x3Letters } = buildMultipleBingoGrids(
+    6,
+    3,
+    3,
+    getExportedLists().generalExportsList.DEFAULT_LETTERS
+  );
+  
+  const { grids: grids4x4Letters, usedItems: used4x4Letters } = buildMultipleBingoGrids(
+    6,
+    4,
+    4,
+    getExportedLists().generalExportsList.DEFAULT_LETTERS
+  );
+  
+  const { grids: grids4x4Numbers, usedItems: used4x4Numbers } = buildMultipleBingoGrids(
+    6,
+    4,
+    4,
+    getExportedLists().generalExportsList.DEFAULT_NUMBERS
+  );
+  
 
   return (
     <Document>
@@ -250,62 +276,95 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.portugueseLetters?.enabled && (
+        <Page size="A4" style={styles.portugueseLetters}>
+          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
+          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {buildPortugueseLetters().map((letter, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "10%",   // ajusta quantas letras por linha
+                  margin: 4,
+                  alignItems: "center",
+                  border: "1px solid black",
+                  borderRadius: 4,
+                  padding: 4,
+                }}
+              >
+                <Text style={{ fontSize: 28, margin: 6 }}>
+                  {letter}
+                </Text>
+
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
           {getTraduction(i18n, data, "pdf.bingo.title", "title")}
           {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = data.bingo?.rows ?? 3;
-              const cols = data.bingo?.cols ?? 3;
-              const letters = getExportedLists().generalExportsList.DEFAULT_LETTERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-3X3`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids3x3.map((grid, idx) => (
+                <View key={`bingo-3x3-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = 4;
-              const cols = 4;
-              const letters = getExportedLists().generalExportsList.DEFAULT_LETTERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-4X4`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids4x4Letters.map((grid, idx) => (
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = 4;
-              const cols = 4;
-              const letters = getExportedLists().generalExportsList.DEFAULT_LETTERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-5X5`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids4x4Numbers.map((grid, idx) => (
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
+        </Page>
+      )}
+
+      {data.bingo?.enabled && (
+        <Page size="A4" style={styles.bingo}>
+          <Text style={styles.h1}>Referência para Sorteio</Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            {used3x3Letters.map((letter, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{letter}</Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            {used4x4Letters.map((letter, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{letter}</Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 10 }}>
+            {used4x4Numbers.map((number, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{number}</Text>
+              </View>
+            ))}
+          </View>
+
+          <Text style={styles.caption}>Recorte os círculos para sortear</Text>
         </Page>
       )}
 

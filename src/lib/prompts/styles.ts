@@ -46,6 +46,11 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Helvetica",
   },
+  portugueseLetters: {
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
   h1: { fontSize: 24, marginBottom: 6 },
   h2: { fontSize: 18, marginTop: 16, marginBottom: 6 },
   p: { marginBottom: 8, lineHeight: 1.4 },

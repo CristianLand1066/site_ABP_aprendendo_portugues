@@ -303,6 +303,9 @@
         "objectHunt": {
           "title": "Caça ao Objeto"
         },
+        "portugueseLetters": {
+          "title": "Letras do Alfabeto"
+        },
         "moldes": {
           "moldeMaleta": "Molde de Maleta"
         }

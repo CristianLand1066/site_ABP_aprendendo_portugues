@@ -1,20 +1,29 @@
 import { generatePdf, downloadBlob } from "../../features/pdf/pdf.service";
 import getExportedLists from "../prompts/getExportedLists";
 import { generateWordSearch } from "../functions/renderGrid";
-import { generateMemoryPairs, generateObjects, generateStoryPrompts } from "../functions/generateGames";
+import {
+  generateMemoryPairs,
+  generateObjects,
+  generateStoryPrompts,
+} from "../functions/generateGames";
 import { fetchAsDataUrl } from "./fetchDataUrl";
-import type { PdfGame, PdfDebateCategory } from "../../features/pdf/pdf.templates";
+import type {
+  PdfGame,
+  PdfDebateCategory,
+} from "../../features/pdf/pdf.templates";
 import type { i18n as I18n } from "i18next";
 import type { TFunction } from "i18next";
+import { getRandomCards } from "../functions/generalFunctions";
+import { BASE_LETTERS_NUMBERS } from "../prompts/BASE_LETTERS_NUMBERS";
 /**
  * Gera o PDF de jogos educativos
  */
 export async function handleGeneratePdf(
-    t: TFunction,
-    i18n: I18n,
-    setLoading: (v: boolean) => void,
-    setError: (v: string | null) => void,
-  ) {
+  t: TFunction,
+  i18n: I18n,
+  setLoading: (v: boolean) => void,
+  setError: (v: string | null) => void
+) {
   const abs = (p: string) => new URL(p, window.location.origin).href;
 
   setLoading(true);
@@ -30,9 +39,15 @@ export async function handleGeneratePdf(
       }))
     );
 
-    const beginnerGames = t("pdf.sections.beginner_games", { returnObjects: true }) as PdfGame[];
-    const intermediateGames = t("pdf.sections.intermediate_games", { returnObjects: true }) as PdfGame[];
-    const advancedGames = t("pdf.sections.advanced_games", { returnObjects: true }) as PdfGame[];
+    const beginnerGames = t("pdf.sections.beginner_games", {
+      returnObjects: true,
+    }) as PdfGame[];
+    const intermediateGames = t("pdf.sections.intermediate_games", {
+      returnObjects: true,
+    }) as PdfGame[];
+    const advancedGames = t("pdf.sections.advanced_games", {
+      returnObjects: true,
+    }) as PdfGame[];
 
     const [img1] = await Promise.all([
       fetchAsDataUrl(abs("/imagens/moldes/mala.jpg")),
@@ -43,11 +58,13 @@ export async function handleGeneratePdf(
       moldePromises.push(
         fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_0.jpg`)),
         fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_1.jpg`)),
-        fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_2.jpg`)),
+        fetchAsDataUrl(abs(`/imagens/moldes/parte_${i}_2.jpg`))
       );
     }
 
-    const instructionItems = t("pdf.instruction_games", { returnObjects: true }) as Array<{
+    const instructionItems = t("pdf.instruction_games", {
+      returnObjects: true,
+    }) as Array<{
       title: string;
       summary: string;
       instructions: string[];
@@ -123,19 +140,25 @@ export async function handleGeneratePdf(
             title: "Substantivos",
             color: "#1E90FF",
             colorText: "#000",
-            words: getExportedLists().wordsCrdsList.substantivos,
+            words: getRandomCards(
+              getExportedLists().wordsCrdsList.substantivos,
+              20
+            ),
           },
           {
             title: "Verbos",
             color: "#32CD32",
             colorText: "#fff",
-            words: getExportedLists().wordsCrdsList.verbos,
+            words: getRandomCards(getExportedLists().wordsCrdsList.verbos, 20),
           },
           {
             title: "Adjetivos",
             color: "#FFD700",
             colorText: "#000",
-            words: getExportedLists().wordsCrdsList.adjetivos,
+            words: getRandomCards(
+              getExportedLists().wordsCrdsList.adjetivos,
+              20
+            ),
           },
         ],
       },
@@ -151,6 +174,7 @@ export async function handleGeneratePdf(
       objectHunt: { enabled: true, objects: generateObjects() },
       memoryGame: { enabled: true, pairs: memoryPairs },
       hangman: { enabled: true },
+      portugueseLetters: { enabled: true, syllables: BASE_LETTERS_NUMBERS },
     };
 
     const blob = await generatePdf(data);
