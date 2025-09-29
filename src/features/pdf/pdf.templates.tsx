@@ -4,12 +4,18 @@ import {
   Page,
   Text,
   View,
-  StyleSheet,
   Image,
 } from "@react-pdf/renderer";
 import languages from "../../i18n/languages";
 import type { DocumentProps } from "@react-pdf/renderer";
 import { useTranslation } from "react-i18next";
+import { styles } from "../../lib/prompts/styles";
+import getExportedLists from "../../lib/prompts/getExportedLists";
+import { getTraduction } from "../../components/translate";
+import { renderGrid} from "../../components/renderGrid";
+import { generateHangman } from "../../components/generateHangMan";
+import { buildDominoPieces, buildPortugueseLetters } from "../../lib/functions/generateGames";
+import { buildMultipleBingoGrids } from "../../lib/functions/renderGrid";
 
 export interface PdfSection {
   title: string;
@@ -43,11 +49,6 @@ export interface PdfDebateCategory {
   phrases: string[];
 }
 
-interface DominoPiece {
-  left: string;
-  right: string;
-}
-
 export interface PdfData {
   locale: (typeof languages)[0]["code"];
   coverTitle: string;
@@ -76,6 +77,28 @@ export interface PdfData {
       grid: string[][];
     }[];
   };
+  storyGame?: {
+    enabled: boolean;
+    prompts: string[]; // frases sorteadas
+  };
+  objectHunt?: {
+    enabled: boolean;
+    objects: string[]; // lista de objetos sorteados
+  };
+  memoryGame?: {
+    enabled: boolean;
+    pairs: {
+      word: string;
+      image?: string; // opcional: se tiver imagem correspondente
+    }[];
+  };
+  hangman?: {
+    enabled: boolean;
+  };
+  portugueseLetters?: {
+    enabled: boolean;
+    syllables: string[];
+  };
 }
 
 export interface PdfGame {
@@ -87,8 +110,8 @@ export interface PdfGame {
 
 export interface PdfInstruction {
   title: string;
-  summary?: string;        // usar no lugar de content
-  instructions?: string[]; // lista de passos
+  summary?: string;
+  instructions?: string[];
 }
 
 export interface PdfImage {
@@ -100,131 +123,13 @@ export interface PdfImage {
 
 interface PdfBingoConfig {
   enabled: boolean;
-  rows?: number; // default 12
-  cols?: number; // default 12
-  letters?: string[]; // default A-Z
-  cards?: number; // number of cards to generate, default 1
+  rows?: number;
+  cols?: number;
+  letters?: string[];
+  cards?: number;
 }
 
-const styles = StyleSheet.create({
-  page: {
-    padding: 32,
-    fontSize: 12,
-    fontFamily: "Helvetica",
-  },
-  bingo: {
-    padding: 0,
-    fontSize: 12,
-    fontFamily: "Helvetica",
-  },
-  molde: {
-    padding: 20,
-    fontSize: 12,
-    fontFamily: "Helvetica",
-  },
-  domino: {
-    padding: 0,
-    fontSize: 10,
-    fontFamily: "Helvetica",
-  },
-  wordSearch: {
-    padding: 0,
-    fontSize: 10,
-    fontFamily: "Helvetica",
-  },
-  h1: { fontSize: 24, marginBottom: 6 },
-  h2: { fontSize: 18, marginTop: 16, marginBottom: 6 },
-  p: { marginBottom: 8, lineHeight: 1.4 },
-  list: { marginLeft: 12 },
-  caption: {
-    marginBottom: 5,
-    lineHeight: 1.4,
-    fontStyle: "italic",
-    fontSize: 10,
-    color: "#555",
-  },
-  captionLabel: {
-    fontStyle: "italic",
-    fontSize: 8,
-    color: "#555",
-    fontWeight: 700,
-    marginBottom: 2,
-  },
-  image: { marginTop: 6, marginBottom: 6, alignSelf: "center" },
-  //bingo styles
-  bingoGrid: { marginTop: 12, gap: 0 },
-  bingoRow: { flexDirection: "row" },
-  bingoCell: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: "#000",
-    height: 20,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  bingoText: { fontSize: 10, fontWeight: 500 },
-  bingoCard: { marginBottom: 10 },
-});
 
-const DEFAULT_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-const DEFAULT_NUMBERS = Array.from({ length: 1001 }, (_, i) => i.toString());
-
-
-function shuffleArray<T>(arr: T[]): T[] {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function buildDominoPieces(syllables: string[]): DominoPiece[] {
-  const pieces: DominoPiece[] = [];
-  for (let i = 0; i < syllables.length; i++) {
-    for (let j = i + 1; j < syllables.length; j++) {
-      pieces.push({ left: syllables[i], right: syllables[j] });
-    }
-  }
-  return pieces.sort(() => Math.random() - 0.5).slice(0, 90);
-}
-
-function makeLettersPool(letters: string[], total: number): string[] {
-  const pool: string[] = [];
-  while (pool.length < total) pool.push(...letters);
-  return pool.slice(0, total);
-}
-
-function buildBingoGrid(
-  rows: number,
-  cols: number,
-  letters: string[] = DEFAULT_LETTERS
-): string[][] {
-  const total = rows * cols;
-  const pool = makeLettersPool(letters, total);
-  const shuffled = shuffleArray(pool);
-  const grid: string[][] = [];
-  for (let r = 0; r < rows; r++) {
-    grid.push(shuffled.slice(r * cols, (r + 1) * cols));
-  }
-  return grid;
-}
-
-function renderGrid(grid: string[][], styles: any) {
-  return (
-    <View style={styles.bingoGrid}>
-      {grid.map((row, r) => (
-        <View key={r} style={styles.bingoRow}>
-          {row.map((cell, c) => (
-            <View key={c} style={styles.bingoCell}>
-              <Text style={styles.bingoText}>{cell}</Text>
-            </View>
-          ))}
-        </View>
-      ))}
-    </View>
-  );
-}
 
 export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
   const { i18n } = useTranslation();
@@ -236,31 +141,30 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
     (sec) => sec.images?.moldes || []
   );
 
-  function getTraduction(data: PdfData, text: string, type: string) {
-    if (type === "title") {
-      const translation = i18n.getFixedT("pt")(text);
-      return (
-        <Text style={styles.h1}>
-          {translation}
-        </Text>
-      );
-    }
-    const translation = i18n.getFixedT(data.locale)(text);
-    if (data.locale !== "pt") {
-      return (
-        <Text style={styles.captionLabel}>
-          ({translation})
-        </Text>
-      );
-    }
-    return null;
-  }
+  const { grids: grids3x3, usedItems: used3x3Letters } = buildMultipleBingoGrids(
+    6,
+    3,
+    3,
+    getExportedLists().generalExportsList.DEFAULT_LETTERS
+  );
+  
+  const { grids: grids4x4Letters, usedItems: used4x4Letters } = buildMultipleBingoGrids(
+    6,
+    4,
+    4,
+    getExportedLists().generalExportsList.DEFAULT_LETTERS
+  );
+  
+  const { grids: grids4x4Numbers, usedItems: used4x4Numbers } = buildMultipleBingoGrids(
+    6,
+    4,
+    4,
+    getExportedLists().generalExportsList.DEFAULT_NUMBERS
+  );
+  
+
   return (
     <Document>
-
-
-
-
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -355,8 +259,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Page 2: images aggregated */}
       {sectionImagesImages.length > 0 && (
         <Page size="A4" style={styles.page}>
-          {getTraduction(data, "pdf.images.title", "title")}
-          {getTraduction(data, "pdf.images.title", "caption")}
+          {getTraduction(i18n, data, "pdf.images.title", "title")}
+          {getTraduction(i18n, data, "pdf.images.title", "caption")}
           {sectionImagesImages.map((img, idxImg) => (
             <View key={`sec-img-${idxImg}`}>
               <Image
@@ -372,70 +276,103 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.portugueseLetters?.enabled && (
+        <Page size="A4" style={styles.portugueseLetters}>
+          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
+          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {buildPortugueseLetters().map((letter, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "10%",   // ajusta quantas letras por linha
+                  margin: 4,
+                  alignItems: "center",
+                  border: "1px solid black",
+                  borderRadius: 4,
+                  padding: 4,
+                }}
+              >
+                <Text style={{ fontSize: 28, margin: 6 }}>
+                  {letter}
+                </Text>
+
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
-          {getTraduction(data, "pdf.bingo.title", "title")}
-          {getTraduction(data, "pdf.bingo.title", "caption")}
+          {getTraduction(i18n, data, "pdf.bingo.title", "title")}
+          {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = data.bingo?.rows ?? 3;
-              const cols = data.bingo?.cols ?? 3;
-              const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-3X3`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids3x3.map((grid, idx) => (
+                <View key={`bingo-3x3-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = 4;
-              const cols = 4;
-              const letters = data.bingo?.letters ?? DEFAULT_LETTERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-4X4`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids4x4Letters.map((grid, idx) => (
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-            {Array.from({ length: data.bingo.cards ?? 1 }).map(() => {
-              const rows = 4; // maior que 3x3 para caber mais números
-              const cols = 4;
-              const letters = data.bingo?.letters ?? DEFAULT_NUMBERS;
-              const grid = buildBingoGrid(rows, cols, letters);
-
-              return (
-                <View
-                  key={`bingo-5X5`}
-                  style={{ width: "50%", padding: 1 }}
-                >
+            {grids4x4Numbers.map((grid, idx) => (
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
                   {renderGrid(grid, styles)}
                 </View>
-              );
-            })}
+              )
+            )}
           </View>
+        </Page>
+      )}
+
+      {data.bingo?.enabled && (
+        <Page size="A4" style={styles.bingo}>
+          <Text style={styles.h1}>Referência para Sorteio</Text>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            {used3x3Letters.map((letter, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{letter}</Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            {used4x4Letters.map((letter, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{letter}</Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 10 }}>
+            {used4x4Numbers.map((number, idx) => (
+              <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
+                <Text style={{ fontSize: 12 }}>{number}</Text>
+              </View>
+            ))}
+          </View>
+
+          <Text style={styles.caption}>Recorte os círculos para sortear</Text>
         </Page>
       )}
 
       {/* Optional: cardsDebate pages */}
       {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
         <Page size="A4" style={styles.page}>
-          {getTraduction(data, "pdf.cardsDebate.title", "title")}
-          {getTraduction(data, "pdf.cardsDebate.title", "caption")}
+          {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
+          {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
             {data.cardsDebate.cards.map((cat, idx) => (
@@ -498,8 +435,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.domino?.enabled && (
         <Page size="A4" style={styles.domino}>
-          {getTraduction(data, "pdf.domino.title", "title")}
-          {getTraduction(data, "pdf.domino.title", "caption")}
+          {getTraduction(i18n, data, "pdf.domino.title", "title")}
+          {getTraduction(i18n, data, "pdf.domino.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
@@ -547,8 +484,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
-          {getTraduction(data, "pdf.wordCards.title", "title")}
-          {getTraduction(data, "pdf.wordCards.title", "caption")}
+          {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
+          {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
             {data.wordCards.categories?.flatMap((cat) =>
@@ -587,8 +524,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       
       {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
         <Page size="A4" style={styles.wordSearch}>
-          {getTraduction(data, "pdf.wordSearch.title", "title")}
-          {getTraduction(data, "pdf.wordSearch.title", "caption")}
+          {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
+          {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
 
           {data.wordSearch.themes.map((theme, idx) => (
             <View key={idx} style={{ marginBottom: 16 }}>
@@ -614,6 +551,141 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
+        <Page size="A4" style={styles.storyGame}>
+          {getTraduction(i18n, data, "pdf.storyGame.title", "title")}
+          {getTraduction(i18n, data, "pdf.storyGame.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.storyGame.prompts.map((phrase, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "45%",      // 2 cartões por linha
+                  minHeight: 80,     // altura mínima
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  padding: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 12,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  {phrase}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
+      {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
+        <Page size="A4" style={styles.objectHunt}>
+          {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
+          {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.objectHunt.objects.map((obj, idx) => (
+              <View
+                key={idx}
+                style={{
+                  width: "30%",      // 3 cartões por linha
+                  minHeight: 50,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  padding: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
+                }}
+              >
+                <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
+                  {obj}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </Page>
+      )}
+
+      {data.hangman?.enabled && (
+        <Page size="A4" style={styles.hangman}>
+          {getTraduction(i18n, data, "pdf.hangman.title", "title")}
+          {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
+
+          {/* Imagem da forca */}
+          {generateHangman()}
+        </Page>
+      )}
+
+      {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
+        <Page size="A4" style={styles.memoryGame}>
+          {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
+          {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+            {data.memoryGame.pairs.flatMap((pair) => [
+              // Cartão com palavra
+              <View
+                key={`${pair.word}-word`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#f1f8e9"
+                }}
+              >
+                <Text style={{ fontSize: 16, fontWeight: "bold" }}>{pair.word}</Text>
+              </View>,
+
+              // Cartão com imagem
+              <View
+                key={`${pair.word}-img`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#fff3e0"
+                }}
+              >
+                {pair.image ? (
+                  <Image
+                    src={pair.image}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover" // preenche e corta o excesso para ocupar todo o cartão
+                    }}
+                  />
+                ) : (
+                  <Text>[Imagem]</Text>
+                )}
+              </View>
+            ])}
+          </View>
+        </Page>
+      )}
       {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
         <Page size="A4" style={styles.molde}>
           <View key={`sec-img-${idxImg}`}>
@@ -627,12 +699,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       ))}
-
-
-
-
-
-
     </Document>
   );
 }

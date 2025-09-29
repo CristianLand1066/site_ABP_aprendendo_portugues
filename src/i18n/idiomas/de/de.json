@@ -11,63 +11,64 @@
     },
     "pdf": {
       "cover_title": "Spiele und Aktivitäten",
-      "intro":
-        "Dieses Material enthält Aktivitäten, die nach Niveau organisiert sind: Anfänger, Mittelstufe und Fortgeschrittene. Sie können zu Hause oder im Klassenzimmer mit einfachen Materialien durchgeführt werden.",
+      "intro": "Dieses Material enthält Aktivitäten, die nach Niveau organisiert sind: Anfänger, Mittelstufe und Fortgeschrittene. Sie können zu Hause oder im Klassenzimmer mit einfachen Mitteln durchgeführt werden.",
+      "cover_instructions": "Montageanleitung",
+      "intro_instructions": "Diese Seite enthält Anleitungen zum Zusammenstellen der Spiele.",
       "sections": {
         "beginner": "Anfänger",
-        "beginner_content": "Aktivitäten, die sich auf Alphabetisierung und den ersten Kontakt mit Wörtern konzentrieren.",
+        "beginner_content": "Aktivitäten zum Lesenlernen und ersten Kontakt mit Wörtern.",
         "beginner_games": [
           {
             "title": "Memory-Spiel – Bild und Wort",
-            "summary": "Bilder den entsprechenden Wörtern zuordnen.",
+            "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
             "instructions": [
-              "Karten mit Bildern und den entsprechenden Wörtern ausdrucken.",
-              "Die Karten mischen und verdeckt auf den Tisch legen.",
-              "Die Spieler decken abwechselnd zwei Karten auf, um ein passendes Paar zu finden.",
-              "Der Spieler mit den meisten Paaren am Ende gewinnt."
+              "Drucken Sie Karten mit Bildern und den entsprechenden Wörtern aus.",
+              "Mischen Sie die Karten und legen Sie sie verdeckt auf den Tisch.",
+              "Die Spieler decken abwechselnd zwei Karten auf, um ein Paar zu finden.",
+              "Der Spieler mit den meisten Paaren gewinnt."
             ]
           },
           {
             "title": "Alphabet-Bingo",
-            "summary": "Buchstaben des Alphabets spielerisch erkennen.",
+            "summary": "Buchstaben des Alphabets durch das Spiel erkennen.",
             "instructions": [
-              "Bingo-Karten mit Buchstaben vorbereiten.",
+              "Bereiten Sie Bingokarten mit Buchstaben des Alphabets vor.",
               "Der Lehrer oder Spielleiter zieht Buchstaben aus einem Beutel und sagt sie laut an.",
               "Die Spieler markieren den entsprechenden Buchstaben auf ihrer Karte.",
-              "Der Erste, der eine Reihe oder die ganze Karte vervollständigt, gewinnt."
+              "Der erste, der eine Reihe oder die ganze Karte vervollständigt, gewinnt."
             ]
           },
           {
-            "title": "Gegenstandssuche",
-            "summary": "Finde Gegenstände anhand geschriebener oder gesprochener Hinweise.",
+            "title": "Gegenstands-Suche",
+            "summary": "Finde Gegenstände anhand schriftlicher oder gesprochener Hinweise.",
             "instructions": [
-              "Einfache Namen von Gegenständen aufschreiben (z. B.: Ball, Stuhl, Löffel).",
-              "Das Wort sagen oder die Karte zeigen.",
+              "Schreiben Sie einfache Namen von Gegenständen auf (z. B. Ball, Stuhl, Löffel).",
+              "Sagen Sie das Wort oder zeigen Sie die Karte.",
               "Die Kinder müssen den Gegenstand in der Umgebung finden.",
-              "Der Erste, der den richtigen Gegenstand bringt, bekommt einen Punkt."
+              "Der Erste, der den richtigen Gegenstand bringt, erhält einen Punkt."
             ]
           }
         ],
         "intermediate": "Mittelstufe",
-        "intermediate_content": "Aktivitäten zum Ausbau des Wortschatzes und zum Bilden einfacher Sätze.",
+        "intermediate_content": "Aktivitäten zur Erweiterung des Wortschatzes und zum Bilden einfacher Sätze.",
         "intermediate_games": [
           {
-            "title": "Wortdomino",
-            "summary": "Wörter durch das Kombinieren von Silben bilden.",
+            "title": "Wort-Domino",
+            "summary": "Wörter durch Kombinieren von Silben bilden.",
             "instructions": [
-              "Domino-Steine erstellen, bei denen eine Seite eine Silbe und die andere die Wortergänzung enthält.",
-              "Die Steine an die Spieler austeilen.",
-              "Die Spieler legen abwechselnd Steine, um richtige Wörter zu bilden.",
+              "Erstellen Sie Dominosteine mit einer Silbe auf der einen Seite und dem Rest des Wortes auf der anderen.",
+              "Verteilen Sie die Steine an die Spieler.",
+              "Die Spieler legen reihum passende Steine, um richtige Wörter zu bilden.",
               "Der Erste, der alle seine Steine verwendet, gewinnt."
             ]
           },
           {
             "title": "Galgenmännchen (angepasst)",
-            "summary": "Das geheime Wort erraten, indem Buchstaben vorgeschlagen werden.",
+            "summary": "Erraten Sie das geheime Wort, indem Sie Buchstaben vorschlagen.",
             "instructions": [
-              "Ein einfaches Wort auswählen und leere Felder auf das Papier zeichnen.",
-              "Die Spieler schlagen nacheinander Buchstaben vor.",
-              "Für jeden Fehler wird ein Teil der Figur gezeichnet (z. B.: Strichmännchen).",
+              "Wählen Sie ein einfaches Wort und zeichnen Sie leere Felder auf Papier.",
+              "Die Spieler schlagen abwechselnd Buchstaben vor.",
+              "Bei jedem Fehler zeichnen Sie einen Teil der Figur (z. B. Strichmännchen).",
               "Ziel ist es, das Wort zu erraten, bevor die Figur fertig ist."
             ]
           },
@@ -75,97 +76,188 @@
             "title": "Satzbau",
             "summary": "Einfache Sätze mit Wortkarten bilden.",
             "instructions": [
-              "Karten mit Substantiven, Verben und Adjektiven vorbereiten.",
-              "Die Karten an die Spieler verteilen.",
+              "Bereiten Sie Karten mit Nomen, Verben und Adjektiven vor.",
+              "Verteilen Sie die Karten an die Spieler.",
               "Die Spieler bilden kurze Sätze mit mindestens 3 Karten.",
               "Die Gruppe stimmt über den lustigsten oder kreativsten Satz ab."
             ]
           }
         ],
         "advanced": "Fortgeschritten",
-        "advanced_content": "Aktivitäten für Textverständnis, logisches Denken und Geschichtenerzählen.",
+        "advanced_content": "Aktivitäten zur Textverständnis, logischem Denken und Geschichtenerzählen.",
         "advanced_games": [
           {
             "title": "Geschichte fortsetzen",
-            "summary": "Eine gemeinsame Geschichte bilden, indem jeder Spieler Sätze hinzufügt.",
+            "summary": "Eine gemeinsame Geschichte Satz für Satz fortsetzen.",
             "instructions": [
-              "Der erste Spieler beginnt die Geschichte mit einem Satz (z. B.: 'Es war einmal ein Kind, das Abenteuer liebte').",
+              "Der erste Spieler beginnt mit einem Satz (z. B.: 'Es war einmal ein Kind, das Abenteuer liebte').",
               "Jeder Spieler fügt einen neuen Satz hinzu.",
-              "Die Geschichte geht weiter, bis alle beschließen, sie zu beenden.",
-              "Am Ende die gesamte Geschichte laut vorlesen."
+              "Die Geschichte geht weiter, bis alle zustimmen, sie zu beenden.",
+              "Am Ende wird die ganze Geschichte laut vorgelesen."
             ]
           },
           {
             "title": "Wortsuche",
             "summary": "Finde versteckte Wörter in einem Buchstabengitter.",
             "instructions": [
-              "Ein Buchstabengitter mit Wörtern zu einem bestimmten Thema vorbereiten (z. B.: Tiere, Früchte, Schule).",
-              "Die Gitter an die Spieler verteilen.",
-              "Die Spieler müssen alle aufgelisteten Wörter finden und einkreisen.",
-              "Der Erste, der alle Wörter findet, gewinnt."
+              "Bereiten Sie ein Buchstabengitter mit Wörtern zu einem Thema vor (z. B. Tiere, Früchte, Schule).",
+              "Verteilen Sie die Gitter an die Spieler.",
+              "Die Spieler müssen alle Wörter finden und einkreisen.",
+              "Der Erste, der alle findet, gewinnt."
             ]
           },
           {
-            "title": "Lustige Debatte",
-            "summary": "Argumentieren und logisches Denken in Debatten üben.",
+            "title": "Spaß-Debatte",
+            "summary": "Übe Argumentation und logisches Denken durch Debatten.",
             "instructions": [
-              "Die Spieler in zwei Gruppen aufteilen.",
-              "Ein einfaches Thema wählen (z. B.: 'Bücher sind besser als Fernsehen').",
+              "Teilen Sie die Spieler in zwei Gruppen ein.",
+              "Wählen Sie ein einfaches Thema (z. B.: 'Bücher sind besser als Fernsehen').",
               "Jede Gruppe bereitet 2–3 Argumente vor.",
-              "Die Gruppen präsentieren abwechselnd ihre Argumente, und das Publikum entscheidet über den Gewinner."
+              "Die Gruppen präsentieren abwechselnd, und das Publikum wählt den Gewinner."
             ]
           }
         ]
       },
+      "instruction_games": [
+        {
+          "title": "Memory-Spiel",
+          "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
+          "instructions": [
+            "Drucken Sie die Seite mit Bildern und Wörtern aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Karten aus"
+          ]
+        },
+        {
+          "title": "Alphabet-Bingo",
+          "summary": "Buchstaben des Alphabets spielerisch erkennen.",
+          "instructions": [
+            "Drucken Sie die Seite mit Bingokarten aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Karten aus"
+          ]
+        },
+        {
+          "title": "Gegenstands-Suche",
+          "summary": "Finde Gegenstände anhand schriftlicher oder gesprochener Hinweise.",
+          "instructions": [
+            "Drucken Sie die Seite mit den Suchkarten aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Karten aus"
+          ]
+        },
+        {
+          "title": "Wort-Domino",
+          "summary": "Wörter durch Kombinieren von Silben bilden.",
+          "instructions": [
+            "Drucken Sie die Seite mit Dominosteinen aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Teile aus"
+          ]
+        },
+        {
+          "title": "Galgenmännchen",
+          "summary": "Erraten Sie das geheime Wort, indem Sie Buchstaben vorschlagen.",
+          "instructions": [
+            "Drucken Sie die Seite mit den Spielsteinen aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Teile aus"
+          ]
+        },
+        {
+          "title": "Satzbau",
+          "summary": "Einfache Sätze mit Wortkarten bilden.",
+          "instructions": [
+            "Drucken Sie die Seite mit Wortkarten (Nomen in Blau, Verben in Grün, Adjektive in Gelb) aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Teile aus"
+          ]
+        },
+        {
+          "title": "Geschichte fortsetzen",
+          "summary": "Eine gemeinsame Geschichte Satz für Satz fortsetzen.",
+          "instructions": [
+            "Drucken Sie die Seite mit den Satzkarten aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Teile aus"
+          ]
+        },
+        {
+          "title": "Wortsuche",
+          "summary": "Finde versteckte Wörter in einem Buchstabengitter.",
+          "instructions": [
+            "Drucken Sie die Seite mit den Suchkarten aus.",
+            "Schneiden Sie die Karten aus"
+          ]
+        },
+        {
+          "title": "Spaß-Debatte",
+          "summary": "Übe Argumentation und logisches Denken durch Debatten.",
+          "instructions": [
+            "Drucken Sie die Seite mit den Debattenkarten aus.",
+            "Kleben Sie sie auf Karton.",
+            "Schneiden Sie die Karten aus"
+          ]
+        },
+        {
+          "title": "Aufbewahrungskoffer",
+          "summary": "Koffer zum Aufbewahren der Spielkarten.",
+          "instructions": [
+            "Drucken Sie die Seiten mit den Koffer-Teilen aus.",
+            "Kleben Sie sie auf Karton nach dem Koffermodell (Bild 'Koffer-Vorlage').",
+            "Schneiden Sie die Koffer-Vorlage aus"
+          ]
+        }
+      ],
       "cardsDebate": {
-        "title": "Lustige Debatte",
-        "summary": "Argumentieren und logisches Denken in Debatten üben.",
+        "title": "Spaß-Debatte",
+        "summary": "Übe Argumentation und logisches Denken durch Debatten.",
         "cards": [
           {
             "title": "Schule und Lernen",
             "color": "#4A90E2",
             "colorText": "#000",
             "phrases": [
-              "Am Morgen zu lernen ist besser als am Nachmittag.",
-              "Bücher zu lesen macht mehr Spaß als Zeichentrickfilme zu schauen.",
+              "Es ist besser, morgens zu lernen als nachmittags.",
+              "Bücher lesen macht mehr Spaß als Cartoons schauen.",
               "Hausaufgaben sollten kürzer sein.",
               "Es ist besser, mit Bleistift als mit Kugelschreiber zu schreiben.",
               "Es ist besser, in Ruhe als mit Musik zu lernen."
             ]
           },
           {
-            "title": "Zuhause und Familie",
+            "title": "Haus und Familie",
             "color": "#50C878",
             "colorText": "#000",
             "phrases": [
-              "Früh schlafen zu gehen ist besser als spät schlafen zu gehen.",
+              "Früh schlafen ist besser als spät schlafen.",
               "Im Haushalt zu helfen macht Spaß.",
-              "Allein zu spielen ist besser als mit Freunden.",
+              "Allein spielen ist besser als mit Freunden.",
               "Ein Hund ist ein besseres Haustier als eine Katze.",
               "Mit der Familie zu essen ist schöner als allein."
             ]
           },
           {
-            "title": "Spiele und Freizeit",
+            "title": "Spiele und Spaß",
             "color": "#F5C518",
             "colorText": "#000",
             "phrases": [
-              "Draußen zu spielen macht mehr Spaß als drinnen.",
+              "Draußen spielen macht mehr Spaß als drinnen.",
               "Brettspiele sind besser als Videospiele.",
               "Seilspringen macht mehr Spaß als Ballspielen.",
-              "Es ist besser, im Park als im Garten zu spielen.",
-              "Zeichnen macht mehr Spaß als Malen."
+              "Im Park spielen ist besser als im Hof.",
+              "Malen macht mehr Spaß als zeichnen."
             ]
           },
           {
-            "title": "Lebensmittel",
+            "title": "Essen",
             "color": "#E63946",
             "colorText": "#fff",
             "phrases": [
               "Eis ist besser als Kuchen.",
-              "Obst schmeckt besser als Süßigkeiten.",
+              "Obst ist leckerer als Süßigkeiten.",
               "Limonade ist besser als Saft.",
-              "Mittagessen ist besser als Abendessen.",
+              "Mittagessen ist schöner als Abendessen.",
               "Pizza ist besser als Hamburger."
             ]
           },
@@ -174,17 +266,17 @@
             "color": "#9B59B6",
             "colorText": "#fff",
             "phrases": [
-              "Auf dem Land zu leben ist besser als in der Stadt.",
+              "Auf dem Land zu wohnen ist besser als in der Stadt.",
               "Superhelden sind cooler als Prinzessinnen.",
-              "Fahrradfahren ist besser als Autofahren.",
+              "Radfahren ist besser als Autofahren.",
               "An den Strand zu gehen macht mehr Spaß als ins Einkaufszentrum.",
-              "Reisen ist besser als zu Hause zu bleiben."
+              "Reisen ist besser als zu Hause bleiben."
             ]
           }
         ]
       },
       "domino": {
-        "title": "Wortdomino"
+        "title": "Wort-Domino"
       },
       "bingo": {
         "title": "Buchstaben- und Zahlen-Bingo"
@@ -194,6 +286,27 @@
       },
       "wordCards": {
         "title": "Wortkarten"
+      },
+      "wordSearch": {
+        "title": "Wortsuche"
+      },
+      "hangman": {
+        "title": "Galgenmännchen"
+      },
+      "memoryGame": {
+        "title": "Memory-Spiel"
+      },
+      "storyGame": {
+        "title": "Geschichten"
+      },
+      "objectHunt": {
+        "title": "Gegenstands-Suche"
+      },
+      "portugueseLetters": {
+        "title": "Alphabet-Buchstaben"
+      },
+      "moldes": {
+        "moldeMaleta": "Koffer-Vorlage"
       }
     }
   }

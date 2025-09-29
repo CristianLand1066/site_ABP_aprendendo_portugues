@@ -7,34 +7,35 @@
     "actions": {
       "generate_pdf": "Generate PDF",
       "downloading": "Downloading...",
-      "retry": "Try again"
+      "retry": "Try Again"
     },
     "pdf": {
       "cover_title": "Games and Activities",
-      "intro":
-        "This material contains activities organized by level: beginner, intermediate, and advanced. They can be carried out at home or in the classroom, using simple resources.",
+      "intro": "This material contains activities organized by level: beginner, intermediate, and advanced. They can be carried out at home or in the classroom using simple resources.",
+      "cover_instructions": "Assembly Instructions",
+      "intro_instructions": "This page contains instructions for assembling the games.",
       "sections": {
         "beginner": "Beginner",
         "beginner_content": "Activities focused on literacy and first contact with words.",
         "beginner_games": [
           {
             "title": "Memory Game – Image and Word",
-            "summary": "Match images with their corresponding words.",
+            "summary": "Match images to their corresponding words.",
             "instructions": [
-              "Print cards with images and the corresponding words.",
+              "Print cards with images and their corresponding words.",
               "Shuffle the cards and place them face down on the table.",
-              "Players take turns flipping two cards to find a matching pair.",
+              "Players take turns flipping two cards to find a match.",
               "The player with the most pairs at the end wins."
             ]
           },
           {
             "title": "Alphabet Bingo",
-            "summary": "Recognize letters of the alphabet through play.",
+            "summary": "Recognize alphabet letters through the game.",
             "instructions": [
               "Prepare bingo cards with letters of the alphabet.",
-              "The teacher or leader draws letters from a bag and announces them aloud.",
+              "The teacher or facilitator draws letters from a bag and announces them out loud.",
               "Players mark the corresponding letter on their card.",
-              "The first to complete a line or the entire card wins."
+              "The first to complete a line or the whole card wins."
             ]
           },
           {
@@ -49,14 +50,14 @@
           }
         ],
         "intermediate": "Intermediate",
-        "intermediate_content": "Activities to expand vocabulary and build simple sentences.",
+        "intermediate_content": "Activities to expand vocabulary and form simple sentences.",
         "intermediate_games": [
           {
             "title": "Word Domino",
             "summary": "Form words by combining syllables.",
             "instructions": [
-              "Create domino pieces where one side has a syllable and the other completes a word.",
-              "Distribute the pieces among the players.",
+              "Create domino pieces with a syllable on one side and the rest of the word on the other.",
+              "Distribute the pieces among players.",
               "Players take turns placing pieces to form correct words.",
               "The first to use all their pieces wins."
             ]
@@ -67,8 +68,8 @@
             "instructions": [
               "Choose a simple word and draw blank spaces on paper.",
               "Players suggest letters one at a time.",
-              "For each mistake, draw a part of the figure (e.g., stick figure).",
-              "The goal is to guess the word before the drawing is complete."
+              "For each mistake, draw part of the figure (e.g., a stick figure).",
+              "The goal is to guess the word before completing the drawing."
             ]
           },
           {
@@ -76,7 +77,7 @@
             "summary": "Form simple sentences using word cards.",
             "instructions": [
               "Prepare cards with nouns, verbs, and adjectives.",
-              "Distribute the cards among the players.",
+              "Distribute the cards among players.",
               "Players take turns forming short sentences using at least 3 cards.",
               "The group votes for the funniest or most creative sentence."
             ]
@@ -89,10 +90,10 @@
             "title": "Story Continuation",
             "summary": "Create a collaborative story by adding sentences in turns.",
             "instructions": [
-              "The first player starts the story with a sentence (e.g., 'Once upon a time there was a child who loved adventures').",
+              "The first player starts with a sentence (e.g., 'Once upon a time, there was a child who loved adventures').",
               "Each player continues the story with a new sentence.",
               "The story continues until everyone agrees to end it.",
-              "At the end, read the full story aloud."
+              "At the end, read the whole story out loud."
             ]
           },
           {
@@ -100,37 +101,128 @@
             "summary": "Find hidden words in a grid of letters.",
             "instructions": [
               "Prepare a word search grid with words from a specific theme (e.g., animals, fruits, school).",
-              "Distribute the grids to the players.",
+              "Distribute the grids to players.",
               "Players must find and circle all the listed words.",
               "The first to find them all wins."
             ]
           },
           {
             "title": "Fun Debate",
-            "summary": "Practice argumentation and reasoning in debates.",
+            "summary": "Practice argumentation and reasoning through debates.",
             "instructions": [
-              "Divide the players into two groups.",
-              "Choose a simple topic (e.g., 'Books are better than TV').",
+              "Divide players into two groups.",
+              "Choose a simple theme (e.g., 'Books are better than TV').",
               "Each group prepares 2–3 arguments.",
-              "The groups take turns presenting arguments, and the audience decides the winner."
+              "Groups take turns presenting arguments, and the audience decides the winner."
             ]
           }
         ]
       },
+      "instruction_games": [
+        {
+          "title": "Memory Game",
+          "summary": "Match images with their corresponding words.",
+          "instructions": [
+            "Print the page with images and corresponding words.",
+            "Glue it onto cardboard material.",
+            "Cut out the cards"
+          ]
+        },
+        {
+          "title": "Alphabet Bingo",
+          "summary": "Recognize alphabet letters through play.",
+          "instructions": [
+            "Print the page with bingo cards.",
+            "Glue it onto cardboard material.",
+            "Cut out the cards"
+          ]
+        },
+        {
+          "title": "Object Hunt",
+          "summary": "Identify objects from written or spoken clues.",
+          "instructions": [
+            "Print the page with object hunt cards.",
+            "Glue it onto cardboard material.",
+            "Cut out the cards"
+          ]
+        },
+        {
+          "title": "Word Domino",
+          "summary": "Form words by combining syllables.",
+          "instructions": [
+            "Print the page with domino pieces.",
+            "Glue it onto cardboard material.",
+            "Cut out the pieces"
+          ]
+        },
+        {
+          "title": "Hangman",
+          "summary": "Guess the secret word by suggesting letters.",
+          "instructions": [
+            "Print the page with the game pieces.",
+            "Glue it onto cardboard material.",
+            "Cut out the pieces"
+          ]
+        },
+        {
+          "title": "Sentence Building",
+          "summary": "Form simple sentences using word cards.",
+          "instructions": [
+            "Print the page with word pieces (nouns in blue, verbs in green, adjectives in yellow).",
+            "Glue it onto cardboard material.",
+            "Cut out the pieces"
+          ]
+        },
+        {
+          "title": "Story Continuation",
+          "summary": "Create a collaborative story by adding sentences in turns.",
+          "instructions": [
+            "Print the page with sentence pieces.",
+            "Glue it onto cardboard material.",
+            "Cut out the pieces"
+          ]
+        },
+        {
+          "title": "Word Search",
+          "summary": "Find hidden words in a grid of letters.",
+          "instructions": [
+            "Print the page with word search cards.",
+            "Cut out the cards"
+          ]
+        },
+        {
+          "title": "Fun Debate",
+          "summary": "Practice argumentation and reasoning through debates.",
+          "instructions": [
+            "Print the page with debate cards.",
+            "Glue it onto cardboard material.",
+            "Cut out the cards"
+          ]
+        },
+        {
+          "title": "Organizer Case",
+          "summary": "Case to organize the game cards.",
+          "instructions": [
+            "Print the pages with the case parts.",
+            "Glue them onto cardboard material following the case model (image 'Case Template').",
+            "Cut out the case template"
+          ]
+        }
+      ],
       "cardsDebate": {
         "title": "Fun Debate",
-        "summary": "Practice argumentation and reasoning in debates.",
+        "summary": "Practice argumentation and reasoning through debates.",
         "cards": [
           {
             "title": "School and Learning",
             "color": "#4A90E2",
             "colorText": "#000",
             "phrases": [
-              "It is better to study in the morning than in the afternoon.",
+              "It’s better to study in the morning than in the afternoon.",
               "Reading books is more fun than watching cartoons.",
               "Homework should be shorter.",
-              "It is better to write with a pencil than with a pen.",
-              "It is better to study in silence than with music."
+              "It’s better to write with a pencil than with a pen.",
+              "It’s better to study in silence than with music."
             ]
           },
           {
@@ -140,20 +232,20 @@
             "phrases": [
               "Sleeping early is better than sleeping late.",
               "Helping at home is fun.",
-              "It is better to play alone than with friends.",
-              "A dog is a better pet than a cat.",
-              "It is nicer to eat with family than alone."
+              "It’s better to play alone than with friends.",
+              "Dogs are better pets than cats.",
+              "It’s nicer to eat with family than alone."
             ]
           },
           {
-            "title": "Games and Play",
+            "title": "Games and Fun",
             "color": "#F5C518",
             "colorText": "#000",
             "phrases": [
-              "It is more fun to play outdoors than indoors.",
+              "It’s more fun to play outdoors than indoors.",
               "Board games are better than video games.",
               "Jumping rope is more fun than playing ball.",
-              "It is better to play in the park than in the backyard.",
+              "It’s better to play in the park than in the yard.",
               "Drawing is more fun than painting."
             ]
           },
@@ -163,10 +255,10 @@
             "colorText": "#fff",
             "phrases": [
               "Ice cream is better than cake.",
-              "Fruit tastes better than candy.",
+              "Fruit is tastier than candy.",
               "Soda is better than juice.",
-              "Lunch is better than dinner.",
-              "Pizza is better than a hamburger."
+              "Lunch is nicer than dinner.",
+              "Pizza is better than hamburgers."
             ]
           },
           {
@@ -174,7 +266,7 @@
             "color": "#9B59B6",
             "colorText": "#fff",
             "phrases": [
-              "It is better to live in the countryside than in the city.",
+              "It’s better to live in the countryside than in the city.",
               "Superheroes are cooler than princesses.",
               "Riding a bike is better than riding a car.",
               "Going to the beach is more fun than going to the mall.",
@@ -187,13 +279,34 @@
         "title": "Word Domino"
       },
       "bingo": {
-        "title": "Letter and Number Bingo"
+        "title": "Alphabet and Number Bingo"
       },
       "images": {
         "title": "Images"
       },
       "wordCards": {
         "title": "Word Cards"
+      },
+      "wordSearch": {
+        "title": "Word Search"
+      },
+      "hangman": {
+        "title": "Hangman"
+      },
+      "memoryGame": {
+        "title": "Memory Game"
+      },
+      "storyGame": {
+        "title": "Stories"
+      },
+      "objectHunt": {
+        "title": "Object Hunt"
+      },
+      "portugueseLetters": {
+        "title": "Alphabet Letters"
+      },
+      "moldes": {
+        "moldeMaleta": "Case Template"
       }
     }
   }
