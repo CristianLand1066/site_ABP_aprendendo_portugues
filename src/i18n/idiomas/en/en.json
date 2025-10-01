@@ -279,7 +279,8 @@
         "title": "Word Domino"
       },
       "bingo": {
-        "title": "Alphabet and Number Bingo"
+        "title": "Alphabet and Number Bingo",
+        "reference": "Reference for Drawing"
       },
       "images": {
         "title": "Images"
