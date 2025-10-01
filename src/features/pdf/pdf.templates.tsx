@@ -281,7 +281,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
           {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
             {buildPortugueseLetters().map((letter, idx) => (
               <View
                 key={idx}
@@ -309,9 +309,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         <Page size="A4" style={styles.bingo}>
           {getTraduction(i18n, data, "pdf.bingo.title", "title")}
           {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap"}}>
             {grids3x3.map((grid, idx) => (
-                <View key={`bingo-3x3-${idx}`} style={{ width: "50%", padding: 1 }}>
+                <View key={`bingo-3x3-${idx}`} style={{ width: "50%", padding: 1, justifyContent: "center" }}>
                   {renderGrid(grid, styles)}
                 </View>
               )
@@ -319,7 +319,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
             {grids4x4Letters.map((grid, idx) => (
-                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1, justifyContent: "center" }}>
                   {renderGrid(grid, styles)}
                 </View>
               )
@@ -327,7 +327,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
             {grids4x4Numbers.map((grid, idx) => (
-                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1 }}>
+                <View key={`bingo-4x4-${idx}`} style={{ width: "50%", padding: 1, justifyContent: "center" }}>
                   {renderGrid(grid, styles)}
                 </View>
               )
@@ -340,7 +340,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         <Page size="A4" style={styles.bingo}>
           <Text style={styles.h1}>Referência para Sorteio</Text>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {used3x3Letters.map((letter, idx) => (
               <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{ fontSize: 12 }}>{letter}</Text>
@@ -348,7 +348,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             ))}
           </View>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {used4x4Letters.map((letter, idx) => (
               <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{ fontSize: 12 }}>{letter}</Text>
@@ -356,7 +356,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             ))}
           </View>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 10 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {used4x4Numbers.map((number, idx) => (
               <View key={idx} style={{ width: 50, height: 50, borderRadius: 25, borderWidth: 1, margin: 2, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{ fontSize: 12 }}>{number}</Text>
@@ -374,7 +374,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
           {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
             {data.cardsDebate.cards.map((cat, idx) => (
               <View
                 key={idx}
@@ -438,17 +438,18 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.domino.title", "title")}
           {getTraduction(i18n, data, "pdf.domino.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
               <View
                 key={idx}
                 style={{
-                  width: "16%", // 4 peças por linha
+                  width: "15%", // 4 peças por linha
                   borderWidth: 1,
                   borderColor: "#000",
+                  borderRadius: 6,
                   margin: 1,
                   flexDirection: "row",
-                  height: 50,
+                  height: 45,
                 }}
               >
                 <View
@@ -458,10 +459,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                     borderColor: "#000",
                     justifyContent: "center",
                     alignItems: "center",
-                    marginBottom: 2,
+                    marginBottom: 1,
                   }}
                 >
-                  <Text style={{ fontSize: 12, fontWeight: "bold" }}>
+                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
                     {piece.left}
                   </Text>
                 </View>
@@ -472,7 +473,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                     alignItems: "center",
                   }}
                 >
-                  <Text style={{ fontSize: 12, fontWeight: "bold" }}>
+                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
                     {piece.right}
                   </Text>
                 </View>
@@ -487,7 +488,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
           {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.wordCards.categories?.flatMap((cat) =>
               cat.words.map((word, idx) => (
                 <View
@@ -528,15 +529,15 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
 
           {data.wordSearch.themes.map((theme, idx) => (
-            <View key={idx} style={{ marginBottom: 16 }}>
+            <View key={idx} style={{ justifyContent: "center" }}>
 
               {/* Renderiza a grade */}
-              <View style={styles.bingoGrid}>
+              <View style={styles.wordSearchGrid}>
                 {theme.grid.map((row, r) => (
-                  <View key={r} style={styles.bingoRow}>
+                  <View key={r} style={styles.wordSearchRow}>
                     {row.map((cell, c) => (
-                      <View key={c} style={styles.bingoCell}>
-                        <Text style={styles.bingoText}>{cell}</Text>
+                      <View key={c} style={styles.wordSearchCell}>
+                        <Text style={styles.wordSearchText}>{cell}</Text>
                       </View>
                     ))}
                   </View>
@@ -556,7 +557,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.storyGame.title", "title")}
           {getTraduction(i18n, data, "pdf.storyGame.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.storyGame.prompts.map((phrase, idx) => (
               <View
                 key={idx}
@@ -593,7 +594,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
           {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.objectHunt.objects.map((obj, idx) => (
               <View
                 key={idx}
@@ -634,7 +635,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
           {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 12 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.memoryGame.pairs.flatMap((pair) => [
               // Cartão com palavra
               <View
@@ -686,6 +687,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       )}
+      
       {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
         <Page size="A4" style={styles.molde}>
           <View key={`sec-img-${idxImg}`}>
