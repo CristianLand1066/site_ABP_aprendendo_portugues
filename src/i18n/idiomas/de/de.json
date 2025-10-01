@@ -279,7 +279,8 @@
         "title": "Wort-Domino"
       },
       "bingo": {
-        "title": "Buchstaben- und Zahlen-Bingo"
+        "title": "Buchstaben- und Zahlen-Bingo",
+        "reference": "Referência para Sorteio"
       },
       "images": {
         "title": "Bilder"

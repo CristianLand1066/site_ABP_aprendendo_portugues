@@ -278,8 +278,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.portugueseLetters?.enabled && (
         <Page size="A4" style={styles.portugueseLetters}>
-          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
-          {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
+            {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center"}}>
             {buildPortugueseLetters().map((letter, idx) => (
@@ -307,8 +309,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
-          {getTraduction(i18n, data, "pdf.bingo.title", "title")}
-          {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.bingo.title", "title")}
+            {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
+          </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap"}}>
             {grids3x3.map((grid, idx) => (
                 <View key={`bingo-3x3-${idx}`} style={{ width: "50%", padding: 1, justifyContent: "center" }}>
@@ -338,7 +342,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
-          <Text style={styles.h1}>Referência para Sorteio</Text>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.bingo.reference", "title")}
+            {getTraduction(i18n, data, "pdf.bingo.reference", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {used3x3Letters.map((letter, idx) => (
@@ -371,8 +378,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Optional: cardsDebate pages */}
       {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
         <Page size="A4" style={styles.page}>
-          {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
-          {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
+            {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
             {data.cardsDebate.cards.map((cat, idx) => (
@@ -435,8 +444,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.domino?.enabled && (
         <Page size="A4" style={styles.domino}>
-          {getTraduction(i18n, data, "pdf.domino.title", "title")}
-          {getTraduction(i18n, data, "pdf.domino.title", "caption")}
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.domino.title", "title")}
+            {getTraduction(i18n, data, "pdf.domino.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
@@ -485,8 +496,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
-          {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
-          {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
+            {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
+            {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.wordCards.categories?.flatMap((cat) =>
@@ -525,8 +538,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       
       {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
         <Page size="A4" style={styles.wordSearch}>
-          {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
-          {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
+            {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
+          </View>
 
           {data.wordSearch.themes.map((theme, idx) => (
             <View key={idx} style={{ justifyContent: "center" }}>
@@ -554,8 +569,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
         <Page size="A4" style={styles.storyGame}>
-          {getTraduction(i18n, data, "pdf.storyGame.title", "title")}
-          {getTraduction(i18n, data, "pdf.storyGame.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.storyGame.title", "title")}
+            {getTraduction(i18n, data, "pdf.storyGame.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.storyGame.prompts.map((phrase, idx) => (
@@ -591,8 +608,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
         <Page size="A4" style={styles.objectHunt}>
-          {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
-          {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
+            {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.objectHunt.objects.map((obj, idx) => (
@@ -622,8 +641,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.hangman?.enabled && (
         <Page size="A4" style={styles.hangman}>
-          {getTraduction(i18n, data, "pdf.hangman.title", "title")}
-          {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.hangman.title", "title")}
+            {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
+          </View>
 
           {/* Imagem da forca */}
           {generateHangman()}
@@ -632,8 +653,10 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
         <Page size="A4" style={styles.memoryGame}>
-          {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
-          {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
+            {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
+          </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
             {data.memoryGame.pairs.flatMap((pair) => [

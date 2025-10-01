@@ -279,7 +279,8 @@
         "title": "Dominó de Palabras"
       },
       "bingo": {
-        "title": "Bingo de Letras y Números"
+        "title": "Bingo de Letras y Números",
+        "reference": "Referencia para Sorteo"
       },
       "images": {
         "title": "Imágenes"
