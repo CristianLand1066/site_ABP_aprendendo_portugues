@@ -51,6 +51,7 @@ export interface PdfDebateCategory {
 
 export interface PdfData {
   locale: (typeof languages)[0]["code"];
+  difficulty?: 'beginner' | 'intermediate' | 'advanced' | 'all';
   coverTitle: string;
   intro: string;
   coverInstructions: string;
