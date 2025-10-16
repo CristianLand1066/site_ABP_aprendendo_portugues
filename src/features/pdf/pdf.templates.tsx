@@ -496,7 +496,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
-          <View style={{ alignItems: "center", marginTop: 15 }}>
+          <View style={{ alignItems: "center", marginTop: 157 }}>
             {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
             {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
           </View>
