@@ -207,7 +207,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
     <Document>
 
       
-
       
 
       
@@ -380,7 +379,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
           {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center" }}>
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
           </View>
@@ -449,7 +448,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.cronograma?.enabled && (
         <Page size="A4" style={styles.cronograma}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
             {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
           </View>
@@ -569,8 +569,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       )}
 
       {data.minhaFamilia?.enabled && (
-        <Page size="A4" style={styles.minhaFamilia}>
-          <View style={{ alignItems: "center" }}>
+          <Page size="A4" style={styles.minhaFamilia}>
+            {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
           </View>
@@ -599,7 +600,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         const cores = data.desenheObjetosDaCor!.cores;
         return (
           <Page size="A4" style={styles.desenheObjetosDaCor}>
-            <View style={{ alignItems: "center" }}>
+            {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
             </View>
@@ -672,7 +674,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.apresentacao?.enabled && (
         <Page size="A4" style={styles.apresentacao}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
             {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
           </View>
@@ -709,7 +712,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.desenharOrigem?.enabled && (
         <Page size="A4" style={styles.desenharOrigem}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
           </View>
@@ -743,7 +747,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.mapaMundi?.enabled && (
         <Page size="A4" style={styles.mapaMundi}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
           </View>
