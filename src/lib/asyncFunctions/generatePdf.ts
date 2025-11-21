@@ -200,7 +200,8 @@ export async function handleGeneratePdf(
       memoryGame: { enabled: isGameEnabled('beginner'), pairs: memoryPairs },
       hangman: { enabled: isGameEnabled('intermediate') },
       portugueseLetters: { enabled: isGameEnabled('beginner'), syllables: BASE_LETTERS_NUMBERS },
-      mapaMundi: { enabled: isGameEnabled('beginner') },
+      mapaMundi: { enabled: isGameEnabled('beginner')},
+      desenharOrigem: { enabled: isGameEnabled('beginner')},
     };
 
     const blob = await generatePdf(data);

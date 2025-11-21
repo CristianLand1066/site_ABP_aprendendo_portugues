@@ -106,6 +106,12 @@ export interface PdfData {
     width?: number;
     height?: number;
   };
+  desenharOrigem?: {
+    enabled: boolean;
+    image?: string;
+    width?: number;
+    height?: number;
+  };
 }
 
 export interface PdfGame {
@@ -172,6 +178,94 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
   return (
     <Document>
+
+      {data.desenharOrigem?.enabled && (
+        <Page size="A4" style={styles.mapaMundi}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_1.png"
+            />
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.desenharOrigem.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.desenharOrigem.textos.0.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_2.png"
+            />
+          </View>
+        </Page>
+      )}
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -280,6 +374,40 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               {img.caption && <Text style={styles.caption}>{img.caption}</Text>}
             </View>
           ))}
+        </Page>
+      )}
+
+      {data.desenharOrigem?.enabled && (
+        <Page size="A4" style={styles.mapaMundi}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_1.png"
+            />
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.desenharOrigem.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.desenharOrigem.textos.0.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_2.png"
+            />
+          </View>
         </Page>
       )}
 

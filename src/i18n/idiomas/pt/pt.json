@@ -36,6 +36,15 @@
             ]
           },
           {
+            "title": "Desenhar sua origem",
+            "summary": "Se apresente e desenhe o seu país de origem.",
+            "instructions": [
+              "Escreva seu nome, idade e sua nacionalidade na sua língua materna.",
+              "Desenhe o seu país de origem.",
+              "Escreva seu nome, idade e sua nacionalidade em português."
+            ]
+          },
+          {
             "title": "Jogo da Memória – Imagem e Palavra",
             "summary": "Associe imagens às palavras correspondentes.",
             "instructions": [
@@ -152,6 +161,14 @@
             "imprima a página com o mapa do mundo.",
             "pinte de azul o país que você nasceu.",
             "pinte de amarelo o país que você esta agora."
+          ]
+        },
+        {
+          "title": "Desenhar Origem",
+          "summary": "Se apresente e desenhe o seu país de origem.",
+          "instructions": [
+            "Imprima a página com o mapa do mundo.",
+            "Se apresente e desenhe o seu país de origem."
           ]
         },
         {
@@ -319,6 +336,18 @@
             },
             {
               "title": "Pinte de amarelo o país que você esta agora."
+            }
+          ]
+        },
+        "desenharOrigem": {
+          "title": "Se apresente",
+          "imagens": [
+            "desenhar_origem_1.png",
+            "desenhar_origem_2.png"
+          ],
+          "textos": [
+            {
+              "title": "Agora é a sua vez! Diga quem você é, sua idade e de qual país veio. Primeiro na sua língua materna e depois na língua portuguesa!"
             }
           ]
         },
