@@ -379,6 +379,14 @@
             }
           ]
         },
+        "desenheObjetosDaCor": {
+          "title": "Cores",
+          "textos": [
+            {
+              "title": "Procure ao seu redor objetos dessas cores e desenhe-os nos quadrados."
+            }
+          ]
+        },
         "domino": {
           "title": "Dominó de Palavras"
         },

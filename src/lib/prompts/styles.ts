@@ -89,6 +89,13 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Helvetica",
   },
+  desenheObjetosDaCor: {
+    justifyContent: "center",
+    marginTop: 5,
+    padding: 0,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
   h1: { fontSize: 16, marginBottom: 5 },
   h2: { fontSize: 14, marginTop: 12, marginBottom: 5 },
   p: { marginBottom: 5, lineHeight: 1.4 },

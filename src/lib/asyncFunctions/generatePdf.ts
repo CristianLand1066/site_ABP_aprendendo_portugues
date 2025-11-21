@@ -5,6 +5,7 @@ import {
   generateMemoryPairs,
   generateObjects,
   generateStoryPrompts,
+  generateCores,
 } from "../functions/generateGames";
 import { fetchAsDataUrl } from "./fetchDataUrl";
 import type {
@@ -204,6 +205,7 @@ export async function handleGeneratePdf(
       desenharOrigem: { enabled: isGameEnabled('beginner')},
       apresentacao: { enabled: isGameEnabled('beginner')},
       minhaFamilia: { enabled: isGameEnabled('beginner')},
+      desenheObjetosDaCor: { enabled: isGameEnabled('beginner'), cores: generateCores() },
     };
 
     const blob = await generatePdf(data);

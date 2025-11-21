@@ -16,6 +16,12 @@ export function generateObjects() {
   return shuffled.slice(0, count);
 }
 
+export function generateCores() {
+  const shuffled = shuffleArray(getExportedLists().coresList as { nome: string; hex: string; }[]);
+  const count = 5;
+  return shuffled.slice(0, count);
+}
+
 export function generateStoryPrompts(): string[] {
   const shuffled = shuffleArray(getExportedLists().storyList as string[]);
   const count = 16;
