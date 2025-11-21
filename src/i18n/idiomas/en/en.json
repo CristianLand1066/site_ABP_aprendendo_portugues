@@ -226,6 +226,11 @@
           ]
         }
       ],
+      "header": {
+        "nome": "name",
+        "turma": "class",
+        "data": "date"
+      },
       "cardsDebate": {
         "title": "Fun Debate",
         "summary": "Practice argumentation and reasoning through debates.",

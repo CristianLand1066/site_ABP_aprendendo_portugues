@@ -16,6 +16,7 @@ import { renderGrid} from "../../components/renderGrid";
 import { generateHangman } from "../../components/generateHangMan";
 import { buildDominoPieces, buildPortugueseLetters } from "../../lib/functions/generateGames";
 import { buildMultipleBingoGrids } from "../../lib/functions/renderGrid";
+import { renderHeader } from "../../components/header";
 
 export interface PdfSection {
   title: string;
@@ -208,6 +209,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       
 
       
+
+      
       
 
 
@@ -376,6 +379,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
+          {renderHeader({ i18n, locale: data.locale })}
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}

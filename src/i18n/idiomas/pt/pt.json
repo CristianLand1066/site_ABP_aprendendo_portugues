@@ -252,6 +252,11 @@
           ]
         }
       ],
+      "header": {
+        "nome": "nome",
+        "turma": "turma",
+        "data": "data"
+      },
       "cardsDebate": {
         "title": "Debate divertido",
         "summary": "Pratique argumentação e raciocínio em debates.",
