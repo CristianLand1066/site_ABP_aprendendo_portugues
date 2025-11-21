@@ -47,6 +47,23 @@
               "Les enfants doivent trouver l’objet dans l’environnement.",
               "Le premier qui apporte l’objet correct gagne un point."
             ]
+          },
+          {
+            "title": "Dessine ton Origine",
+            "summary": "Présente-toi et dessine ton pays d'origine.",
+            "instructions": [
+              "Écris ton nom, ton âge et ta nationalité dans ta langue maternelle.",
+              "Dessine ton pays d'origine.",
+              "Écris ton nom, ton âge et ta nationalité en portugais."
+            ]
+          },
+          {
+            "title": "Présentation",
+            "summary": "Présente-toi et dessine ton pays d'origine.",
+            "instructions": [
+              "Écris ton nom, ton âge et ta nationalité dans ta langue maternelle.",
+              "Dessine le drapeau de ton pays d'origine."
+            ]
           }
         ],
         "intermediate": "Intermédiaire",
@@ -305,6 +322,56 @@
       },
       "portugueseLetters": {
         "title": "Lettres de l’Alphabet"
+      },
+      "mapaMundi": {
+        "title": "Carte du Monde",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Peins en bleu le pays où tu es né."
+          },
+          {
+            "title": "Peins en jaune le pays où tu es maintenant."
+          }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Présente-toi",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "C'est ton tour ! Dis qui tu es, ton âge et de quel pays tu viens. D'abord dans ta langue maternelle puis en portugais !"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Présentation",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "Qui suis-je ?"
+          },
+          {
+            "title": "Écris ton nom, ton âge et ton pays d'origine"
+          },
+          {
+            "title": "Nom : ___________________________"
+          },
+          {
+            "title": "Âge : ___________________________"
+          },
+          {
+            "title": "Pays d'origine : ___________________________"
+          },
+          {
+            "title": "Dessine le drapeau du pays où tu es né"
+          }
+        ]
       },
       "moldes": {
         "moldeMaleta": "Modèle de Mallette"

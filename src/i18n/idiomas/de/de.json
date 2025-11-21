@@ -47,6 +47,23 @@
               "Die Kinder müssen den Gegenstand in der Umgebung finden.",
               "Der Erste, der den richtigen Gegenstand bringt, erhält einen Punkt."
             ]
+          },
+          {
+            "title": "Zeichne deine Herkunft",
+            "summary": "Stelle dich vor und zeichne dein Herkunftsland.",
+            "instructions": [
+              "Schreibe deinen Namen, dein Alter und deine Nationalität in deiner Muttersprache.",
+              "Zeichne dein Herkunftsland.",
+              "Schreibe deinen Namen, dein Alter und deine Nationalität auf Portugiesisch."
+            ]
+          },
+          {
+            "title": "Vorstellung",
+            "summary": "Stelle dich vor und zeichne dein Herkunftsland.",
+            "instructions": [
+              "Schreibe deinen Namen, dein Alter und deine Nationalität in deiner Muttersprache.",
+              "Zeichne die Flagge deines Herkunftslandes."
+            ]
           }
         ],
         "intermediate": "Mittelstufe",
@@ -305,6 +322,56 @@
       },
       "portugueseLetters": {
         "title": "Alphabet-Buchstaben"
+      },
+      "mapaMundi": {
+        "title": "Weltkarte",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Male das Land, in dem du geboren wurdest, blau an."
+          },
+          {
+            "title": "Male das Land, in dem du jetzt bist, gelb an."
+          }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Stelle dich vor",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "Jetzt bist du dran! Sag, wer du bist, wie alt du bist und aus welchem Land du kommst. Zuerst in deiner Muttersprache und dann auf Portugiesisch!"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Vorstellung",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "Wer bin ich?"
+          },
+          {
+            "title": "Schreibe deinen Namen, dein Alter und dein Herkunftsland"
+          },
+          {
+            "title": "Name: ___________________________"
+          },
+          {
+            "title": "Alter: ___________________________"
+          },
+          {
+            "title": "Herkunftsland: ___________________________"
+          },
+          {
+            "title": "Zeichne die Flagge des Landes, in dem du geboren wurdest"
+          }
+        ]
       },
       "moldes": {
         "moldeMaleta": "Koffer-Vorlage"

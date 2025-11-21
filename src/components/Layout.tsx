@@ -1,42 +1,51 @@
-import { type PropsWithChildren } from "react";
+import { type PropsWithChildren, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
+import { ChevronRight } from "lucide-react";
+import AgradecimentosModal from "./AgradecimentosModal";
 
 export default function Layout({ children }: PropsWithChildren) {
-  return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-900 dark:text-neutral-100">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-3 py-1 rounded"
-      >
-        Ir para o conteúdo principal
-      </a>
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-      <header className="w-full border-b border-neutral-200 dark:border-neutral-800">
-        <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded bg-blue-600 text-white font-bold">
-              ABP
-            </span>
-            <span className="font-semibold">Aprendendo Português</span>
+  return (
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 flex flex-col">
+
+      {/* HEADER */}
+      <header className="w-full flex-shrink-0 border-b border-neutral-200 dark:border-neutral-800">
+        <div className="px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 font-bold text-lg">
+            <span className="bg-blue-600 text-white px-2.5 py-1.5 rounded-md">ABP</span>
+            <span>Aprendendo Português</span>
           </div>
-          <div className="flex items-center gap-3">
-            <LanguageSelector />
-          </div>
+          <LanguageSelector />
         </div>
       </header>
 
-      <main id="main" className="mx-auto max-w-5xl px-4 py-8">
+      {/* MAIN */}
+      <main className="w-full flex-1 flex items-center justify-center py-8">
         {children}
       </main>
 
-      <footer className="mt-12 w-full border-t border-neutral-200 dark:border-neutral-800">
-        <div className="mx-auto max-w-5xl px-4 py-6 text-sm text-neutral-500 dark:text-neutral-400">
-          <p>
-            © {new Date().getFullYear()} ABP — Material educacional multilíngue.
-            Construído com React + Vite.
-          </p>
+      {/* LINK DE AGRADECIMENTOS */}
+      <div className="w-full flex-shrink-0 px-6 py-2 flex justify-center items-center gap-1">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-600 transition-colors flex items-center gap-1"
+        >
+          Agradecimentos
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* MODAL DE AGRADECIMENTOS */}
+      <AgradecimentosModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      {/* FOOTER */}
+      <footer className="w-full flex-shrink-0 border-t-2 border-neutral-700 bg-neutral-800">
+        <div className="px-6 py-3 text-center text-xs text-neutral-300">
+          © {new Date().getFullYear()} ABP — Material educacional multilíngue.
         </div>
       </footer>
+
     </div>
   );
 }
