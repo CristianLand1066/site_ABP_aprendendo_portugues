@@ -306,6 +306,18 @@
       "portugueseLetters": {
         "title": "Letras del Alfabeto"
       },
+      "mapaMundi": {
+        "title": "Mapa del Mundo",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Pinta de azul el país donde naciste."
+          },
+          {
+            "title": "Pinta de amarillo el país donde estás ahora."
+          }
+        ]
+      },
       "moldes": {
         "moldeMaleta": "Molde de Maletín"
       }

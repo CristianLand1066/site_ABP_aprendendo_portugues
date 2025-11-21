@@ -20,6 +20,22 @@
         "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras.",
         "beginner_games": [
           {
+            "title": "Letras do Alfabeto",
+            "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
+            "instructions": [
+              "Forme palavras usando as letras do alfabeto.",
+              "Forme contas e números básicos usando os números."
+            ]
+          },
+          {
+            "title": "Mapa do Mundo",
+            "summary": "Reconheça o país que você nasceu e onde você esta agora.",
+            "instructions": [
+              "pinte de azul o país que você nasceu.",
+              "pinte de amarelo o país que você esta agora."
+            ]
+          },
+          {
             "title": "Jogo da Memória – Imagem e Palavra",
             "summary": "Associe imagens às palavras correspondentes.",
             "instructions": [
@@ -120,6 +136,24 @@
         ]
       },
       "instruction_games": [
+        {
+          "title": "Letras do Alfabeto",
+          "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
+          "instructions": [
+            "Imprima a página com a cartela de letras.",
+            "Cole-a em um material de cartão.",
+            "Recorte as letras"
+          ]
+        },
+        {
+          "title": "Mapa do Mundo",
+          "summary": "Reconheça os países.",
+          "instructions": [
+            "imprima a página com o mapa do mundo.",
+            "pinte de azul o país que você nasceu.",
+            "pinte de amarelo o país que você esta agora."
+          ]
+        },
         {
           "title": "Jogo da Memória",
           "summary": "Associe imagens às palavras correspondentes.",
@@ -273,6 +307,18 @@
                 "Ir à praia é mais divertido que ir ao shopping.",
                 "Viajar é melhor do que ficar em casa."
               ]
+            }
+          ]
+        },
+        "mapaMundi": {
+          "title": "Mapa do Mundo",
+          "image": "mapa_mundi.png",
+          "textos": [
+            {
+              "title": "Pinte de azul o país que você nasceu."
+            },
+            {
+              "title": "Pinte de amarelo o país que você esta agora."
             }
           ]
         },

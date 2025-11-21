@@ -100,6 +100,12 @@ export interface PdfData {
     enabled: boolean;
     syllables: string[];
   };
+  mapaMundi?: {
+    enabled: boolean;
+    image?: string;
+    width?: number;
+    height?: number;
+  };
 }
 
 export interface PdfGame {
@@ -274,6 +280,42 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               {img.caption && <Text style={styles.caption}>{img.caption}</Text>}
             </View>
           ))}
+        </Page>
+      )}
+
+      {data.mapaMundi?.enabled && (
+        <Page size="A4" style={styles.mapaMundi}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
+            {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.0.title")})
+              </Text>
+            )}
+            
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.1.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.1.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/mapa_mundi.png"
+            />
+          </View>
         </Page>
       )}
 
@@ -711,6 +753,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           </View>
         </Page>
       )}
+
+
       
       {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
         <Page size="A4" style={styles.molde}>

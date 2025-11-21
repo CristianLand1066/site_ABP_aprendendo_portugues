@@ -306,6 +306,18 @@
       "portugueseLetters": {
         "title": "Alphabet Letters"
       },
+      "mapaMundi": {
+        "title": "World Map",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Paint blue the country where you were born."
+          },
+          {
+            "title": "Paint yellow the country where you are now."
+          }
+        ]
+      },
       "moldes": {
         "moldeMaleta": "Case Template"
       }

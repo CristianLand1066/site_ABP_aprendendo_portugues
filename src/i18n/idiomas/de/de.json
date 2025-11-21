@@ -306,6 +306,18 @@
       "portugueseLetters": {
         "title": "Alphabet-Buchstaben"
       },
+      "mapaMundi": {
+        "title": "Weltkarte",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Male das Land, in dem du geboren wurdest, blau an."
+          },
+          {
+            "title": "Male das Land, in dem du jetzt bist, gelb an."
+          }
+        ]
+      },
       "moldes": {
         "moldeMaleta": "Koffer-Vorlage"
       }

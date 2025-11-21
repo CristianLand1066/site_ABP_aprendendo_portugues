@@ -306,6 +306,18 @@
       "portugueseLetters": {
         "title": "Lettres de l’Alphabet"
       },
+      "mapaMundi": {
+        "title": "Carte du Monde",
+        "image": "mapa_mundi.png",
+        "textos": [
+          {
+            "title": "Peins en bleu le pays où tu es né."
+          },
+          {
+            "title": "Peins en jaune le pays où tu es maintenant."
+          }
+        ]
+      },
       "moldes": {
         "moldeMaleta": "Modèle de Mallette"
       }

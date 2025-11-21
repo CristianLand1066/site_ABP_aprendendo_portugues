@@ -33,7 +33,6 @@ export default function Layout({ children }: PropsWithChildren) {
         <div className="mx-auto max-w-5xl px-4 py-6 text-sm text-neutral-500 dark:text-neutral-400">
           <p>
             © {new Date().getFullYear()} ABP — Material educacional multilíngue.
-            Construído com React + Vite.
           </p>
         </div>
       </footer>
