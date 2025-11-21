@@ -203,6 +203,7 @@ export async function handleGeneratePdf(
       mapaMundi: { enabled: isGameEnabled('beginner')},
       desenharOrigem: { enabled: isGameEnabled('beginner')},
       apresentacao: { enabled: isGameEnabled('beginner')},
+      minhaFamilia: { enabled: isGameEnabled('beginner')},
     };
 
     const blob = await generatePdf(data);

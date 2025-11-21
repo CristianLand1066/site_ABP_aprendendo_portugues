@@ -368,6 +368,17 @@
             }
           ]
         },
+        "minhaFamilia": {
+          "title": "Minha Família",
+          "imagens": [
+            "quadro_branco_familia.png"
+          ],
+          "textos": [
+            {
+              "title": "Desenhe sua família e escreva o nome de cada um abaixo."
+            }
+          ]
+        },
         "domino": {
           "title": "Dominó de Palavras"
         },

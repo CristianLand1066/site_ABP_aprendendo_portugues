@@ -118,6 +118,12 @@ export interface PdfData {
     width?: number;
     height?: number;
   };
+  minhaFamilia?: {
+    enabled: boolean;
+    image?: string;
+    width?: number;
+    height?: number;
+  };
 }
 
 export interface PdfGame {
@@ -184,6 +190,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
   return (
     <Document>
+
+      
       
 
 
@@ -347,6 +355,33 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               {img.caption && <Text style={styles.caption}>{img.caption}</Text>}
             </View>
           ))}
+        </Page>
+      )}
+
+      {data.minhaFamilia?.enabled && (
+        <Page size="A4" style={styles.minhaFamilia}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
+            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.minhaFamilia.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.minhaFamilia.textos.0.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/quadro_branco_familia.png"
+            />
+          </View>
         </Page>
       )}
 
