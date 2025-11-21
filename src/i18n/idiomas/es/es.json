@@ -47,6 +47,23 @@
               "Los niños deben encontrar el objeto en el entorno.",
               "El primero en traer el objeto correcto gana un punto."
             ]
+          },
+          {
+            "title": "Dibuja tu Origen",
+            "summary": "Preséntate y dibuja tu país de origen.",
+            "instructions": [
+              "Escribe tu nombre, edad y nacionalidad en tu lengua materna.",
+              "Dibuja tu país de origen.",
+              "Escribe tu nombre, edad y nacionalidad en portugués."
+            ]
+          },
+          {
+            "title": "Presentación",
+            "summary": "Preséntate y dibuja tu país de origen.",
+            "instructions": [
+              "Escribe tu nombre, edad y nacionalidad en tu lengua materna.",
+              "Dibuja la bandera de tu país de origen."
+            ]
           }
         ],
         "intermediate": "Intermedio",
@@ -315,6 +332,44 @@
           },
           {
             "title": "Pinta de amarillo el país donde estás ahora."
+          }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Preséntate",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "¡Ahora es tu turno! Di quién eres, tu edad y de qué país vienes. ¡Primero en tu lengua materna y luego en portugués!"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Presentación",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "¿Quién soy yo?"
+          },
+          {
+            "title": "Escribe tu nombre, edad y país de origen"
+          },
+          {
+            "title": "Nombre: ___________________________"
+          },
+          {
+            "title": "Edad: ___________________________"
+          },
+          {
+            "title": "País de origen: ___________________________"
+          },
+          {
+            "title": "Dibuja la bandera del país donde naciste"
           }
         ]
       },

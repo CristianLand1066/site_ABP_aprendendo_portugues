@@ -47,6 +47,23 @@
               "Children must find the object in the environment.",
               "The first to bring the correct object scores a point."
             ]
+          },
+          {
+            "title": "Draw Your Origin",
+            "summary": "Introduce yourself and draw your country of origin.",
+            "instructions": [
+              "Write your name, age and nationality in your mother tongue.",
+              "Draw your country of origin.",
+              "Write your name, age and nationality in Portuguese."
+            ]
+          },
+          {
+            "title": "Introduction",
+            "summary": "Introduce yourself and draw your country of origin.",
+            "instructions": [
+              "Write your name, age and nationality in your mother tongue.",
+              "Draw the flag of your country of origin."
+            ]
           }
         ],
         "intermediate": "Intermediate",
@@ -315,6 +332,44 @@
           },
           {
             "title": "Paint yellow the country where you are now."
+          }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Introduce Yourself",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "Now it's your turn! Say who you are, your age and which country you came from. First in your mother tongue and then in Portuguese!"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Introduction",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "Who am I?"
+          },
+          {
+            "title": "Write your name, age and country of origin"
+          },
+          {
+            "title": "Name: ___________________________"
+          },
+          {
+            "title": "Age: ___________________________"
+          },
+          {
+            "title": "Country of origin: ___________________________"
+          },
+          {
+            "title": "Draw the flag of the country where you were born"
           }
         ]
       },

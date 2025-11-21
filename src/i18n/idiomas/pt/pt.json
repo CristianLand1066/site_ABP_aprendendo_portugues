@@ -45,6 +45,14 @@
             ]
           },
           {
+            "title": "Apresentação",
+            "summary": "Se apresente e desenhe o seu país de origem.",
+            "instructions": [
+              "Escreva seu nome, idade e sua nacionalidade na sua língua materna.",
+              "Desenhe a bandeira do seu país de origem."
+            ]
+          },
+          {
             "title": "Jogo da Memória – Imagem e Palavra",
             "summary": "Associe imagens às palavras correspondentes.",
             "instructions": [
@@ -152,23 +160,6 @@
             "Imprima a página com a cartela de letras.",
             "Cole-a em um material de cartão.",
             "Recorte as letras"
-          ]
-        },
-        {
-          "title": "Mapa do Mundo",
-          "summary": "Reconheça os países.",
-          "instructions": [
-            "imprima a página com o mapa do mundo.",
-            "pinte de azul o país que você nasceu.",
-            "pinte de amarelo o país que você esta agora."
-          ]
-        },
-        {
-          "title": "Desenhar Origem",
-          "summary": "Se apresente e desenhe o seu país de origem.",
-          "instructions": [
-            "Imprima a página com o mapa do mundo.",
-            "Se apresente e desenhe o seu país de origem."
           ]
         },
         {
@@ -348,6 +339,32 @@
           "textos": [
             {
               "title": "Agora é a sua vez! Diga quem você é, sua idade e de qual país veio. Primeiro na sua língua materna e depois na língua portuguesa!"
+            }
+          ]
+        },
+        "apresentacao": {
+          "title": "Apresentação",
+          "imagens": [
+            "quadro_branco_desenho.png"
+          ],
+          "textos": [
+            {
+              "title": "Quem sou eu?"
+            },
+            {
+              "title": "Escreva seu nome, idade e país de origem"
+            },
+            {
+              "title": "Nome: ___________________________"
+            },
+            {
+              "title": "Idade: ___________________________"
+            },
+            {
+              "title": "País de origem: ___________________________"
+            },
+            {
+              "title": "Desenhe a bandeira do país que voce nasceu"
             }
           ]
         },

@@ -112,6 +112,12 @@ export interface PdfData {
     width?: number;
     height?: number;
   };
+  apresentacao?: {
+    enabled: boolean;
+    image?: string;
+    width?: number;
+    height?: number;
+  };
 }
 
 export interface PdfGame {
@@ -178,40 +184,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
   return (
     <Document>
-
-      {data.desenharOrigem?.enabled && (
-        <Page size="A4" style={styles.mapaMundi}>
-          <View style={{ alignItems: "center" }}>
-            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
-            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/desenhar_origem_1.png"
-            />
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.desenharOrigem.textos.0.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.desenharOrigem.textos.0.title")})
-              </Text>
-            )}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/desenhar_origem_2.png"
-            />
-          </View>
-        </Page>
-      )}
+      
 
 
 
@@ -377,8 +350,45 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.apresentacao?.enabled && (
+        <Page size="A4" style={styles.apresentacao}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
+            {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
+          </View>
+
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3, 4, 5].map((index) => {
+              const key = `pdf.apresentacao.textos.${index}.title`;
+              const textAlign = index === 0 || index === 1 || index === 5 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/quadro_branco_desenho.png"
+            />
+          </View>
+        </Page>
+      )}
+
       {data.desenharOrigem?.enabled && (
-        <Page size="A4" style={styles.mapaMundi}>
+        <Page size="A4" style={styles.desenharOrigem}>
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
