@@ -1,8 +1,11 @@
-import { type PropsWithChildren } from "react";
+import { type PropsWithChildren, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
 import { ChevronRight } from "lucide-react";
+import AgradecimentosModal from "./AgradecimentosModal";
 
 export default function Layout({ children }: PropsWithChildren) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white text-gray-900 dark:bg-neutral-900 dark:text-neutral-100 flex flex-col">
 
@@ -24,16 +27,17 @@ export default function Layout({ children }: PropsWithChildren) {
 
       {/* LINK DE AGRADECIMENTOS */}
       <div className="w-full flex-shrink-0 px-6 py-2 flex justify-center items-center gap-1">
-        <a
-          href="https://abp.com.br"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-600 transition-colors"
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-600 transition-colors flex items-center gap-1"
         >
           Agradecimentos
-        </a>
-        <ChevronRight className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
+
+      {/* MODAL DE AGRADECIMENTOS */}
+      <AgradecimentosModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* FOOTER */}
       <footer className="w-full flex-shrink-0 border-t-2 border-neutral-700 bg-neutral-800">
