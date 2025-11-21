@@ -131,6 +131,10 @@ export interface PdfData {
     height?: number;
     cores: { nome: string; hex: string; }[];
   };
+  cronograma?: {
+    enabled: boolean;
+    dias?: string[];
+  };
 }
 
 export interface PdfGame {
@@ -367,6 +371,127 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.cronograma?.enabled && (
+        <Page size="A4" style={styles.cronograma}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
+            {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3].map((index) => {
+              const key = `pdf.cronograma.textos.${index}.title`;
+              const textAlign = index === 0 || index === 1 || index === 2 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
+
+          {/* Malha 5x5 com dias da semana na primeira linha */}
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              width: "100%",
+              borderWidth: 1,
+              borderColor: "#000",
+              marginTop: 10,
+            }}
+          >
+            {Array.from({ length: 25 }).map((_, idx) => {
+              const row = Math.floor(idx / 5);
+              const col = idx % 5;
+
+              const isLastRow = row === 4;
+              const isLastCol = col === 4;
+              const isFirstRow = row === 0;
+
+              return (
+                <View
+                  key={idx}
+                  style={{
+                    width: "20%",
+                    height: 80,
+                    borderRightWidth: isLastCol ? 0 : 1,
+                    borderBottomWidth: isLastRow ? 0 : 1,
+                    borderColor: "#000",
+                    backgroundColor: "#fff",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: 4,
+                  }}
+                >
+                  {isFirstRow && (
+                    <View style={{ alignItems: "center" }}>
+                      <Text
+                        style={{
+                          fontSize: 10,
+                          fontWeight: "bold",
+                          textAlign: "center",
+                        }}
+                      >
+                        {i18n.getFixedT("pt")(`pdf.cronograma.dias.${col}`)}
+                      </Text>
+
+                      {data.locale !== "pt" && (
+                        <Text
+                          style={{
+                            fontSize: 10,
+                            marginTop: 2,
+                            textAlign: "center",
+                            fontStyle: "italic",
+                            color: "#555",
+                          }}
+                        >
+                          ({i18n.getFixedT(data.locale)(`pdf.cronograma.dias.${col}`)})
+                        </Text>
+                      )}
+                    </View>
+                  )}
+                </View>
+              );
+            })}
+          </View>
+
+           <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.cronograma.textos.4.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.cronograma.textos.4.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3, 4].map((index) => {
+              const key = `pdf.cronograma.combinados.${index}`;
+              const textAlign = "center";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                </React.Fragment>
+              );
+            })}
+          </View>
+        </Page>
+      )}
+
       {data.minhaFamilia?.enabled && (
         <Page size="A4" style={styles.minhaFamilia}>
           <View style={{ alignItems: "center" }}>
@@ -399,6 +524,17 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
             {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.desenheObjetosDaCor.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.desenheObjetosDaCor.textos.0.title")})
+              </Text>
+            )}
           </View>
 
           <View style={{ flexDirection: "row", flexWrap: "wrap", width: "100%", borderWidth: 1, borderColor: "#000" }}>

@@ -387,6 +387,40 @@
             }
           ]
         },
+        "cronograma": {
+          "title": "Quadro de avisos",
+          "textos": [
+            {
+              "title": "Estamos muito felizes em ter você conosco!"
+            },
+            {
+              "title": "Nossa turma é um lugar onde todos aprendem juntos, compartilham sorrisos e se ajudam."
+            },
+            {
+              "title": " Você é muito importante aqui!"
+            },
+            {
+              "title": "Essas são algumas informações sobre a nossa turma para que você e sua família consigam se organizar!"
+            },
+            {
+              "title": "Combinados da turma"
+            }
+          ],
+          "dias": [
+            "Segunda-feira",
+            "Terça-feira",
+            "Quarta-feira",
+            "Quinta-feira",
+            "Sexta-feira"
+          ],
+          "combinados": [
+            "1. _________________________________________________________________________________",
+            "2. _________________________________________________________________________________",
+            "3. _________________________________________________________________________________",
+            "4. _________________________________________________________________________________",
+            "5. _________________________________________________________________________________"
+          ]
+        },
         "domino": {
           "title": "Dominó de Palavras"
         },
