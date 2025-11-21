@@ -591,77 +591,80 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {data.desenheObjetosDaCor?.enabled && (
-        <Page size="A4" style={styles.desenheObjetosDaCor}>
-          <View style={{ alignItems: "center" }}>
-            {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
-            {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
-          </View>
+      {data.desenheObjetosDaCor?.enabled && data.desenheObjetosDaCor?.cores && (() => {
+        const cores = data.desenheObjetosDaCor!.cores;
+        return (
+          <Page size="A4" style={styles.desenheObjetosDaCor}>
+            <View style={{ alignItems: "center" }}>
+              {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
+              {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
+            </View>
 
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.desenheObjetosDaCor.textos.0.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.desenheObjetosDaCor.textos.0.title")})
+            <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+              <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+                {i18n.getFixedT("pt")("pdf.desenheObjetosDaCor.textos.0.title")}
               </Text>
-            )}
-          </View>
+              {data.locale !== "pt" && (
+                <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                  ({i18n.getFixedT(data.locale)("pdf.desenheObjetosDaCor.textos.0.title")})
+                </Text>
+              )}
+            </View>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", width: "100%", borderWidth: 1, borderColor: "#000" }}>
-            {data.desenheObjetosDaCor.cores.map((cor, idx) => (
-              <React.Fragment key={idx}>
-                {/* Célula 1: Nome da cor (30%) */}
-                <View
-                  style={{
-                    width: "30%",
-                    borderRightWidth: 1,
-                    borderBottomWidth: idx < data.desenheObjetosDaCor.cores.length - 1 ? 1 : 0,
-                    borderColor: "#000",
-                    paddingVertical: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#fff",
-                  }}
-                >
-                  <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center", color: "#000" }}>
-                    {cor.nome}
-                  </Text>
-
-                  {data.locale !== "pt" && (
-                    <Text style={{ fontSize: 10, textAlign: "center", marginTop: 4, color: "#555" }}>
-                      ({i18n.getFixedT(data.locale)(`cores.${cor.nome}`)})
+            <View style={{ flexDirection: "row", flexWrap: "wrap", width: "100%", borderWidth: 1, borderColor: "#000" }}>
+              {cores.map((cor, idx) => (
+                <React.Fragment key={idx}>
+                  {/* Célula 1: Nome da cor (30%) */}
+                  <View
+                    style={{
+                      width: "30%",
+                      borderRightWidth: 1,
+                      borderBottomWidth: idx < cores.length - 1 ? 1 : 0,
+                      borderColor: "#000",
+                      paddingVertical: 20,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "#fff",
+                    }}
+                  >
+                    <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center", color: "#000" }}>
+                      {cor.nome}
                     </Text>
-                  )}
-                </View>
 
-                {/* Célula 2: Cor pura (10%) */}
-                <View
-                  style={{
-                    width: "10%",
-                    borderRightWidth: 1,
-                    borderBottomWidth: idx < data.desenheObjetosDaCor.cores.length - 1 ? 1 : 0,
-                    borderColor: "#000",
-                    backgroundColor: cor.hex,
-                  }}
-                />
+                    {data.locale !== "pt" && (
+                      <Text style={{ fontSize: 10, textAlign: "center", marginTop: 4, color: "#555" }}>
+                        ({i18n.getFixedT(data.locale)(`cores.${cor.nome}`)})
+                      </Text>
+                    )}
+                  </View>
 
-                {/* Célula 3: Espaço para desenhar (60%) */}
-                <View
-                  style={{
-                    width: "60%",
-                    borderBottomWidth: idx < data.desenheObjetosDaCor.cores.length - 1 ? 1 : 0,
-                    borderColor: "#000",
-                    paddingVertical: 60,
-                    backgroundColor: "#fff",
-                  }}
-                />
-              </React.Fragment>
-            ))}
-          </View>
-        </Page>
-      )}
+                  {/* Célula 2: Cor pura (10%) */}
+                  <View
+                    style={{
+                      width: "10%",
+                      borderRightWidth: 1,
+                      borderBottomWidth: idx < cores.length - 1 ? 1 : 0,
+                      borderColor: "#000",
+                      backgroundColor: cor.hex,
+                    }}
+                  />
+
+                  {/* Célula 3: Espaço para desenhar (60%) */}
+                  <View
+                    style={{
+                      width: "60%",
+                      borderBottomWidth: idx < cores.length - 1 ? 1 : 0,
+                      borderColor: "#000",
+                      paddingVertical: 60,
+                      backgroundColor: "#fff",
+                    }}
+                  />
+                </React.Fragment>
+              ))}
+            </View>
+          </Page>
+        );
+      })()}
 
       {data.apresentacao?.enabled && (
         <Page size="A4" style={styles.apresentacao}>
