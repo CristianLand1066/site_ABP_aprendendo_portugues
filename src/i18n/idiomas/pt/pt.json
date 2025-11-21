@@ -421,6 +421,32 @@
             "5. _________________________________________________________________________________"
           ]
         },
+        "seApresentarTurma": {
+          "title": "A turma quer te conhecer!",
+          "textos": [
+            {
+              "title": "A turma quer te conhecer!"
+            },
+            {
+              "title": "Monte sua própria apresentação!"
+            },
+            {
+              "title": "Use desenhos, palavras, recortes ou colagens para contar um pouco sobre:"
+            },
+            {
+              "title": "Pode montar um cartaz, slide ou mural para compartilhar com os colegas!"
+            },
+            {
+              "title": "Sua história é única e muito importante para nós!"
+            }
+          ],
+          "perguntas": [
+            "1. O lugar onde você nasceu.",
+            "2. Uma comida típica do seu país.",
+            "3. Uma música ou dança do seu país.",
+            "4. O que você mais gosta no Brasil."
+          ]
+        },
         "domino": {
           "title": "Dominó de Palavras"
         },

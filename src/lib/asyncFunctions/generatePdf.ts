@@ -207,6 +207,7 @@ export async function handleGeneratePdf(
       minhaFamilia: { enabled: isGameEnabled('beginner')},
       desenheObjetosDaCor: { enabled: isGameEnabled('beginner'), cores: generateCores() },
       cronograma: { enabled: isGameEnabled('beginner')},
+      seApresentarTurma: { enabled: isGameEnabled('beginner')},
     };
 
     const blob = await generatePdf(data);

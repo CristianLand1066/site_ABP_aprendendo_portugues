@@ -135,6 +135,9 @@ export interface PdfData {
     enabled: boolean;
     dias?: string[];
   };
+  seApresentarTurma?: {
+    enabled: boolean;
+  };
 }
 
 export interface PdfGame {
@@ -368,6 +371,75 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               {img.caption && <Text style={styles.caption}>{img.caption}</Text>}
             </View>
           ))}
+        </Page>
+      )}
+
+      {data.seApresentarTurma?.enabled && (
+        <Page size="A4" style={styles.seApresentarTurma}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
+            {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2].map((index) => {
+              const key = `pdf.seApresentarTurma.textos.${index}.title`;
+              const textAlign = index === 0 || index === 1 || index === 2 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3].map((index) => {
+              const key = `pdf.seApresentarTurma.perguntas.${index}`;
+              const textAlign = index === 0 || index === 1 || index === 2 || index === 3 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[3, 4].map((index) => {
+              const key = `pdf.seApresentarTurma.textos.${index}.title`;
+              const textAlign = index === 3 || index === 4 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
         </Page>
       )}
 
