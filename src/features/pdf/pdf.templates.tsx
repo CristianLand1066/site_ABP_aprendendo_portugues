@@ -319,7 +319,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
@@ -389,7 +389,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.cronograma?.enabled && (
         <Page size="A4" style={styles.cronograma}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
             {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
@@ -447,7 +447,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.minhaFamilia?.enabled && (
           <Page size="A4" style={styles.minhaFamilia}>
-            {renderHeader({ i18n, locale: data.locale })}
+            {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
@@ -477,7 +477,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         const cores = data.desenheObjetosDaCor!.cores;
         return (
           <Page size="A4" style={styles.desenheObjetosDaCor}>
-            {renderHeader({ i18n, locale: data.locale })}
+            {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
@@ -551,17 +551,16 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.apresentacao?.enabled && (
         <Page size="A4" style={styles.apresentacao}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
             {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
           </View>
 
-
           <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            {[0, 1, 2, 3, 4, 5].map((index) => {
+            {[0, 1].map((index) => {
               const key = `pdf.apresentacao.textos.${index}.title`;
-              const textAlign = index === 0 || index === 1 || index === 5 ? "center" : "left";
+              const textAlign = index === 0 || index === 1 ? "center" : "left";
 
               return (
                 <React.Fragment key={index}>
@@ -576,9 +575,23 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 </React.Fragment>
               );
             })}
+
+            {renderHeader({ i18n, locale: data.locale, top: false, name: true, turma: false, date: false, idade: true, paisOrigem: true })}
+
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.apresentacao.textos.2.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.apresentacao.textos.2.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10 }}>
             <Image
               style={styles.image}
               src="/imagens/quadro_branco_desenho.png"
@@ -589,7 +602,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.desenharOrigem?.enabled && (
         <Page size="A4" style={styles.desenharOrigem}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
@@ -624,7 +637,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.mapaMundi?.enabled && (
         <Page size="A4" style={styles.mapaMundi}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}

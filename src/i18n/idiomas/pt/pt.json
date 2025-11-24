@@ -253,9 +253,11 @@
         }
       ],
       "header": {
-        "nome": "nome",
-        "turma": "turma",
-        "data": "data"
+        "nome": "Nome",
+        "turma": "Turma",
+        "data": "Data",
+        "idade": "Idade",
+        "paisOrigem": "País de origem"
       },
       "cardsDebate": {
         "title": "Debate divertido",
@@ -358,15 +360,6 @@
             },
             {
               "title": "Escreva seu nome, idade e país de origem"
-            },
-            {
-              "title": "Nome: ___________________________"
-            },
-            {
-              "title": "Idade: ___________________________"
-            },
-            {
-              "title": "País de origem: ___________________________"
             },
             {
               "title": "Desenhe a bandeira do país que voce nasceu"
