@@ -20,11 +20,10 @@
         "beginner_content": "Atividades focadas na alfabetização e no primeiro contato com palavras.",
         "beginner_games": [
           {
-            "title": "Letras do Alfabeto",
-            "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
+            "title": "Cronograma",
+            "summary": "Faça o cronograma da sua semana.",
             "instructions": [
-              "Forme palavras usando as letras do alfabeto.",
-              "Forme contas e números básicos usando os números."
+              "Faça o cronograma da sua semana."
             ]
           },
           {
@@ -46,17 +45,46 @@
           },
           {
             "title": "Apresentação",
-            "summary": "Se apresente e desenhe o seu país de origem.",
+            "summary": "Se apresente e desenhe a bandeira do seu país de origem.",
             "instructions": [
               "Escreva seu nome, idade e sua nacionalidade na sua língua materna.",
               "Desenhe a bandeira do seu país de origem."
             ]
           },
           {
+            "title": "Minha Família",
+            "summary": "Desenhe sua família.",
+            "instructions": [
+              "Desenhe sua família.",
+              "Escreva o nome de cada membro da família."
+            ]
+          },
+          {
+            "title": "Conte sua história",
+            "summary": "Conte sua história para a turma.",
+            "instructions": [
+              "Conte sua história para a turma."
+            ]
+          },
+          {
+            "title": "Caça as cores",
+            "summary": "Encontre os os objetos com as cores na lista.",
+            "instructions": [
+              "Encontre e desenhe os objetos com as cores na lista."
+            ]
+          },
+          {
+            "title": "Letras do Alfabeto",
+            "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
+            "instructions": [
+              "Forme palavras usando as letras do alfabeto.",
+              "Forme contas e números básicos usando os números."
+            ]
+          },
+          {
             "title": "Jogo da Memória – Imagem e Palavra",
             "summary": "Associe imagens às palavras correspondentes.",
             "instructions": [
-              "Imprima cartas com imagens e as palavras correspondentes.",
               "Embaralhe as cartas e coloque-as viradas para baixo sobre a mesa.",
               "Os jogadores se revezam virando duas cartas para encontrar um par correspondente.",
               "O jogador com mais pares no final vence."
@@ -66,7 +94,6 @@
             "title": "Bingo do Alfabeto",
             "summary": "Reconheça letras do alfabeto por meio da brincadeira.",
             "instructions": [
-              "Prepare cartelas de bingo com letras do alfabeto.",
               "O professor ou responsável sorteia letras de um saco e anuncia em voz alta.",
               "Os jogadores marcam a letra correspondente em sua cartela.",
               "O primeiro a completar uma linha ou a cartela inteira vence."
@@ -76,7 +103,6 @@
             "title": "Caça ao Objeto",
             "summary": "Identifique objetos a partir de pistas escritas ou faladas.",
             "instructions": [
-              "Escreva nomes simples de objetos (ex.: bola, cadeira, colher).",
               "Fale a palavra ou mostre o cartão escrito.",
               "As crianças devem encontrar o objeto no ambiente.",
               "O primeiro a trazer o objeto correto ganha um ponto."
@@ -90,7 +116,6 @@
             "title": "Dominó de Palavras",
             "summary": "Forme palavras combinando sílabas.",
             "instructions": [
-              "Crie peças de dominó em que um lado tenha uma sílaba e o outro complete uma palavra.",
               "Distribua as peças entre os jogadores.",
               "Os jogadores se revezam colocando peças para formar palavras corretas.",
               "O primeiro a usar todas as peças vence."
@@ -110,7 +135,6 @@
             "title": "Construção de Frases",
             "summary": "Forme frases simples a partir de cartões com palavras.",
             "instructions": [
-              "Prepare cartões com substantivos, verbos e adjetivos.",
               "Distribua os cartões entre os jogadores.",
               "Os jogadores se revezam formando frases curtas usando pelo menos 3 cartões.",
               "O grupo vota na frase mais engraçada ou criativa."
@@ -124,8 +148,8 @@
             "title": "Continuação de História",
             "summary": "Crie uma história colaborativa acrescentando frases em turnos.",
             "instructions": [
-              "O primeiro jogador inicia uma história com uma frase (ex.: 'Era uma vez uma criança que adorava aventuras').",
-              "Cada jogador continua a história com uma nova frase.",
+              "O primeiro jogador inicia uma história com um cartão de frase.",
+              "Cada jogador continua a história com um novo cartão de frase.",
               "A história segue até que todos concordem em encerrar.",
               "No final, leia a história completa em voz alta."
             ]
@@ -134,9 +158,8 @@
             "title": "Caça-Palavras",
             "summary": "Encontre palavras escondidas em uma grade de letras.",
             "instructions": [
-              "Prepare uma grade de caça-palavras com palavras de um tema específico (ex.: animais, frutas, escola).",
               "Distribua as grades aos jogadores.",
-              "Os jogadores devem encontrar e circular todas as palavras listadas.",
+              "Os jogadores devem encontrar todas as palavras listadas.",
               "O primeiro a encontrar todas vence."
             ]
           },
@@ -147,12 +170,20 @@
               "Divida os jogadores em dois grupos.",
               "Escolha um tema simples (ex.: 'Os livros são melhores que a TV').",
               "Cada grupo prepara 2–3 argumentos.",
-              "Os grupos se revezam apresentando argumentos e o público decide o vencedor."
+              "Os grupos se revezam apresentando argumentos e o público/professor/jogadores decidem o vencedor."
             ]
           }
         ]
       },
       "instruction_games": [
+        {
+          "title": "Quadro de avisos e cronograma",
+          "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
+          "instructions": [
+            "Imprima a página com o quadro de avisos e cronograma.",
+            "Cole-a em um material de cartão."
+          ]
+        },
         {
           "title": "Letras do Alfabeto",
           "summary": "Reconheça e forme palavras usando as letras do alfabeto.",
@@ -202,9 +233,9 @@
           "title": "Jogo da Forca",
           "summary": "Adivinhe a palavra secreta sugerindo letras.",
           "instructions": [
-            "Imprima a página com as peças de dominó.",
+            "Imprima a página com as forcas.",
             "Cole-a em um material de cartão.",
-            "Recorte as peças"
+            "Recorte as forcas"
           ]
         },
         {
