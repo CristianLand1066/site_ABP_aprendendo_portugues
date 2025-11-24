@@ -317,9 +317,218 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.cronograma?.enabled && (
+        <Page size="A4" style={styles.cronograma}>
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
+            {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
+            {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3].map((index) => {
+              const key = `pdf.cronograma.textos.${index}.title`;
+              const textAlign = index === 0 || index === 1 || index === 2 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </View>
+
+          {renderCronograma({ i18n, locale: data.locale })}
+
+           <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.cronograma.textos.4.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.cronograma.textos.4.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1, 2, 3, 4].map((index) => {
+              const key = `pdf.cronograma.combinados.${index}`;
+              const textAlign = "center";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                </React.Fragment>
+              );
+            })}
+          </View>
+        </Page>
+      )}
+
+      {data.mapaMundi?.enabled && (
+        <Page size="A4" style={styles.mapaMundi}>
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
+            {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
+            {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.0.title")})
+              </Text>
+            )}
+            
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.1.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.1.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/mapa_mundi.png"
+            />
+          </View>
+        </Page>
+      )}
+
+      {data.desenharOrigem?.enabled && (
+        <Page size="A4" style={styles.desenharOrigem}>
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
+            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_1.png"
+            />
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.desenharOrigem.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.desenharOrigem.textos.0.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/desenhar_origem_2.png"
+            />
+          </View>
+        </Page>
+      )}
+
+      {data.apresentacao?.enabled && (
+        <Page size="A4" style={styles.apresentacao}>
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
+            {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
+            {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            {[0, 1].map((index) => {
+              const key = `pdf.apresentacao.textos.${index}.title`;
+              const textAlign = index === 0 || index === 1 ? "center" : "left";
+
+              return (
+                <React.Fragment key={index}>
+                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
+                    {i18n.getFixedT("pt")(key)}
+                  </Text>
+                  {data.locale !== "pt" && (
+                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
+                      ({i18n.getFixedT(data.locale)(key)})
+                    </Text>
+                  )}
+                </React.Fragment>
+              );
+            })}
+
+            {renderHeader({ i18n, locale: data.locale, top: false, name: true, turma: false, date: false, idade: true, paisOrigem: true })}
+
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.apresentacao.textos.2.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.apresentacao.textos.2.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/quadro_branco_desenho.png"
+            />
+          </View>
+        </Page>
+      )}
+
+      {data.minhaFamilia?.enabled && (
+          <Page size="A4" style={styles.minhaFamilia}>
+            {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
+            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
+            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
+          </View>
+
+          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
+            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
+              {i18n.getFixedT("pt")("pdf.minhaFamilia.textos.0.title")}
+            </Text>
+            {data.locale !== "pt" && (
+              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
+                ({i18n.getFixedT(data.locale)("pdf.minhaFamilia.textos.0.title")})
+              </Text>
+            )}
+          </View>
+
+          <View style={{ marginTop: 10, marginBottom: 10 }}>
+            <Image
+              style={styles.image}
+              src="/imagens/quadro_branco_familia.png"
+            />
+          </View>
+        </Page>
+      )}
+
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
-          {renderHeader({ i18n, locale: data.locale })}
+          {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
@@ -387,97 +596,11 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {data.cronograma?.enabled && (
-        <Page size="A4" style={styles.cronograma}>
-          {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
-            {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
-            {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            {[0, 1, 2, 3].map((index) => {
-              const key = `pdf.cronograma.textos.${index}.title`;
-              const textAlign = index === 0 || index === 1 || index === 2 ? "center" : "left";
-
-              return (
-                <React.Fragment key={index}>
-                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
-                    {i18n.getFixedT("pt")(key)}
-                  </Text>
-                  {data.locale !== "pt" && (
-                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
-                      ({i18n.getFixedT(data.locale)(key)})
-                    </Text>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </View>
-
-          {renderCronograma({ i18n, locale: data.locale })}
-
-           <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.cronograma.textos.4.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.cronograma.textos.4.title")})
-              </Text>
-            )}
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            {[0, 1, 2, 3, 4].map((index) => {
-              const key = `pdf.cronograma.combinados.${index}`;
-              const textAlign = "center";
-
-              return (
-                <React.Fragment key={index}>
-                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
-                    {i18n.getFixedT("pt")(key)}
-                  </Text>
-                </React.Fragment>
-              );
-            })}
-          </View>
-        </Page>
-      )}
-
-      {data.minhaFamilia?.enabled && (
-          <Page size="A4" style={styles.minhaFamilia}>
-            {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
-            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
-            {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.minhaFamilia.textos.0.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.minhaFamilia.textos.0.title")})
-              </Text>
-            )}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/quadro_branco_familia.png"
-            />
-          </View>
-        </Page>
-      )}
-
       {data.desenheObjetosDaCor?.enabled && data.desenheObjetosDaCor?.cores && (() => {
         const cores = data.desenheObjetosDaCor!.cores;
         return (
           <Page size="A4" style={styles.desenheObjetosDaCor}>
-            {renderHeader({ i18n, locale: data.locale })}
+            {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
@@ -549,116 +672,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         );
       })()}
 
-      {data.apresentacao?.enabled && (
-        <Page size="A4" style={styles.apresentacao}>
-          {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
-            {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
-            {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
-          </View>
-
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            {[0, 1, 2, 3, 4, 5].map((index) => {
-              const key = `pdf.apresentacao.textos.${index}.title`;
-              const textAlign = index === 0 || index === 1 || index === 5 ? "center" : "left";
-
-              return (
-                <React.Fragment key={index}>
-                  <Text style={{ fontSize: 12, marginBottom: 8, textAlign }}>
-                    {i18n.getFixedT("pt")(key)}
-                  </Text>
-                  {data.locale !== "pt" && (
-                    <Text style={{ fontSize: 10, marginBottom: 8, textAlign, fontStyle: "italic", color: "#555" }}>
-                      ({i18n.getFixedT(data.locale)(key)})
-                    </Text>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/quadro_branco_desenho.png"
-            />
-          </View>
-        </Page>
-      )}
-
-      {data.desenharOrigem?.enabled && (
-        <Page size="A4" style={styles.desenharOrigem}>
-          {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
-            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
-            {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/desenhar_origem_1.png"
-            />
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.desenharOrigem.textos.0.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.desenharOrigem.textos.0.title")})
-              </Text>
-            )}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/desenhar_origem_2.png"
-            />
-          </View>
-        </Page>
-      )}
-
-      {data.mapaMundi?.enabled && (
-        <Page size="A4" style={styles.mapaMundi}>
-          {renderHeader({ i18n, locale: data.locale })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
-            {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
-            {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
-          </View>
-
-          <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.0.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.0.title")})
-              </Text>
-            )}
-            
-            <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
-              {i18n.getFixedT("pt")("pdf.mapaMundi.textos.1.title")}
-            </Text>
-            {data.locale !== "pt" && (
-              <Text style={{ fontSize: 10, marginBottom: 8, textAlign: "center", fontStyle: "italic", color: "#555" }}>
-                ({i18n.getFixedT(data.locale)("pdf.mapaMundi.textos.1.title")})
-              </Text>
-            )}
-          </View>
-
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
-            <Image
-              style={styles.image}
-              src="/imagens/mapa_mundi.png"
-            />
-          </View>
-        </Page>
-      )}
-
       {data.portugueseLetters?.enabled && (
         <Page size="A4" style={styles.portugueseLetters}>
           <View style={{ alignItems: "center" }}>
@@ -685,6 +698,66 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
               </View>
             ))}
+          </View>
+        </Page>
+      )}
+
+      {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
+        <Page size="A4" style={styles.memoryGame}>
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
+            {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+            {data.memoryGame.pairs.flatMap((pair) => [
+              // Cartão com palavra
+              <View
+                key={`${pair.word}-word`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#f1f8e9"
+                }}
+              >
+                <Text style={{ fontSize: 16, fontWeight: "bold" }}>{pair.word}</Text>
+              </View>,
+
+              // Cartão com imagem
+              <View
+                key={`${pair.word}-img`}
+                style={{
+                  width: "30%",
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: "#000",
+                  borderRadius: 8,
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#fff3e0"
+                }}
+              >
+                {pair.image ? (
+                  <Image
+                    src={pair.image}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover" // preenche e corta o excesso para ocupar todo o cartão
+                    }}
+                  />
+                ) : (
+                  <Text>[Imagem]</Text>
+                )}
+              </View>
+            ])}
           </View>
         </Page>
       )}
@@ -758,67 +831,33 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {/* Optional: cardsDebate pages */}
-      {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
-        <Page size="A4" style={styles.page}>
-          <View style={{ alignItems: "center" }}>
-            {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
-            {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
+      {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
+        <Page size="A4" style={styles.objectHunt}>
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
+            {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
           </View>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
-            {data.cardsDebate.cards.map((cat, idx) => (
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+            {data.objectHunt.objects.map((obj, idx) => (
               <View
                 key={idx}
                 style={{
-                  marginBottom: 16,
+                  width: "30%",      // 3 cartões por linha
+                  minHeight: 50,
                   borderWidth: 1,
-                  borderColor: "#ddd",
-                  borderRadius: 6,
+                  borderColor: "#000",
+                  borderRadius: 8,
                   padding: 8,
-                  backgroundColor: cat.color,
-                  width: "48%",
+                  margin: 6,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
                 }}
               >
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontWeight: "bold",
-                    color: cat.colorText,
-                  }}
-                >
-                  {cat.title}
+                <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
+                  {obj}
                 </Text>
-                <Text
-                  style={{
-                    fontSize: 12,
-                    fontStyle: "italic",
-                    marginBottom: 6,
-                    color: cat.colorText,
-                  }}
-                >
-                </Text>
-                {cat.phrases.map((p, pi) => {
-                  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.cards.${idx}.phrases`, {
-                    returnObjects: true,
-                  }) as string[];
-                  const ptPhrase = ptPhrases?.[pi];
-                  
-                  return (
-                    <React.Fragment key={pi}>
-                      <Text style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}>
-                        - {ptPhrase || p}
-                      </Text>
-                      {data.locale !== "pt" && (
-                        <Text
-                          style={{ fontSize: 8, marginBottom: 2, color: cat.colorText, fontStyle: "italic" }}
-                        >
-                          - {p}
-                        </Text>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
               </View>
             ))}
           </View>
@@ -877,6 +916,18 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
+      {data.hangman?.enabled && (
+        <Page size="A4" style={styles.hangman}>
+          <View style={{ alignItems: "center", marginTop: 10 }}>
+            {getTraduction(i18n, data, "pdf.hangman.title", "title")}
+            {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
+          </View>
+
+          {/* Imagem da forca */}
+          {generateHangman()}
+        </Page>
+      )}
+
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
           <View style={{ alignItems: "center", marginTop: 157 }}>
@@ -916,37 +967,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               ))
             )}
           </View>
-        </Page>
-      )}
-      
-      {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
-        <Page size="A4" style={styles.wordSearch}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
-            {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
-            {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
-          </View>
-
-          {data.wordSearch.themes.map((theme, idx) => (
-            <View key={idx} style={{ justifyContent: "center" }}>
-
-              {/* Renderiza a grade */}
-              <View style={styles.wordSearchGrid}>
-                {theme.grid.map((row, r) => (
-                  <View key={r} style={styles.wordSearchRow}>
-                    {row.map((cell, c) => (
-                      <View key={c} style={styles.wordSearchCell}>
-                        <Text style={styles.wordSearchText}>{cell}</Text>
-                      </View>
-                    ))}
-                  </View>
-                ))}
-              </View>
-
-              <Text style={{ marginTop: 8, fontSize: 10 }}>
-                Palavras: {theme.words.join(", ")}
-              </Text>
-            </View>
-          ))}
         </Page>
       )}
 
@@ -989,112 +1009,101 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         </Page>
       )}
 
-      {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
-        <Page size="A4" style={styles.objectHunt}>
+      {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
+        <Page size="A4" style={styles.wordSearch}>
           <View style={{ alignItems: "center", marginTop: 10 }}>
-            {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
-            {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
+            {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
+            {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
           </View>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
-            {data.objectHunt.objects.map((obj, idx) => (
+          {data.wordSearch.themes.map((theme, idx) => (
+            <View key={idx} style={{ justifyContent: "center" }}>
+
+              {/* Renderiza a grade */}
+              <View style={styles.wordSearchGrid}>
+                {theme.grid.map((row, r) => (
+                  <View key={r} style={styles.wordSearchRow}>
+                    {row.map((cell, c) => (
+                      <View key={c} style={styles.wordSearchCell}>
+                        <Text style={styles.wordSearchText}>{cell}</Text>
+                      </View>
+                    ))}
+                  </View>
+                ))}
+              </View>
+
+              <Text style={{ marginTop: 8, fontSize: 10 }}>
+                Palavras: {theme.words.join(", ")}
+              </Text>
+            </View>
+          ))}
+        </Page>
+      )}
+      
+      {/* Optional: cardsDebate pages */}
+      {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <View style={{ alignItems: "center" }}>
+            {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
+            {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}
+          </View>
+
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
+            {data.cardsDebate.cards.map((cat, idx) => (
               <View
                 key={idx}
                 style={{
-                  width: "30%",      // 3 cartões por linha
-                  minHeight: 50,
+                  marginBottom: 16,
                   borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
+                  borderColor: "#ddd",
+                  borderRadius: 6,
                   padding: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
+                  backgroundColor: cat.color,
+                  width: "48%",
                 }}
               >
-                <Text style={{ fontSize: 14, fontWeight: "bold", textAlign: "center" }}>
-                  {obj}
+                <Text
+                  style={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    color: cat.colorText,
+                  }}
+                >
+                  {cat.title}
                 </Text>
+                <Text
+                  style={{
+                    fontSize: 12,
+                    fontStyle: "italic",
+                    marginBottom: 6,
+                    color: cat.colorText,
+                  }}
+                >
+                </Text>
+                {cat.phrases.map((phrase, pi) => {
+                  // Separa a frase em português e tradução (se houver)
+                  const lines = phrase.split('\n');
+                  const ptPhrase = lines[0];
+                  const translation = lines[1]?.trim();
+                  
+                  return (
+                    <React.Fragment key={pi}>
+                      <Text style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}>
+                        - {ptPhrase}
+                      </Text>
+                      {translation && (
+                        <Text style={{ fontSize: 8, marginBottom: 4, marginLeft: 8, color: cat.colorText, fontStyle: "italic" }}>
+                          {translation}
+                        </Text>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
               </View>
             ))}
           </View>
         </Page>
       )}
-
-      {data.hangman?.enabled && (
-        <Page size="A4" style={styles.hangman}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
-            {getTraduction(i18n, data, "pdf.hangman.title", "title")}
-            {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
-          </View>
-
-          {/* Imagem da forca */}
-          {generateHangman()}
-        </Page>
-      )}
-
-      {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
-        <Page size="A4" style={styles.memoryGame}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
-            {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
-            {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
-          </View>
-
-          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
-            {data.memoryGame.pairs.flatMap((pair) => [
-              // Cartão com palavra
-              <View
-                key={`${pair.word}-word`}
-                style={{
-                  width: "30%",
-                  height: 80,
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#f1f8e9"
-                }}
-              >
-                <Text style={{ fontSize: 16, fontWeight: "bold" }}>{pair.word}</Text>
-              </View>,
-
-              // Cartão com imagem
-              <View
-                key={`${pair.word}-img`}
-                style={{
-                  width: "30%",
-                  height: 80,
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#fff3e0"
-                }}
-              >
-                {pair.image ? (
-                  <Image
-                    src={pair.image}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover" // preenche e corta o excesso para ocupar todo o cartão
-                    }}
-                  />
-                ) : (
-                  <Text>[Imagem]</Text>
-                )}
-              </View>
-            ])}
-          </View>
-        </Page>
-      )}
-
-
       
       {sectionImagesMoldes.length > 0 && sectionImagesMoldes.map((img, idxImg) => (
         <Page size="A4" style={styles.molde}>

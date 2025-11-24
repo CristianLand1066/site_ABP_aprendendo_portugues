@@ -11,3 +11,13 @@ export function shuffleArray<T>(arr: T[]): T[] {
     const shuffled = shuffleArray(arr);
     return shuffled.slice(0, count);
   }
+
+  export function getRandomPhrases<T extends { phrases: string[] }>(
+    card: T,
+    count: number = 5
+  ): T {
+    return {
+      ...card,
+      phrases: getRandomCards(card.phrases, count)
+    };
+  }

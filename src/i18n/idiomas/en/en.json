@@ -227,9 +227,11 @@
         }
       ],
       "header": {
-        "nome": "name",
-        "turma": "class",
-        "data": "date"
+        "nome": "Name",
+        "turma": "Class",
+        "data": "Date",
+        "idade": "Age",
+        "paisOrigem": "Country of origin"
       },
       "cardsDebate": {
         "title": "Fun Debate",
@@ -353,31 +355,22 @@
         ]
       },
       "apresentacao": {
-        "title": "Introduction",
-        "imagens": [
-          "quadro_branco_desenho.png"
-        ],
-        "textos": [
-          {
-            "title": "Who am I?"
-          },
-          {
-            "title": "Write your name, age and country of origin"
-          },
-          {
-            "title": "Name: ___________________________"
-          },
-          {
-            "title": "Age: ___________________________"
-          },
-          {
-            "title": "Country of origin: ___________________________"
-          },
-          {
-            "title": "Draw the flag of the country where you were born"
-          }
-        ]
-      },
+          "title": "Apresentação",
+          "imagens": [
+            "quadro_branco_desenho.png"
+          ],
+          "textos": [
+            {
+              "title": "Who am I?"
+            },
+            {
+              "title": "Write your name, age and country of origin"
+            },
+            {
+              "title": "Draw the flag of the country where you were born"
+            }
+          ]
+        },
       "moldes": {
         "moldeMaleta": "Case Template"
       }
