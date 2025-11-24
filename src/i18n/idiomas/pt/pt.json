@@ -292,70 +292,8 @@
       },
       "cardsDebate": {
         "title": "Debate divertido",
-        "summary": "Pratique argumentação e raciocínio em debates.",
-        "cards": [
-          {
-              "title": "Escola e aprendizagem",
-              "color":"#4A90E2",
-              "colorText":"#000",
-              "phrases": [
-                "É melhor estudar de manhã do que à tarde.",
-                "Ler livros é mais divertido do que assistir desenhos.",
-                "A lição de casa deveria ser mais curta.",
-                "É melhor escrever com lápis do que com caneta.",
-                "É melhor estudar em silêncio do que com música."
-              ]
-            },
-            {
-              "title": "Casa e família",
-              "color":"#50C878",
-              "colorText":"#000",
-              "phrases": [
-                "Dormir cedo é melhor do que dormir tarde.",
-                "Ajudar em casa é divertido.",
-                "É melhor brincar sozinho do que com amigos.",
-                "Cachorro é um animal de estimação melhor que gato.",
-                "É mais gostoso comer em família do que sozinho."
-              ]
-            },
-            {
-              "title": "Brincadeiras e jogos",
-              "color":"#F5C518",
-              "colorText":"#000",
-              "phrases": [
-                "É mais divertido brincar ao ar livre do que em casa.",
-                "Jogos de tabuleiro são melhores que videogame.",
-                "Pular corda é mais divertido que jogar bola.",
-                "É melhor brincar no parque do que no quintal.",
-                "Desenhar é mais divertido do que pintar."
-              ]
-            },
-            {
-              "title": "Alimentos",
-              "color":"#E63946",
-              "colorText":"#fff",
-              "phrases": [
-                "Sorvete é melhor do que bolo.",
-                "Fruta é mais gostosa do que doce.",
-                "Refrigerante é melhor do que suco.",
-                "É mais gostoso almoçar do que jantar.",
-                "Pizza é melhor do que hambúrguer."
-              ]
-            },
-            {
-              "title": "Cotidiano e imaginação",
-              "color":"#9B59B6",
-              "colorText":"#fff",
-              "phrases": [
-                "É melhor morar no campo do que na cidade.",
-                "Super-heróis são mais legais que princesas.",
-                "Andar de bicicleta é melhor do que andar de carro.",
-                "Ir à praia é mais divertido que ir ao shopping.",
-                "Viajar é melhor do que ficar em casa."
-              ]
-            }
-          ]
-        },
+        "summary": "Pratique argumentação e raciocínio em debates."
+      },
         "mapaMundi": {
           "title": "Mapa do Mundo",
           "image": "mapa_mundi.png",

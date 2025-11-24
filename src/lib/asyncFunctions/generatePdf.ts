@@ -16,6 +16,7 @@ import type { i18n as I18n } from "i18next";
 import type { TFunction } from "i18next";
 import { getRandomCards } from "../functions/generalFunctions";
 import { BASE_LETTERS_NUMBERS } from "../prompts/BASE_LETTERS_NUMBERS";
+import { getDebateCards } from "../prompts/debateCards";
 /**
  * Gera o PDF de jogos educativos
  */
@@ -75,8 +76,33 @@ export async function handleGeneratePdf(
     const moldeSrcs = await Promise.all(moldePromises);
     const moldes = moldeSrcs.map((src) => ({ src, width: 420 }));
 
-    const cardsDebateCategories = t("pdf.cardsDebate.cards", {
-      returnObjects: true,
+    // Seleciona 5 frases aleatórias de cada categoria de debate
+    // Sempre em português com tradução em itálico se locale !== "pt"
+    const locale = i18n.language ?? "pt";
+    const cardsPt = getDebateCards("pt");
+    const cardsTranslated = locale !== "pt" ? getDebateCards(locale) : null;
+    
+    // Seleciona os mesmos índices aleatórios para ambos os idiomas
+    const cardsDebateCategories = cardsPt.map((cardPt, categoryIdx) => {
+      const selectedIndices = Array.from({ length: Math.min(5, cardPt.phrases.length) }, () => 
+        Math.floor(Math.random() * cardPt.phrases.length)
+      ).filter((v, i, a) => a.indexOf(v) === i).slice(0, 5);
+      
+      const phrases = selectedIndices.map(idx => {
+        const ptPhrase = cardPt.phrases[idx];
+        if (locale === "pt" || !cardsTranslated) {
+          return ptPhrase;
+        }
+        const translatedPhrase = cardsTranslated[categoryIdx]?.phrases[idx];
+        return `${ptPhrase}\n  ${translatedPhrase}`;
+      });
+      
+      return {
+        title: cardPt.title,
+        color: cardPt.color,
+        colorText: cardPt.colorText,
+        phrases
+      };
     }) as PdfDebateCategory[];
 
     // Define nível padrão como 'all' se não especificado

@@ -1080,22 +1080,20 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   }}
                 >
                 </Text>
-                {cat.phrases.map((p, pi) => {
-                  const ptPhrases = i18n.getFixedT("pt")(`pdf.cardsDebate.cards.${idx}.phrases`, {
-                    returnObjects: true,
-                  }) as string[];
-                  const ptPhrase = ptPhrases?.[pi];
+                {cat.phrases.map((phrase, pi) => {
+                  // Separa a frase em português e tradução (se houver)
+                  const lines = phrase.split('\n');
+                  const ptPhrase = lines[0];
+                  const translation = lines[1]?.trim();
                   
                   return (
                     <React.Fragment key={pi}>
                       <Text style={{ fontSize: 10, marginBottom: 2, color: cat.colorText }}>
-                        - {ptPhrase || p}
+                        - {ptPhrase}
                       </Text>
-                      {data.locale !== "pt" && (
-                        <Text
-                          style={{ fontSize: 8, marginBottom: 2, color: cat.colorText, fontStyle: "italic" }}
-                        >
-                          - {p}
+                      {translation && (
+                        <Text style={{ fontSize: 8, marginBottom: 4, marginLeft: 8, color: cat.colorText, fontStyle: "italic" }}>
+                          {translation}
                         </Text>
                       )}
                     </React.Fragment>
