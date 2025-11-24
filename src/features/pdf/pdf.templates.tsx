@@ -16,6 +16,8 @@ import { renderGrid} from "../../components/renderGrid";
 import { generateHangman } from "../../components/generateHangMan";
 import { buildDominoPieces, buildPortugueseLetters } from "../../lib/functions/generateGames";
 import { buildMultipleBingoGrids } from "../../lib/functions/renderGrid";
+import { renderHeader } from "../../components/header";
+import { renderCronograma } from "../../components/renderCronograma";
 
 export interface PdfSection {
   title: string;
@@ -204,65 +206,6 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
   return (
     <Document>
-
-      
-
-      
-      
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -376,7 +319,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
           </View>
@@ -445,7 +389,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.cronograma?.enabled && (
         <Page size="A4" style={styles.cronograma}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
             {getTraduction(i18n, data, "pdf.cronograma.title", "caption")}
           </View>
@@ -470,71 +415,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             })}
           </View>
 
-          {/* Malha 5x5 com dias da semana na primeira linha */}
-          <View
-            style={{
-              flexDirection: "row",
-              flexWrap: "wrap",
-              width: "100%",
-              borderWidth: 1,
-              borderColor: "#000",
-              marginTop: 10,
-            }}
-          >
-            {Array.from({ length: 25 }).map((_, idx) => {
-              const row = Math.floor(idx / 5);
-              const col = idx % 5;
-
-              const isLastRow = row === 4;
-              const isLastCol = col === 4;
-              const isFirstRow = row === 0;
-
-              return (
-                <View
-                  key={idx}
-                  style={{
-                    width: "20%",
-                    height: 80,
-                    borderRightWidth: isLastCol ? 0 : 1,
-                    borderBottomWidth: isLastRow ? 0 : 1,
-                    borderColor: "#000",
-                    backgroundColor: "#fff",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: 4,
-                  }}
-                >
-                  {isFirstRow && (
-                    <View style={{ alignItems: "center" }}>
-                      <Text
-                        style={{
-                          fontSize: 10,
-                          fontWeight: "bold",
-                          textAlign: "center",
-                        }}
-                      >
-                        {i18n.getFixedT("pt")(`pdf.cronograma.dias.${col}`)}
-                      </Text>
-
-                      {data.locale !== "pt" && (
-                        <Text
-                          style={{
-                            fontSize: 10,
-                            marginTop: 2,
-                            textAlign: "center",
-                            fontStyle: "italic",
-                            color: "#555",
-                          }}
-                        >
-                          ({i18n.getFixedT(data.locale)(`pdf.cronograma.dias.${col}`)})
-                        </Text>
-                      )}
-                    </View>
-                  )}
-                </View>
-              );
-            })}
-          </View>
+          {renderCronograma({ i18n, locale: data.locale })}
 
            <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
             <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
@@ -565,8 +446,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       )}
 
       {data.minhaFamilia?.enabled && (
-        <Page size="A4" style={styles.minhaFamilia}>
-          <View style={{ alignItems: "center" }}>
+          <Page size="A4" style={styles.minhaFamilia}>
+            {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
           </View>
@@ -595,7 +477,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         const cores = data.desenheObjetosDaCor!.cores;
         return (
           <Page size="A4" style={styles.desenheObjetosDaCor}>
-            <View style={{ alignItems: "center" }}>
+            {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
             </View>
@@ -668,7 +551,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.apresentacao?.enabled && (
         <Page size="A4" style={styles.apresentacao}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
             {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
           </View>
@@ -705,7 +589,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.desenharOrigem?.enabled && (
         <Page size="A4" style={styles.desenharOrigem}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
           </View>
@@ -739,7 +624,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.mapaMundi?.enabled && (
         <Page size="A4" style={styles.mapaMundi}>
-          <View style={{ alignItems: "center" }}>
+          {renderHeader({ i18n, locale: data.locale })}
+          <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
           </View>
