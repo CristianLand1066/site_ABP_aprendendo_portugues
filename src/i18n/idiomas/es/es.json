@@ -226,6 +226,11 @@
           ]
         }
       ],
+      "header": {
+        "nome": "Nombre",
+        "turma": "Clase",
+        "data": "Fecha"
+      },
       "cardsDebate": {
         "title": "Debate divertido",
         "summary": "Practica argumentación y razonamiento en debates.",

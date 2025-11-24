@@ -56,30 +56,19 @@ export default function AgradecimentosModal({ isOpen, onClose }: AgradecimentosM
           {activeTab === "equipe" ? (
             <div className="space-y-6">
               <section>
-                <h3 className="text-xl font-semibold mb-3">Equipe do Projeto ABP</h3>
+                <h3 className="text-xl font-semibold mb-3">Equipe do Projeto Aprendizagem sem Fronteiras</h3>
                 <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Este projeto foi desenvolvido com dedicação e carinho por uma equipe comprometida
-                  com a educação e o ensino da língua portuguesa. Agradecemos a todos os envolvidos
-                  que tornaram este material educacional possível.
+                  Agradecemos a todos os integrantes da equipe pelo empenho e colaboração na realização deste projeto. Cada um contribuiu de forma essencial para que a proposta se tornasse possível.
                 </p>
-              </section>
-
-              <section>
-                <h4 className="text-lg font-semibold mb-3">Desenvolvimento</h4>
-                <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
-                  <li>Equipe de Desenvolvimento de Software</li>
-                  <li>Designers e UX/UI</li>
-                  <li>Especialistas em Pedagogia</li>
-                </ul>
-              </section>
-
-              <section>
-                <h4 className="text-lg font-semibold mb-3">Conteúdo Pedagógico</h4>
-                <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
-                  <li>Professores de Língua Portuguesa</li>
-                  <li>Revisores e Consultores Linguísticos</li>
-                  <li>Especialistas em Educação Multilíngue</li>
-                </ul>
+                  <ul>
+                    <li><strong>Cristian Mateus Land</strong> — Desenvolvimento da plataforma/atividades e Letras Português/Alemão</li>
+                    <li><strong>Gabriel Teles Bergamini</strong> — Desenvolvimento de atividades e Letras Português/Alemão</li>
+                    <li><strong>Giovana Ferrari Simon</strong> — Desenvolvimento de atividades e Pedagogia</li>
+                    <li><strong>Isabella Antunes de Oliveira</strong> — Desenvolvimento de atividades e Letras Português/Inglês</li>
+                  </ul>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                  Obrigada(o) pelo comprometimento, pelas trocas e pelo trabalho coletivo. Sem vocês, este projeto não teria tomado forma.
+                </p>
               </section>
             </div>
           ) : (
@@ -87,36 +76,29 @@ export default function AgradecimentosModal({ isOpen, onClose }: AgradecimentosM
               <section>
                 <h3 className="text-xl font-semibold mb-3">Apoiadores e Parceiros</h3>
                 <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Agradecemos profundamente a todos os apoiadores, instituições e parceiros que
-                  acreditaram neste projeto e contribuíram para sua realização.
+                  Gostaríamos de registrar nossa mais sincera gratidão às professoras <strong>Marguit Goldmeyer</strong>, 
+                  professora de Língua Portuguesa, <strong>Katlen Bohn Grando</strong>, da área da Pedagogia e <strong>Joseane Mathias</strong>, 
+                  professora responsável pela disciplina, pela disponibilidade, dedicação e pelo conhecimento generosamente 
+                  compartilhado ao longo do desenvolvimento deste projeto. Suas contribuições foram fundamentais 
+                  para ampliarmos nossa compreensão sobre os aspectos linguísticos, pedagógicos e metodológicos 
+                  envolvidos no processo de alfabetização, especialmente no contexto multicultural que buscamos atender.
                 </p>
               </section>
 
               <section>
                 <h4 className="text-lg font-semibold mb-3">Instituições Parceiras</h4>
                 <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
-                  <li>Instituições de Ensino</li>
-                  <li>Organizações Educacionais</li>
-                  <li>Comunidades de Educadores</li>
+                  <li>Agradecemos também ao <strong>Programa Move Sem Fronteiras</strong>, 
+                    que gentilmente respondeu às nossas perguntas e nos encaminhou materiais valiosos, 
+                    enriquecendo nossa pesquisa e fortalecendo o propósito deste trabalho voltado ao acolhimento 
+                    e ao aprendizado de crianças estrangeiras e brasileiras.
+                  </li>
+                  <li>Agradecemos ao <strong>Instituto Superior de Educação Ivoti (ISEI)</strong>, 
+                    cuja formação, apoio e ambiente acadêmico inspirador tornaram possível o desenvolvimento deste trabalho. 
+                    A instituição tem sido fundamental para nossa trajetória como futuros profissionais da educação.</li>
                 </ul>
               </section>
 
-              <section>
-                <h4 className="text-lg font-semibold mb-3">Comunidade</h4>
-                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Um agradecimento especial a todos os professores, alunos e educadores que utilizam
-                  este material e contribuem com feedback valioso para sua melhoria contínua.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-lg font-semibold mb-3">Tecnologias Open Source</h4>
-                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  Este projeto foi construído com tecnologias open source: React, TypeScript, 
-                  TailwindCSS, i18next, @react-pdf/renderer e muitas outras bibliotecas incríveis
-                  mantidas pela comunidade.
-                </p>
-              </section>
             </div>
           )}
         </div>
