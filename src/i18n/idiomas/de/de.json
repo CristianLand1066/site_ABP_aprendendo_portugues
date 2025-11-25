@@ -1,7 +1,7 @@
 {
   "translation": {
     "app": {
-      "title": "Bildungsspiele",
+      "title": "Lernspiele",
       "description": "PDFs mit Aktivitäten in {{lang}} erstellen"
     },
     "actions": {
@@ -11,45 +11,31 @@
     },
     "pdf": {
       "cover_title": "Spiele und Aktivitäten",
-      "intro": "Dieses Material enthält Aktivitäten, die nach Niveau organisiert sind: Anfänger, Mittelstufe und Fortgeschrittene. Sie können zu Hause oder im Klassenzimmer mit einfachen Mitteln durchgeführt werden.",
-      "cover_instructions": "Montageanleitung",
-      "intro_instructions": "Diese Seite enthält Anleitungen zum Zusammenstellen der Spiele.",
+      "intro":
+        "Dieses Material enthält Aktivitäten, die nach Niveau organisiert sind: Anfänger, Mittelstufe und Fortgeschrittene. Sie können zu Hause oder im Klassenzimmer mit einfachen Materialien durchgeführt werden.",
+      "cover_instructions": "Bauanleitung",
+      "intro_instructions": "Diese Seite enthält Anweisungen zum Zusammenbauen der Spiele.",
       "sections": {
         "beginner": "Anfänger",
-        "beginner_content": "Aktivitäten zum Lesenlernen und ersten Kontakt mit Wörtern.",
+        "beginner_content": "Aktivitäten mit Fokus auf Alphabetisierung und ersten Kontakt mit Wörtern.",
         "beginner_games": [
           {
-            "title": "Memory-Spiel – Bild und Wort",
-            "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
+            "title": "Wochenplan",
+            "summary": "Erstelle deinen Wochenplan.",
             "instructions": [
-              "Drucken Sie Karten mit Bildern und den entsprechenden Wörtern aus.",
-              "Mischen Sie die Karten und legen Sie sie verdeckt auf den Tisch.",
-              "Die Spieler decken abwechselnd zwei Karten auf, um ein Paar zu finden.",
-              "Der Spieler mit den meisten Paaren gewinnt."
+              "Erstelle deinen Wochenplan."
             ]
           },
           {
-            "title": "Alphabet-Bingo",
-            "summary": "Buchstaben des Alphabets durch das Spiel erkennen.",
+            "title": "Weltkarte",
+            "summary": "Erkenne das Land, in dem du geboren wurdest, und das Land, in dem du jetzt bist.",
             "instructions": [
-              "Bereiten Sie Bingokarten mit Buchstaben des Alphabets vor.",
-              "Der Lehrer oder Spielleiter zieht Buchstaben aus einem Beutel und sagt sie laut an.",
-              "Die Spieler markieren den entsprechenden Buchstaben auf ihrer Karte.",
-              "Der erste, der eine Reihe oder die ganze Karte vervollständigt, gewinnt."
+              "Male das Land, in dem du geboren wurdest, blau aus.",
+              "Male das Land, in dem du jetzt bist, gelb aus."
             ]
           },
           {
-            "title": "Gegenstands-Suche",
-            "summary": "Finde Gegenstände anhand schriftlicher oder gesprochener Hinweise.",
-            "instructions": [
-              "Schreiben Sie einfache Namen von Gegenständen auf (z. B. Ball, Stuhl, Löffel).",
-              "Sagen Sie das Wort oder zeigen Sie die Karte.",
-              "Die Kinder müssen den Gegenstand in der Umgebung finden.",
-              "Der Erste, der den richtigen Gegenstand bringt, erhält einen Punkt."
-            ]
-          },
-          {
-            "title": "Zeichne deine Herkunft",
+            "title": "Deine Herkunft zeichnen",
             "summary": "Stelle dich vor und zeichne dein Herkunftsland.",
             "instructions": [
               "Schreibe deinen Namen, dein Alter und deine Nationalität in deiner Muttersprache.",
@@ -59,237 +45,373 @@
           },
           {
             "title": "Vorstellung",
-            "summary": "Stelle dich vor und zeichne dein Herkunftsland.",
+            "summary": "Stelle dich vor und zeichne die Flagge deines Herkunftslandes.",
             "instructions": [
               "Schreibe deinen Namen, dein Alter und deine Nationalität in deiner Muttersprache.",
               "Zeichne die Flagge deines Herkunftslandes."
             ]
+          },
+          {
+            "title": "Meine Familie",
+            "summary": "Zeichne deine Familie.",
+            "instructions": [
+              "Zeichne deine Familie.",
+              "Schreibe die Namen der Familienmitglieder."
+            ]
+          },
+          {
+            "title": "Erzähle deine Geschichte",
+            "summary": "Erzähle deine Geschichte der Klasse.",
+            "instructions": [
+              "Erzähle deine Geschichte der Klasse."
+            ]
+          },
+          {
+            "title": "Farbenjagd",
+            "summary": "Finde Gegenstände in den Farben auf der Liste.",
+            "instructions": [
+              "Finde und zeichne Gegenstände in den Farben der Liste."
+            ]
+          },
+          {
+            "title": "Buchstaben des Alphabets",
+            "summary": "Erkenne und bilde Wörter mit den Buchstaben des Alphabets.",
+            "instructions": [
+              "Bilde Wörter mit den Buchstaben des Alphabets.",
+              "Bilde einfache Rechnungen und Zahlen."
+            ]
+          },
+          {
+            "title": "Memory – Bild und Wort",
+            "summary": "Ordne Bilder den passenden Wörtern zu.",
+            "instructions": [
+              "Mische die Karten und lege sie verdeckt auf den Tisch.",
+              "Die Spieler decken abwechselnd zwei Karten auf, um passende Paare zu finden.",
+              "Der Spieler mit den meisten Paaren gewinnt."
+            ]
+          },
+          {
+            "title": "Alphabet-Bingo",
+            "summary": "Erkenne die Buchstaben des Alphabets spielerisch.",
+            "instructions": [
+              "Die Lehrkraft oder ein Erwachsener zieht Buchstaben aus einem Beutel und liest sie laut vor.",
+              "Die Spieler markieren den entsprechenden Buchstaben auf ihrer Karte.",
+              "Der erste, der eine Reihe oder die ganze Karte vervollständigt, gewinnt."
+            ]
+          },
+          {
+            "title": "Gegenstandsjagd",
+            "summary": "Finde Gegenstände anhand von geschriebenen oder gesprochenen Hinweisen.",
+            "instructions": [
+              "Sage das Wort oder zeige die geschriebene Karte.",
+              "Die Kinder müssen den Gegenstand im Raum finden.",
+              "Der erste, der den richtigen Gegenstand bringt, erhält einen Punkt."
+            ]
           }
         ],
         "intermediate": "Mittelstufe",
-        "intermediate_content": "Aktivitäten zur Erweiterung des Wortschatzes und zum Bilden einfacher Sätze.",
+        "intermediate_content": "Aktivitäten zur Wortschatzerweiterung und Bildung einfacher Sätze.",
         "intermediate_games": [
           {
             "title": "Wort-Domino",
-            "summary": "Wörter durch Kombinieren von Silben bilden.",
+            "summary": "Bilde Wörter, indem du Silben kombinierst.",
             "instructions": [
-              "Erstellen Sie Dominosteine mit einer Silbe auf der einen Seite und dem Rest des Wortes auf der anderen.",
-              "Verteilen Sie die Steine an die Spieler.",
-              "Die Spieler legen reihum passende Steine, um richtige Wörter zu bilden.",
-              "Der Erste, der alle seine Steine verwendet, gewinnt."
+              "Verteile die Dominosteine an die Spieler.",
+              "Die Spieler legen Steine abwechselnd an, um richtige Wörter zu bilden.",
+              "Der erste, der alle Steine verwendet hat, gewinnt."
             ]
           },
           {
             "title": "Galgenmännchen (angepasst)",
-            "summary": "Erraten Sie das geheime Wort, indem Sie Buchstaben vorschlagen.",
+            "summary": "Errate das geheime Wort, indem du Buchstaben vorschlägst.",
             "instructions": [
-              "Wählen Sie ein einfaches Wort und zeichnen Sie leere Felder auf Papier.",
-              "Die Spieler schlagen abwechselnd Buchstaben vor.",
-              "Bei jedem Fehler zeichnen Sie einen Teil der Figur (z. B. Strichmännchen).",
-              "Ziel ist es, das Wort zu erraten, bevor die Figur fertig ist."
+              "Wähle ein einfaches Wort und zeichne leere Felder.",
+              "Die Spieler schlagen Buchstaben vor.",
+              "Bei jedem Fehler zeichne einen Teil der Figur.",
+              "Ziel ist es, das Wort zu erraten, bevor die Figur komplett ist."
             ]
           },
           {
             "title": "Satzbau",
-            "summary": "Einfache Sätze mit Wortkarten bilden.",
+            "summary": "Bilde einfache Sätze mit Wortkarten.",
             "instructions": [
-              "Bereiten Sie Karten mit Nomen, Verben und Adjektiven vor.",
-              "Verteilen Sie die Karten an die Spieler.",
-              "Die Spieler bilden kurze Sätze mit mindestens 3 Karten.",
-              "Die Gruppe stimmt über den lustigsten oder kreativsten Satz ab."
+              "Verteile die Karten an die Spieler.",
+              "Die Spieler bilden abwechselnd Sätze mit mindestens 3 Karten.",
+              "Die Gruppe wählt den kreativsten oder lustigsten Satz."
             ]
           }
         ],
-        "advanced": "Fortgeschritten",
-        "advanced_content": "Aktivitäten zur Textverständnis, logischem Denken und Geschichtenerzählen.",
+        "advanced": "Fortgeschrittene",
+        "advanced_content": "Aktivitäten für Textverständnis, logisches Denken und Geschichtenerzählung.",
         "advanced_games": [
           {
-            "title": "Geschichte fortsetzen",
-            "summary": "Eine gemeinsame Geschichte Satz für Satz fortsetzen.",
+            "title": "Geschichten fortsetzen",
+            "summary": "Erstellt gemeinsam eine Geschichte, indem jeder eine neue Satzkarte hinzufügt.",
             "instructions": [
-              "Der erste Spieler beginnt mit einem Satz (z. B.: 'Es war einmal ein Kind, das Abenteuer liebte').",
-              "Jeder Spieler fügt einen neuen Satz hinzu.",
-              "Die Geschichte geht weiter, bis alle zustimmen, sie zu beenden.",
-              "Am Ende wird die ganze Geschichte laut vorgelesen."
+              "Der erste Spieler beginnt die Geschichte mit einer Satzkarte.",
+              "Jeder Spieler fügt eine neue Satzkarte hinzu.",
+              "Die Geschichte endet, wenn alle einverstanden sind.",
+              "Lest am Ende die ganze Geschichte laut vor."
             ]
           },
           {
             "title": "Wortsuche",
-            "summary": "Finde versteckte Wörter in einem Buchstabengitter.",
+            "summary": "Finde versteckte Wörter in einem Buchstabenfeld.",
             "instructions": [
-              "Bereiten Sie ein Buchstabengitter mit Wörtern zu einem Thema vor (z. B. Tiere, Früchte, Schule).",
-              "Verteilen Sie die Gitter an die Spieler.",
-              "Die Spieler müssen alle Wörter finden und einkreisen.",
-              "Der Erste, der alle findet, gewinnt."
+              "Verteile die Wortsuchgitter.",
+              "Die Spieler müssen alle Wörter der Liste finden.",
+              "Der erste, der alle findet, gewinnt."
             ]
           },
           {
-            "title": "Spaß-Debatte",
-            "summary": "Übe Argumentation und logisches Denken durch Debatten.",
+            "title": "Lustiges Debattenspiel",
+            "summary": "Übe Argumentation und logisches Denken in einem spielerischen Debattenduell.",
             "instructions": [
-              "Teilen Sie die Spieler in zwei Gruppen ein.",
-              "Wählen Sie ein einfaches Thema (z. B.: 'Bücher sind besser als Fernsehen').",
+              "Teilt die Spieler in zwei Gruppen ein.",
+              "Wählt ein einfaches Thema (z. B.: „Bücher sind besser als Fernsehen“).",
               "Jede Gruppe bereitet 2–3 Argumente vor.",
-              "Die Gruppen präsentieren abwechselnd, und das Publikum wählt den Gewinner."
+              "Die Gruppen tragen abwechselnd ihre Argumente vor, und das Publikum/der Lehrer entscheidet den Gewinner."
             ]
           }
         ]
       },
       "instruction_games": [
         {
-          "title": "Memory-Spiel",
-          "summary": "Bilder mit den entsprechenden Wörtern verbinden.",
+          "title": "Mitteilungstafel und Wochenplan",
+          "summary": "Erkenne und bilde Wörter mit den Buchstaben des Alphabets.",
           "instructions": [
-            "Drucken Sie die Seite mit Bildern und Wörtern aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Karten aus"
+            "Drucke die Seite mit der Mitteilungstafel und dem Wochenplan aus.",
+            "Klebe sie auf festen Karton."
+          ]
+        },
+        {
+          "title": "Alphabetbuchstaben",
+          "summary": "Erkenne und bilde Wörter mit den Buchstaben des Alphabets.",
+          "instructions": [
+            "Drucke die Seite mit den Buchstaben aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Buchstaben aus."
+          ]
+        },
+        {
+          "title": "Memory-Spiel",
+          "summary": "Ordne Bilder den passenden Wörtern zu.",
+          "instructions": [
+            "Drucke die Seite mit Bildern und Wörtern aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
           "title": "Alphabet-Bingo",
-          "summary": "Buchstaben des Alphabets spielerisch erkennen.",
+          "summary": "Erkenne die Buchstaben des Alphabets spielerisch.",
           "instructions": [
-            "Drucken Sie die Seite mit Bingokarten aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Karten aus"
+            "Drucke die Bingo-Karten aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
-          "title": "Gegenstands-Suche",
-          "summary": "Finde Gegenstände anhand schriftlicher oder gesprochener Hinweise.",
+          "title": "Gegenstandsjagd",
+          "summary": "Finde Gegenstände anhand von Hinweiskarten.",
           "instructions": [
-            "Drucken Sie die Seite mit den Suchkarten aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Karten aus"
+            "Drucke die Suchkarten aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
           "title": "Wort-Domino",
-          "summary": "Wörter durch Kombinieren von Silben bilden.",
+          "summary": "Bilde Wörter durch das Kombinieren von Silben.",
           "instructions": [
-            "Drucken Sie die Seite mit Dominosteinen aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Teile aus"
+            "Drucke die Dominosteine aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Steine aus."
           ]
         },
         {
           "title": "Galgenmännchen",
-          "summary": "Erraten Sie das geheime Wort, indem Sie Buchstaben vorschlagen.",
+          "summary": "Errate das geheime Wort durch Buchstaben.",
           "instructions": [
-            "Drucken Sie die Seite mit den Spielsteinen aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Teile aus"
+            "Drucke die Galgenmännchen-Vorlagen aus.",
+            "Klebe sie auf Karton.",
+            "Schneide sie aus."
           ]
         },
         {
           "title": "Satzbau",
-          "summary": "Einfache Sätze mit Wortkarten bilden.",
+          "summary": "Bilde einfache Sätze.",
           "instructions": [
-            "Drucken Sie die Seite mit Wortkarten (Nomen in Blau, Verben in Grün, Adjektive in Gelb) aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Teile aus"
+            "Drucke die Wortkarten aus (Nomen in Blau, Verben in Grün, Adjektive in Gelb).",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
-          "title": "Geschichte fortsetzen",
-          "summary": "Eine gemeinsame Geschichte Satz für Satz fortsetzen.",
+          "title": "Geschichten fortsetzen",
+          "summary": "Baut gemeinsam eine Geschichte.",
           "instructions": [
-            "Drucken Sie die Seite mit den Satzkarten aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Teile aus"
+            "Drucke die Satzkarten aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
           "title": "Wortsuche",
-          "summary": "Finde versteckte Wörter in einem Buchstabengitter.",
+          "summary": "Finde versteckte Wörter.",
           "instructions": [
-            "Drucken Sie die Seite mit den Suchkarten aus.",
-            "Schneiden Sie die Karten aus"
+            "Drucke die Wortsuchkarten aus.",
+            "Schneide die Karten aus."
           ]
         },
         {
-          "title": "Spaß-Debatte",
-          "summary": "Übe Argumentation und logisches Denken durch Debatten.",
+          "title": "Lustiges Debattenspiel",
+          "summary": "Übe Argumentation spielerisch.",
           "instructions": [
-            "Drucken Sie die Seite mit den Debattenkarten aus.",
-            "Kleben Sie sie auf Karton.",
-            "Schneiden Sie die Karten aus"
+            "Drucke die Debattenkarten aus.",
+            "Klebe sie auf Karton.",
+            "Schneide die Karten aus."
           ]
         },
         {
-          "title": "Aufbewahrungskoffer",
-          "summary": "Koffer zum Aufbewahren der Spielkarten.",
+          "title": "Organisationskoffer",
+          "summary": "Koffer zur Aufbewahrung der Spielkarten.",
           "instructions": [
-            "Drucken Sie die Seiten mit den Koffer-Teilen aus.",
-            "Kleben Sie sie auf Karton nach dem Koffermodell (Bild 'Koffer-Vorlage').",
-            "Schneiden Sie die Koffer-Vorlage aus"
+            "Drucke die Seiten mit den Teilen des Koffers aus.",
+            "Klebe sie auf Karton, wie im Modell gezeigt (Bild 'Molde de Maleta').",
+            "Schneide die Koffervorlage aus."
           ]
         }
       ],
+      "header": {
+        "nome": "Name",
+        "turma": "Klasse",
+        "data": "Datum",
+        "idade": "Alter",
+        "paisOrigem": "Herkunftsland"
+      },
       "cardsDebate": {
-        "title": "Spaß-Debatte",
-        "summary": "Übe Argumentation und logisches Denken durch Debatten.",
-        "cards": [
+        "title": "Lustiges Debattenspiel",
+        "summary": "Übe Argumentation und logisches Denken."
+      },
+      "mapaMundi": {
+        "title": "Weltkarte",
+        "image": "mapa_mundi.png",
+        "textos": [
           {
-            "title": "Schule und Lernen",
-            "color": "#4A90E2",
-            "colorText": "#000",
-            "phrases": [
-              "Es ist besser, morgens zu lernen als nachmittags.",
-              "Bücher lesen macht mehr Spaß als Cartoons schauen.",
-              "Hausaufgaben sollten kürzer sein.",
-              "Es ist besser, mit Bleistift als mit Kugelschreiber zu schreiben.",
-              "Es ist besser, in Ruhe als mit Musik zu lernen."
-            ]
+            "title": "Male das Land, in dem du geboren wurdest, blau aus."
           },
           {
-            "title": "Haus und Familie",
-            "color": "#50C878",
-            "colorText": "#000",
-            "phrases": [
-              "Früh schlafen ist besser als spät schlafen.",
-              "Im Haushalt zu helfen macht Spaß.",
-              "Allein spielen ist besser als mit Freunden.",
-              "Ein Hund ist ein besseres Haustier als eine Katze.",
-              "Mit der Familie zu essen ist schöner als allein."
-            ]
-          },
-          {
-            "title": "Spiele und Spaß",
-            "color": "#F5C518",
-            "colorText": "#000",
-            "phrases": [
-              "Draußen spielen macht mehr Spaß als drinnen.",
-              "Brettspiele sind besser als Videospiele.",
-              "Seilspringen macht mehr Spaß als Ballspielen.",
-              "Im Park spielen ist besser als im Hof.",
-              "Malen macht mehr Spaß als zeichnen."
-            ]
-          },
-          {
-            "title": "Essen",
-            "color": "#E63946",
-            "colorText": "#fff",
-            "phrases": [
-              "Eis ist besser als Kuchen.",
-              "Obst ist leckerer als Süßigkeiten.",
-              "Limonade ist besser als Saft.",
-              "Mittagessen ist schöner als Abendessen.",
-              "Pizza ist besser als Hamburger."
-            ]
-          },
-          {
-            "title": "Alltag und Fantasie",
-            "color": "#9B59B6",
-            "colorText": "#fff",
-            "phrases": [
-              "Auf dem Land zu wohnen ist besser als in der Stadt.",
-              "Superhelden sind cooler als Prinzessinnen.",
-              "Radfahren ist besser als Autofahren.",
-              "An den Strand zu gehen macht mehr Spaß als ins Einkaufszentrum.",
-              "Reisen ist besser als zu Hause bleiben."
-            ]
+            "title": "Male das Land, in dem du jetzt bist, gelb aus."
           }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Stell dich vor",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "Jetzt bist du dran! Erzähle, wer du bist, wie alt du bist und aus welchem Land du kommst – zuerst in deiner Muttersprache und dann auf Portugiesisch!"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Vorstellung",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "Wer bin ich?"
+          },
+          {
+            "title": "Schreibe deinen Namen, dein Alter und dein Herkunftsland."
+          },
+          {
+            "title": "Zeichne die Flagge des Landes, in dem du geboren wurdest."
+          }
+        ]
+      },
+      "minhaFamilia": {
+        "title": "Meine Familie",
+        "imagens": [
+          "quadro_branco_familia.png"
+        ],
+        "textos": [
+          {
+            "title": "Zeichne deine Familie und schreibe die Namen darunter."
+          }
+        ]
+      },
+      "desenheObjetosDaCor": {
+        "title": "Farben",
+        "textos": [
+          {
+            "title": "Suche Gegenstände in diesen Farben und zeichne sie in die Kästchen."
+          }
+        ]
+      },
+      "cronograma": {
+        "title": "Mitteilungstafel",
+        "textos": [
+          {
+            "title": "Wir freuen uns sehr, dass du hier bist!"
+          },
+          {
+            "title": "Unsere Klasse ist ein Ort, an dem alle gemeinsam lernen, lächeln und sich gegenseitig helfen."
+          },
+          {
+            "title": "Du bist hier sehr wichtig!"
+          },
+          {
+            "title": "Hier findest du einige Informationen, damit du und deine Familie euch organisieren könnt."
+          },
+          {
+            "title": "Klassenregeln"
+          }
+        ],
+        "dias": [
+          "Montag",
+          "Dienstag",
+          "Mittwoch",
+          "Donnerstag",
+          "Freitag"
+        ],
+        "combinados": [
+          "1. _________________________________________________________________________________",
+          "2. _________________________________________________________________________________",
+          "3. _________________________________________________________________________________",
+          "4. _________________________________________________________________________________",
+          "5. _________________________________________________________________________________"
+        ]
+      },
+      "seApresentarTurma": {
+        "title": "Die Klasse möchte dich kennenlernen!",
+        "textos": [
+          {
+            "title": "Die Klasse möchte dich kennenlernen!"
+          },
+          {
+            "title": "Erstelle deine eigene Präsentation!"
+          },
+          {
+            "title": "Nutze Zeichnungen, Wörter, Ausschnitte oder Collagen, um ein wenig über dich zu erzählen:"
+          },
+          {
+            "title": "Du kannst ein Plakat, eine Folie oder eine Wandtafel gestalten, um dich vorzustellen!"
+          },
+          {
+            "title": "Deine Geschichte ist einzigartig und sehr wichtig für uns!"
+          }
+        ],
+        "perguntas": [
+          "1. Der Ort, an dem du geboren wurdest.",
+          "2. Ein typisches Gericht aus deinem Land.",
+          "3. Ein Lied oder Tanz aus deinem Land.",
+          "4. Was du am meisten an Brasilien magst."
         ]
       },
       "domino": {
@@ -297,7 +419,7 @@
       },
       "bingo": {
         "title": "Buchstaben- und Zahlen-Bingo",
-        "reference": "Referência para Sorteio"
+        "reference": "Referenz für die Ziehung"
       },
       "images": {
         "title": "Bilder"
@@ -318,63 +440,13 @@
         "title": "Geschichten"
       },
       "objectHunt": {
-        "title": "Gegenstands-Suche"
+        "title": "Gegenstandsjagd"
       },
       "portugueseLetters": {
-        "title": "Alphabet-Buchstaben"
-      },
-      "mapaMundi": {
-        "title": "Weltkarte",
-        "image": "mapa_mundi.png",
-        "textos": [
-          {
-            "title": "Male das Land, in dem du geboren wurdest, blau an."
-          },
-          {
-            "title": "Male das Land, in dem du jetzt bist, gelb an."
-          }
-        ]
-      },
-      "desenharOrigem": {
-        "title": "Stelle dich vor",
-        "imagens": [
-          "desenhar_origem_1.png",
-          "desenhar_origem_2.png"
-        ],
-        "textos": [
-          {
-            "title": "Jetzt bist du dran! Sag, wer du bist, wie alt du bist und aus welchem Land du kommst. Zuerst in deiner Muttersprache und dann auf Portugiesisch!"
-          }
-        ]
-      },
-      "apresentacao": {
-        "title": "Vorstellung",
-        "imagens": [
-          "quadro_branco_desenho.png"
-        ],
-        "textos": [
-          {
-            "title": "Wer bin ich?"
-          },
-          {
-            "title": "Schreibe deinen Namen, dein Alter und dein Herkunftsland"
-          },
-          {
-            "title": "Name: ___________________________"
-          },
-          {
-            "title": "Alter: ___________________________"
-          },
-          {
-            "title": "Herkunftsland: ___________________________"
-          },
-          {
-            "title": "Zeichne die Flagge des Landes, in dem du geboren wurdest"
-          }
-        ]
+        "title": "Alphabetbuchstaben"
       },
       "moldes": {
-        "moldeMaleta": "Koffer-Vorlage"
+        "moldeMaleta": "Koffervorlage"
       }
     }
   }
