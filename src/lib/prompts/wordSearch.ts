@@ -1,48 +1,48 @@
 export default {
     animais: [
-      "gato", "cachorro", "pássaro", "peixe", "galinha",
+      "gato", "cachorro", "passaro", "peixe", "galinha",
       "pato", "vaca", "cavalo", "ovelha", "coelho",
-      "sapo", "tartaruga", "abelha", "formiga", "leão",
+      "sapo", "tartaruga", "abelha", "formiga", "leao",
       "tigre", "elefante", "girafa", "macaco", "urso"
     ],
   
     frutas: [
-      "maçã", "banana", "laranja", "uva", "pera",
+      "maca", "banana", "laranja", "uva", "pera",
       "manga", "morango", "melancia", "abacaxi", "kiwi",
-      "limão", "goiaba", "coco", "ameixa", "pêssego",
-      "jabuticaba", "maracujá", "pitanga", "figo", "caju"
+      "limao", "goiaba", "coco", "ameixa", "pêssego",
+      "jabuticaba", "maracuja", "pitanga", "figo", "caju"
     ],
   
     objetos: [
       "bola", "pipa", "boneca", "carrinho", "livro",
-      "lápis", "caneta", "caderno", "borracha", "tesoura",
+      "lapis", "caneta", "caderno", "borracha", "tesoura",
       "mesa", "cadeira", "copo", "prato", "colher",
-      "chave", "sapato", "mochila", "telefone", "relógio"
+      "chave", "sapato", "mochila", "telefone", "relogio"
     ],
   
-    // cores: [
-    //   "azul", "vermelho", "amarelo", "verde", "preto",
-    //   "branco", "rosa", "roxo", "cinza", "marrom"
-    // ],
+    cores: [
+      "azul", "vermelho", "amarelo", "verde", "preto",
+      "branco", "rosa", "roxo", "cinza", "marrom"
+    ],
   
-    // números: [
-    //   "zero", "um", "dois", "três", "quatro",
-    //   "cinco", "seis", "sete", "oito", "nove", "dez"
-    // ],
+    números: [
+      "zero", "um", "dois", "tres", "quatro",
+      "cinco", "seis", "sete", "oito", "nove", "dez"
+    ],
   
-    // partesDoCorpo: [
-    //   "cabeça", "olho", "orelha", "boca", "nariz",
-    //   "braço", "mão", "perna", "pé", "cabelo"
-    // ],
+    partesDoCorpo: [
+      "cabeca", "olho", "orelha", "boca", "nariz",
+      "braco", "mao", "perna", "pe", "cabelo"
+    ],
   
-    // lugares: [
-    //   "casa", "escola", "parque", "praia", "rua",
-    //   "igreja", "mercado", "loja", "fazenda", "zoológico"
-    // ],
+    lugares: [
+      "casa", "escola", "parque", "praia", "rua",
+      "igreja", "mercado", "loja", "fazenda", "zoologico"
+    ],
   
-    // comidas: [
-    //   "arroz", "feijão", "pão", "leite", "queijo",
-    //   "bolo", "biscoito", "ovo", "pizza", "sopa"
-    // ]
+    comidas: [
+      "arroz", "feijao", "pao", "leite", "queijo",
+      "bolo", "biscoito", "ovo", "pizza", "sopa"
+    ]
   }
   

@@ -6,18 +6,20 @@ export function generateHangman() {
       style={{
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: "space-between", // garante espaçamento entre as colunas
+        justifyContent: "space-between",
         marginTop: 20,
+        paddingHorizontal: 10,
       }}
     >
       {Array.from({ length: 8 }).map((_, i) => (
         <View
           key={i}
           style={{
-            width: "48%", // 2 por linha
-            marginBottom: 20,
+            width: "40%",
+            marginBottom: 15,
+            marginHorizontal: 10,
             alignItems: "center",
-            border: "1px solid #000", // opcional: caixa delimitadora
+            border: "1px solid #000",
             padding: 10,
           }}
         >
