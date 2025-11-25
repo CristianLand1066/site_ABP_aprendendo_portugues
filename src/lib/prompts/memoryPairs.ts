@@ -1,30 +1,31 @@
 export default [
-  { word: "Bola", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Cadeira", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Livro", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Lápis", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Peixe", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Gato", image: "/imagens/moldes/parte_0_0.jpg" },
+  // Objetos gerais
+  { word: "Bola", image: "../../imagens/memory/bola.png" },
+  { word: "Cadeira", image: "../../imagens/memory/cadeira.png" },
+  { word: "Livro", image: "../../imagens/memory/livro.png" },
+  { word: "Lápis", image: "../../imagens/memory/lapis.png" },
+  { word: "Peixe", image: "../../imagens/memory/peixe.png" },
+  { word: "Gato", image: "../../imagens/memory/gato.png" },
 
   // Brinquedos
-  { word: "Carrinho", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Boneca", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Ursinho", image: "/imagens/moldes/parte_0_0.jpg" },
+  { word: "Carrinho", image: "../../imagens/memory/carro.png" },
+  { word: "Boneca", image: "../../imagens/memory/boneca.png" },
+  { word: "Ursinho", image: "../../imagens/memory/ursinho.png" },
 
   // Animais
-  { word: "Cachorro", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Pássaro", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Coelho", image: "/imagens/moldes/parte_0_0.jpg" },
+  { word: "Cachorro", image: "../../imagens/memory/cachorro.png" },
+  { word: "Pássaro", image: "../../imagens/memory/passaro.png" },
+  { word: "Coelho", image: "../../imagens/memory/coelho.png" },
 
   // Alimentos
-  { word: "Maçã", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Banana", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Pão", image: "/imagens/moldes/parte_0_0.jpg" },
+  { word: "Maçã", image: "../../imagens/memory/maca.png" },
+  { word: "Banana", image: "../../imagens/memory/banana.png" },
+  { word: "Pão", image: "../../imagens/memory/pao.png" },
 
-  // Objetos da casa/escola
-  { word: "Mesa", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Copo", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Mochila", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Relógio", image: "/imagens/moldes/parte_0_0.jpg" },
-  { word: "Telefone", image: "/imagens/moldes/parte_0_0.jpg" }
+  // Casa / Escola
+  { word: "Mesa", image: "../../imagens/memory/mesa.png" },
+  { word: "Copo", image: "../../imagens/memory/copo.png" },
+  { word: "Mochila", image: "../../imagens/memory/mochila.png" },
+  { word: "Relógio", image: "../../imagens/memory/relogio.png" },
+  { word: "Telefone", image: "../../imagens/memory/telefone.png" }
 ];

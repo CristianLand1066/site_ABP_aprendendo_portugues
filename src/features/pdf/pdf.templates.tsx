@@ -206,6 +206,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
   return (
     <Document>
+
+      
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
         <Text style={styles.h1}>{data.coverTitle}</Text>
@@ -748,9 +750,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   <Image
                     src={pair.image}
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover" // preenche e corta o excesso para ocupar todo o cartão
+                      width: "80%",
+                      height: "80%",
+                      objectFit: "contain" // preenche e corta o excesso para ocupar todo o cartão
                     }}
                   />
                 ) : (
