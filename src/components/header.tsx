@@ -88,7 +88,7 @@ export function renderHeader({ i18n, locale, top, name, turma, date, idade, pais
             </Text>
             )}
             <Text style={{ marginLeft: 4 }}>:</Text>
-            <Text style={{ marginLeft: 4, letterSpacing: 1 }}>____/____/_____</Text>
+            <Text style={{ marginLeft: 4, letterSpacing: 1 }}>_____/_____/_____</Text>
         </View>
       )}
 
@@ -131,7 +131,7 @@ export function renderHeader({ i18n, locale, top, name, turma, date, idade, pais
           )}
           <Text style={{ marginLeft: 4 }}>: </Text>
           <Text style={{ marginLeft: 4, letterSpacing: 0.5 }}>
-            ___________________________________________________
+            ____________________________________________________________
           </Text>
         </View>
       )}
