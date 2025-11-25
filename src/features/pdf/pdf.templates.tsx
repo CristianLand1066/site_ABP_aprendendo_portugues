@@ -18,6 +18,7 @@ import { buildDominoPieces, buildPortugueseLetters } from "../../lib/functions/g
 import { buildMultipleBingoGrids } from "../../lib/functions/renderGrid";
 import { renderHeader } from "../../components/header";
 import { renderCronograma } from "../../components/renderCronograma";
+import { renderMargin } from "../../components/renderMargin";
 
 export interface PdfSection {
   title: string;
@@ -210,6 +211,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       
       {/* Page 1: text content only */}
       <Page size="A4" style={styles.page}>
+        {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
         <Text style={styles.h1}>{data.coverTitle}</Text>
         <Text style={styles.p}>{data.intro}</Text>
 
@@ -273,6 +275,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       </Page>
 
       <Page size="A4" style={styles.page}>
+        {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
         <Text style={styles.h1}>{data.coverInstructions}</Text>
         <Text style={styles.p}>{data.introInstructions}</Text>
 
@@ -302,6 +305,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Page 2: images aggregated */}
       {sectionImagesImages.length > 0 && (
         <Page size="A4" style={styles.page}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {getTraduction(i18n, data, "pdf.images.title", "title")}
           {getTraduction(i18n, data, "pdf.images.title", "caption")}
           {sectionImagesImages.map((img, idxImg) => (
@@ -321,6 +325,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.cronograma?.enabled && (
         <Page size="A4" style={styles.cronograma}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
           <View style={{ alignItems: "center", marginTop: 100 }}>
             {getTraduction(i18n, data, "pdf.cronograma.title", "title")}
@@ -379,8 +384,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.mapaMundi?.enabled && (
         <Page size="A4" style={styles.mapaMundi}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "title")}
             {getTraduction(i18n, data, "pdf.mapaMundi.title", "caption")}
           </View>
@@ -416,8 +422,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.desenharOrigem?.enabled && (
         <Page size="A4" style={styles.desenharOrigem}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "title")}
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
           </View>
@@ -451,8 +458,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.apresentacao?.enabled && (
         <Page size="A4" style={styles.apresentacao}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.apresentacao.title", "title")}
             {getTraduction(i18n, data, "pdf.apresentacao.title", "caption")}
           </View>
@@ -502,8 +510,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.minhaFamilia?.enabled && (
           <Page size="A4" style={styles.minhaFamilia}>
+            {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
             {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "title")}
             {getTraduction(i18n, data, "pdf.minhaFamilia.title", "caption")}
           </View>
@@ -530,8 +539,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.seApresentarTurma?.enabled && (
         <Page size="A4" style={styles.seApresentarTurma}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
           {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "title")}
             {getTraduction(i18n, data, "pdf.seApresentarTurma.title", "caption")}
           </View>
@@ -602,8 +612,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
         const cores = data.desenheObjetosDaCor!.cores;
         return (
           <Page size="A4" style={styles.desenheObjetosDaCor}>
+            {renderMargin({ color: "#8B7355", thickness: 5, pattern: "corner-lines" })}
             {renderHeader({ i18n, locale: data.locale, top: true, name: true, turma: true, date: true, idade: false, paisOrigem: false })}
-          <View style={{ alignItems: "center", marginTop: 100 }}>
+          <View style={{ alignItems: "center", marginTop: 15 }}>
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "title")}
               {getTraduction(i18n, data, "pdf.desenheObjetosDaCor.title", "caption")}
             </View>
@@ -676,7 +687,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.portugueseLetters?.enabled && (
         <Page size="A4" style={styles.portugueseLetters}>
-          <View style={{ alignItems: "center" }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
             {getTraduction(i18n, data, "pdf.portugueseLetters.title", "title")}
             {getTraduction(i18n, data, "pdf.portugueseLetters.title", "caption")}
           </View>
@@ -706,7 +718,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.memoryGame?.enabled && data.memoryGame.pairs?.length > 0 && (
         <Page size="A4" style={styles.memoryGame}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.memoryGame.title", "title")}
             {getTraduction(i18n, data, "pdf.memoryGame.title", "caption")}
           </View>
@@ -767,6 +780,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Optional:bingo pages */}
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.bingo.title", "title")}
             {getTraduction(i18n, data, "pdf.bingo.title", "caption")}
@@ -800,6 +814,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.bingo?.enabled && (
         <Page size="A4" style={styles.bingo}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.bingo.reference", "title")}
             {getTraduction(i18n, data, "pdf.bingo.reference", "caption")}
@@ -835,7 +850,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.objectHunt?.enabled && data.objectHunt.objects?.length > 0 && (
         <Page size="A4" style={styles.objectHunt}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.objectHunt.title", "title")}
             {getTraduction(i18n, data, "pdf.objectHunt.title", "caption")}
           </View>
@@ -868,7 +884,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.domino?.enabled && (
         <Page size="A4" style={styles.domino}>
-          <View style={{ alignItems: "center" }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 10 }}>
             {getTraduction(i18n, data, "pdf.domino.title", "title")}
             {getTraduction(i18n, data, "pdf.domino.title", "caption")}
           </View>
@@ -920,7 +937,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.hangman?.enabled && (
         <Page size="A4" style={styles.hangman}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.hangman.title", "title")}
             {getTraduction(i18n, data, "pdf.hangman.title", "caption")}
           </View>
@@ -932,6 +950,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordCards?.enabled && (
         <Page size="A4" style={styles.molde}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
           <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.wordCards.title", "title")}
             {getTraduction(i18n, data, "pdf.wordCards.title", "caption")}
@@ -974,7 +993,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.storyGame?.enabled && data.storyGame.prompts?.length > 0 && (
         <Page size="A4" style={styles.storyGame}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.storyGame.title", "title")}
             {getTraduction(i18n, data, "pdf.storyGame.title", "caption")}
           </View>
@@ -1013,7 +1033,8 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
 
       {data.wordSearch?.enabled && data.wordSearch.themes?.length > 0 && (
         <Page size="A4" style={styles.wordSearch}>
-          <View style={{ alignItems: "center", marginTop: 10 }}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
+          <View style={{ alignItems: "center", marginTop: 15 }}>
             {getTraduction(i18n, data, "pdf.wordSearch.title", "title")}
             {getTraduction(i18n, data, "pdf.wordSearch.title", "caption")}
           </View>
@@ -1045,6 +1066,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
       {/* Optional: cardsDebate pages */}
       {data.cardsDebate?.enabled && data.cardsDebate.cards?.length > 0 && (
         <Page size="A4" style={styles.page}>
+          {renderMargin({ color: "#8B7355", thickness: 5, pattern: "solid" })}
           <View style={{ alignItems: "center" }}>
             {getTraduction(i18n, data, "pdf.cardsDebate.title", "title")}
             {getTraduction(i18n, data, "pdf.cardsDebate.title", "caption")}

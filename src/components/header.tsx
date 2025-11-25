@@ -19,13 +19,14 @@ export function renderHeader({ i18n, locale, top, name, turma, date, idade, pais
   return (
     <View
       style={{
-        ...(top && { position: "absolute", top: 0, left: 0, right: 0 }),
+        ...(top && { position: "absolute", top: 10, left: 10, right: 10 }),
         paddingTop: 20,
         paddingHorizontal: 20,
         paddingBottom: 10,
         fontSize: 11,
         fontFamily: "Helvetica",
         backgroundColor: "#fff",
+        zIndex: 1,
       }}
     >
       {/* Nome */}
