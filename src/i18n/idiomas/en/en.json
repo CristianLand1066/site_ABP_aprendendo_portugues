@@ -7,62 +7,105 @@
     "actions": {
       "generate_pdf": "Generate PDF",
       "downloading": "Downloading...",
-      "retry": "Try Again"
+      "retry": "Try again"
     },
     "pdf": {
       "cover_title": "Games and Activities",
-      "intro": "This material contains activities organized by level: beginner, intermediate, and advanced. They can be carried out at home or in the classroom using simple resources.",
-      "cover_instructions": "Assembly Instructions",
+      "intro":
+        "This material contains activities organized by level: beginner, intermediate, and advanced. They can be done at home or in the classroom using simple resources.",
+      "cover_instructions": "Assembly instructions",
       "intro_instructions": "This page contains instructions for assembling the games.",
       "sections": {
         "beginner": "Beginner",
         "beginner_content": "Activities focused on literacy and first contact with words.",
         "beginner_games": [
           {
-            "title": "Memory Game – Image and Word",
-            "summary": "Match images to their corresponding words.",
+            "title": "Weekly Schedule",
+            "summary": "Create your weekly schedule.",
             "instructions": [
-              "Print cards with images and their corresponding words.",
-              "Shuffle the cards and place them face down on the table.",
-              "Players take turns flipping two cards to find a match.",
-              "The player with the most pairs at the end wins."
+              "Create your weekly schedule."
             ]
           },
           {
-            "title": "Alphabet Bingo",
-            "summary": "Recognize alphabet letters through the game.",
+            "title": "World Map",
+            "summary": "Recognize the country where you were born and where you are now.",
             "instructions": [
-              "Prepare bingo cards with letters of the alphabet.",
-              "The teacher or facilitator draws letters from a bag and announces them out loud.",
-              "Players mark the corresponding letter on their card.",
-              "The first to complete a line or the whole card wins."
-            ]
-          },
-          {
-            "title": "Object Hunt",
-            "summary": "Identify objects from written or spoken clues.",
-            "instructions": [
-              "Write simple object names (e.g., ball, chair, spoon).",
-              "Say the word or show the written card.",
-              "Children must find the object in the environment.",
-              "The first to bring the correct object scores a point."
+              "Color blue the country where you were born.",
+              "Color yellow the country where you are now."
             ]
           },
           {
             "title": "Draw Your Origin",
             "summary": "Introduce yourself and draw your country of origin.",
             "instructions": [
-              "Write your name, age and nationality in your mother tongue.",
+              "Write your name, age, and nationality in your mother language.",
               "Draw your country of origin.",
-              "Write your name, age and nationality in Portuguese."
+              "Write your name, age, and nationality in Portuguese."
             ]
           },
           {
             "title": "Introduction",
-            "summary": "Introduce yourself and draw your country of origin.",
+            "summary": "Introduce yourself and draw the flag of your country of origin.",
             "instructions": [
-              "Write your name, age and nationality in your mother tongue.",
+              "Write your name, age, and nationality in your mother language.",
               "Draw the flag of your country of origin."
+            ]
+          },
+          {
+            "title": "My Family",
+            "summary": "Draw your family.",
+            "instructions": [
+              "Draw your family.",
+              "Write the name of each family member."
+            ]
+          },
+          {
+            "title": "Tell Your Story",
+            "summary": "Tell your story to the class.",
+            "instructions": [
+              "Tell your story to the class."
+            ]
+          },
+          {
+            "title": "Color Hunt",
+            "summary": "Find objects matching the colors in the list.",
+            "instructions": [
+              "Find and draw objects that match the colors in the list."
+            ]
+          },
+          {
+            "title": "Alphabet Letters",
+            "summary": "Recognize and form words using alphabet letters.",
+            "instructions": [
+              "Form words using alphabet letters.",
+              "Form simple equations and basic numbers."
+            ]
+          },
+          {
+            "title": "Memory Game – Image and Word",
+            "summary": "Match images with the corresponding words.",
+            "instructions": [
+              "Shuffle the cards and place them face down on the table.",
+              "Players take turns flipping two cards to find matching pairs.",
+              "The player with the most pairs at the end wins."
+            ]
+          },
+          {
+            "title": "Alphabet Bingo",
+            "summary": "Recognize alphabet letters through play.",
+            "instructions": [
+              "The teacher or guardian draws letters from a bag and announces them aloud.",
+              "Players mark the corresponding letter on their card.",
+              "The first to complete a line or the entire card wins."
+            ]
+          },
+          {
+            "title": "Object Hunt",
+            "summary": "Identify objects based on written or spoken clues.",
+            "instructions": [
+              "Say the word or show the written card.",
+              "Children must find the object in the environment.",
+              "The first to bring the correct object earns a point."
             ]
           }
         ],
@@ -73,8 +116,7 @@
             "title": "Word Domino",
             "summary": "Form words by combining syllables.",
             "instructions": [
-              "Create domino pieces with a syllable on one side and the rest of the word on the other.",
-              "Distribute the pieces among players.",
+              "Distribute the pieces among the players.",
               "Players take turns placing pieces to form correct words.",
               "The first to use all their pieces wins."
             ]
@@ -85,41 +127,39 @@
             "instructions": [
               "Choose a simple word and draw blank spaces on paper.",
               "Players suggest letters one at a time.",
-              "For each mistake, draw part of the figure (e.g., a stick figure).",
-              "The goal is to guess the word before completing the drawing."
+              "For each mistake, draw part of a figure (e.g., stick figure).",
+              "The goal is to guess the word before the drawing is completed."
             ]
           },
           {
             "title": "Sentence Building",
             "summary": "Form simple sentences using word cards.",
             "instructions": [
-              "Prepare cards with nouns, verbs, and adjectives.",
-              "Distribute the cards among players.",
+              "Distribute the cards among the players.",
               "Players take turns forming short sentences using at least 3 cards.",
               "The group votes for the funniest or most creative sentence."
             ]
           }
         ],
         "advanced": "Advanced",
-        "advanced_content": "Activities for text comprehension, logical reasoning, and storytelling.",
+        "advanced_content": "Activities for reading comprehension, logical reasoning, and storytelling.",
         "advanced_games": [
           {
             "title": "Story Continuation",
             "summary": "Create a collaborative story by adding sentences in turns.",
             "instructions": [
-              "The first player starts with a sentence (e.g., 'Once upon a time, there was a child who loved adventures').",
-              "Each player continues the story with a new sentence.",
-              "The story continues until everyone agrees to end it.",
-              "At the end, read the whole story out loud."
+              "The first player starts a story with a sentence card.",
+              "Each player continues the story with a new sentence card.",
+              "The story ends when everyone agrees to finish.",
+              "At the end, read the full story aloud."
             ]
           },
           {
             "title": "Word Search",
-            "summary": "Find hidden words in a grid of letters.",
+            "summary": "Find hidden words in a letter grid.",
             "instructions": [
-              "Prepare a word search grid with words from a specific theme (e.g., animals, fruits, school).",
-              "Distribute the grids to players.",
-              "Players must find and circle all the listed words.",
+              "Distribute the grids to the players.",
+              "Players must find all the listed words.",
               "The first to find them all wins."
             ]
           },
@@ -128,21 +168,38 @@
             "summary": "Practice argumentation and reasoning through debates.",
             "instructions": [
               "Divide players into two groups.",
-              "Choose a simple theme (e.g., 'Books are better than TV').",
+              "Choose a simple topic (e.g., 'Books are better than TV').",
               "Each group prepares 2–3 arguments.",
-              "Groups take turns presenting arguments, and the audience decides the winner."
+              "Groups take turns presenting arguments, and the audience/teacher decides the winner."
             ]
           }
         ]
       },
       "instruction_games": [
         {
+          "title": "Bulletin Board and Schedule",
+          "summary": "Recognize and form words using alphabet letters.",
+          "instructions": [
+            "Print the page with the bulletin board and schedule.",
+            "Paste it onto cardstock."
+          ]
+        },
+        {
+          "title": "Alphabet Letters",
+          "summary": "Recognize and form words using alphabet letters.",
+          "instructions": [
+            "Print the page with the alphabet sheet.",
+            "Paste it onto cardstock.",
+            "Cut out the letters."
+          ]
+        },
+        {
           "title": "Memory Game",
-          "summary": "Match images with their corresponding words.",
+          "summary": "Match images with the corresponding words.",
           "instructions": [
             "Print the page with images and corresponding words.",
-            "Glue it onto cardboard material.",
-            "Cut out the cards"
+            "Paste it onto cardstock.",
+            "Cut out the cards."
           ]
         },
         {
@@ -150,17 +207,17 @@
           "summary": "Recognize alphabet letters through play.",
           "instructions": [
             "Print the page with bingo cards.",
-            "Glue it onto cardboard material.",
-            "Cut out the cards"
+            "Paste it onto cardstock.",
+            "Cut out the cards."
           ]
         },
         {
           "title": "Object Hunt",
-          "summary": "Identify objects from written or spoken clues.",
+          "summary": "Identify objects based on written or spoken clues.",
           "instructions": [
             "Print the page with object hunt cards.",
-            "Glue it onto cardboard material.",
-            "Cut out the cards"
+            "Paste it onto cardstock.",
+            "Cut out the cards."
           ]
         },
         {
@@ -168,26 +225,26 @@
           "summary": "Form words by combining syllables.",
           "instructions": [
             "Print the page with domino pieces.",
-            "Glue it onto cardboard material.",
-            "Cut out the pieces"
+            "Paste it onto cardstock.",
+            "Cut out the pieces."
           ]
         },
         {
-          "title": "Hangman",
+          "title": "Hangman Game",
           "summary": "Guess the secret word by suggesting letters.",
           "instructions": [
-            "Print the page with the game pieces.",
-            "Glue it onto cardboard material.",
-            "Cut out the pieces"
+            "Print the page with the hangman boards.",
+            "Paste it onto cardstock.",
+            "Cut out the boards."
           ]
         },
         {
           "title": "Sentence Building",
           "summary": "Form simple sentences using word cards.",
           "instructions": [
-            "Print the page with word pieces (nouns in blue, verbs in green, adjectives in yellow).",
-            "Glue it onto cardboard material.",
-            "Cut out the pieces"
+            "Print the page with the word pieces (nouns in blue, verbs in green, adjectives in yellow).",
+            "Paste it onto cardstock.",
+            "Cut out the pieces."
           ]
         },
         {
@@ -195,16 +252,16 @@
           "summary": "Create a collaborative story by adding sentences in turns.",
           "instructions": [
             "Print the page with sentence pieces.",
-            "Glue it onto cardboard material.",
-            "Cut out the pieces"
+            "Paste it onto cardstock.",
+            "Cut out the pieces."
           ]
         },
         {
           "title": "Word Search",
-          "summary": "Find hidden words in a grid of letters.",
+          "summary": "Find hidden words in a letter grid.",
           "instructions": [
             "Print the page with word search cards.",
-            "Cut out the cards"
+            "Cut out the cards."
           ]
         },
         {
@@ -212,8 +269,8 @@
           "summary": "Practice argumentation and reasoning through debates.",
           "instructions": [
             "Print the page with debate cards.",
-            "Glue it onto cardboard material.",
-            "Cut out the cards"
+            "Paste it onto cardstock.",
+            "Cut out the cards."
           ]
         },
         {
@@ -221,8 +278,8 @@
           "summary": "Case to organize the game cards.",
           "instructions": [
             "Print the pages with the case parts.",
-            "Glue them onto cardboard material following the case model (image 'Case Template').",
-            "Cut out the case template"
+            "Paste them onto cardstock following the case model (image 'Case Template').",
+            "Cut out the case template."
           ]
         }
       ],
@@ -235,75 +292,133 @@
       },
       "cardsDebate": {
         "title": "Fun Debate",
-        "summary": "Practice argumentation and reasoning through debates.",
-        "cards": [
+        "summary": "Practice argumentation and reasoning through debates."
+      },
+      "mapaMundi": {
+        "title": "World Map",
+        "image": "mapa_mundi.png",
+        "textos": [
           {
-            "title": "School and Learning",
-            "color": "#4A90E2",
-            "colorText": "#000",
-            "phrases": [
-              "It’s better to study in the morning than in the afternoon.",
-              "Reading books is more fun than watching cartoons.",
-              "Homework should be shorter.",
-              "It’s better to write with a pencil than with a pen.",
-              "It’s better to study in silence than with music."
-            ]
+            "title": "Color blue the country where you were born."
           },
           {
-            "title": "Home and Family",
-            "color": "#50C878",
-            "colorText": "#000",
-            "phrases": [
-              "Sleeping early is better than sleeping late.",
-              "Helping at home is fun.",
-              "It’s better to play alone than with friends.",
-              "Dogs are better pets than cats.",
-              "It’s nicer to eat with family than alone."
-            ]
-          },
-          {
-            "title": "Games and Fun",
-            "color": "#F5C518",
-            "colorText": "#000",
-            "phrases": [
-              "It’s more fun to play outdoors than indoors.",
-              "Board games are better than video games.",
-              "Jumping rope is more fun than playing ball.",
-              "It’s better to play in the park than in the yard.",
-              "Drawing is more fun than painting."
-            ]
-          },
-          {
-            "title": "Food",
-            "color": "#E63946",
-            "colorText": "#fff",
-            "phrases": [
-              "Ice cream is better than cake.",
-              "Fruit is tastier than candy.",
-              "Soda is better than juice.",
-              "Lunch is nicer than dinner.",
-              "Pizza is better than hamburgers."
-            ]
-          },
-          {
-            "title": "Everyday Life and Imagination",
-            "color": "#9B59B6",
-            "colorText": "#fff",
-            "phrases": [
-              "It’s better to live in the countryside than in the city.",
-              "Superheroes are cooler than princesses.",
-              "Riding a bike is better than riding a car.",
-              "Going to the beach is more fun than going to the mall.",
-              "Traveling is better than staying at home."
-            ]
+            "title": "Color yellow the country where you are now."
           }
+        ]
+      },
+      "desenharOrigem": {
+        "title": "Introduce Yourself",
+        "imagens": [
+          "desenhar_origem_1.png",
+          "desenhar_origem_2.png"
+        ],
+        "textos": [
+          {
+            "title": "Now it’s your turn! Say who you are, your age, and which country you came from. First in your mother language and then in Portuguese!"
+          }
+        ]
+      },
+      "apresentacao": {
+        "title": "Introduction",
+        "imagens": [
+          "quadro_branco_desenho.png"
+        ],
+        "textos": [
+          {
+            "title": "Who am I?"
+          },
+          {
+            "title": "Write your name, age, and country of origin."
+          },
+          {
+            "title": "Draw the flag of the country where you were born."
+          }
+        ]
+      },
+      "minhaFamilia": {
+        "title": "My Family",
+        "imagens": [
+          "quadro_branco_familia.png"
+        ],
+        "textos": [
+          {
+            "title": "Draw your family and write each person’s name below."
+          }
+        ]
+      },
+      "desenheObjetosDaCor": {
+        "title": "Colors",
+        "textos": [
+          {
+            "title": "Look around you for objects of these colors and draw them in the squares."
+          }
+        ]
+      },
+      "cronograma": {
+        "title": "Bulletin Board",
+        "textos": [
+          {
+            "title": "We are very happy to have you with us!"
+          },
+          {
+            "title": "Our class is a place where everyone learns together, shares smiles, and helps each other."
+          },
+          {
+            "title": "You are very important here!"
+          },
+          {
+            "title": "These are some details about our class so that you and your family can stay organized!"
+          },
+          {
+            "title": "Class Agreements"
+          }
+        ],
+        "dias": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "combinados": [
+          "1. _________________________________________________________________________________",
+          "2. _________________________________________________________________________________",
+          "3. _________________________________________________________________________________",
+          "4. _________________________________________________________________________________",
+          "5. _________________________________________________________________________________"
+        ]
+      },
+      "seApresentarTurma": {
+        "title": "The class wants to meet you!",
+        "textos": [
+          {
+            "title": "The class wants to meet you!"
+          },
+          {
+            "title": "Create your own introduction!"
+          },
+          {
+            "title": "Use drawings, words, cutouts, or collages to share a little about yourself:"
+          },
+          {
+            "title": "You can make a poster, slide, or board to share with your classmates!"
+          },
+          {
+            "title": "Your story is unique and very important to us!"
+          }
+        ],
+        "perguntas": [
+          "1. The place where you were born.",
+          "2. A traditional food from your country.",
+          "3. A song or dance from your country.",
+          "4. What you like most about Brazil."
         ]
       },
       "domino": {
         "title": "Word Domino"
       },
       "bingo": {
-        "title": "Alphabet and Number Bingo",
+        "title": "Letters and Numbers Bingo",
         "reference": "Reference for Drawing"
       },
       "images": {
@@ -330,47 +445,6 @@
       "portugueseLetters": {
         "title": "Alphabet Letters"
       },
-      "mapaMundi": {
-        "title": "World Map",
-        "image": "mapa_mundi.png",
-        "textos": [
-          {
-            "title": "Paint blue the country where you were born."
-          },
-          {
-            "title": "Paint yellow the country where you are now."
-          }
-        ]
-      },
-      "desenharOrigem": {
-        "title": "Introduce Yourself",
-        "imagens": [
-          "desenhar_origem_1.png",
-          "desenhar_origem_2.png"
-        ],
-        "textos": [
-          {
-            "title": "Now it's your turn! Say who you are, your age and which country you came from. First in your mother tongue and then in Portuguese!"
-          }
-        ]
-      },
-      "apresentacao": {
-          "title": "Apresentação",
-          "imagens": [
-            "quadro_branco_desenho.png"
-          ],
-          "textos": [
-            {
-              "title": "Who am I?"
-            },
-            {
-              "title": "Write your name, age and country of origin"
-            },
-            {
-              "title": "Draw the flag of the country where you were born"
-            }
-          ]
-        },
       "moldes": {
         "moldeMaleta": "Case Template"
       }
