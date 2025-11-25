@@ -15,7 +15,7 @@ export function renderCronograma({ i18n, locale }: RenderCronogramaProps) {
         width: "100%",
         borderWidth: 1,
         borderColor: "#000",
-        marginTop: 10,
+        marginTop: 10
       }}
     >
       {Array.from({ length: 25 }).map((_: unknown, idx: number) => {
@@ -38,7 +38,7 @@ export function renderCronograma({ i18n, locale }: RenderCronogramaProps) {
               backgroundColor: "#fff",
               justifyContent: "center",
               alignItems: "center",
-              padding: 4,
+              padding: 4
             }}
           >
             {isFirstRow && (

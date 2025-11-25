@@ -352,7 +352,9 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             })}
           </View>
 
-          {renderCronograma({ i18n, locale: data.locale })}
+          <View style={{ marginTop: 10, marginHorizontal: 20 }}>
+            {renderCronograma({ i18n, locale: data.locale })}
+          </View>
 
            <View style={{ marginTop: 10, paddingHorizontal: 20 }}>
             <Text style={{ fontSize: 12, marginBottom: 8, textAlign: "center" }}>
@@ -411,7 +413,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             )}
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
+          <View style={{ marginTop: 10, marginBottom: 10, marginHorizontal: 20 }}>
             <Image
               style={styles.image}
               src="/imagens/mapa_mundi.png"
@@ -429,7 +431,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             {getTraduction(i18n, data, "pdf.desenharOrigem.title", "caption")}
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
+          <View style={{ marginTop: 10, marginBottom: 10, marginHorizontal: 20 }}>
             <Image
               style={styles.image}
               src="/imagens/desenhar_origem_1.png"
@@ -447,7 +449,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             )}
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
+          <View style={{ marginTop: 10, marginBottom: 10, marginHorizontal: 20 }}>
             <Image
               style={styles.image}
               src="/imagens/desenhar_origem_2.png"
@@ -499,7 +501,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             )}
           </View>
 
-          <View style={{ marginTop: 10 }}>
+          <View style={{ marginTop: 10, marginHorizontal: 20 }}>
             <Image
               style={styles.image}
               src="/imagens/quadro_branco_desenho.png"
@@ -528,7 +530,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
             )}
           </View>
 
-          <View style={{ marginTop: 10, marginBottom: 10 }}>
+          <View style={{ marginTop: 10, marginBottom: 10, marginHorizontal: 20 }}>
             <Image
               style={styles.image}
               src="/imagens/quadro_branco_familia.png"
@@ -630,7 +632,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               )}
             </View>
 
-            <View style={{ flexDirection: "row", flexWrap: "wrap", width: "100%", borderWidth: 1, borderColor: "#000" }}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", width: "95%", borderWidth: 1, borderColor: "#000", marginHorizontal: 20, alignSelf: "center" }}>
               {cores.map((cor, idx) => (
                 <React.Fragment key={idx}>
                   {/* Célula 1: Nome da cor (30%) */}
@@ -1055,7 +1057,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 ))}
               </View>
 
-              <Text style={{ marginTop: 8, fontSize: 10 }}>
+              <Text style={{ marginTop: 8, fontSize: 10, fontWeight: "bold", textAlign: "center" }}>
                 Palavras: {theme.words.join(", ")}
               </Text>
             </View>

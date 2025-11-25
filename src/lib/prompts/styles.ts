@@ -143,7 +143,7 @@ export const styles = StyleSheet.create({
   bingoText: { fontSize: 10, fontWeight: 500 },
   bingoCard: { marginBottom: 10 },
   //word search styles
-  wordSearchGrid: { marginTop: 12, gap: 0 },
+  wordSearchGrid: { marginTop: 12, gap: 0, marginHorizontal: 20 },
   wordSearchRow: { flexDirection: "row" },
   wordSearchCell: {
     flex: 1,
