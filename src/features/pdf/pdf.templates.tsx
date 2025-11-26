@@ -1278,46 +1278,52 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "15%", // 4 peças por linha
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 6,
-                  margin: 1,
-                  flexDirection: "row",
-                  height: 45,
-                }}
-              >
+            {buildDominoPieces(data.domino.syllables).map((piece, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
                 <View
+                  key={idx}
                   style={{
-                    flex: 1,
-                    borderRightWidth: 1,
+                    width: "15%", // 4 peças por linha
+                    borderWidth: 1,
                     borderColor: "#000",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 1,
+                    borderRadius: 6,
+                    margin: 1,
+                    flexDirection: "row",
+                    height: 45,
+                    backgroundColor: bgColor,
                   }}
                 >
-                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
-                    {piece.left}
-                  </Text>
+                  <View
+                    style={{
+                      flex: 1,
+                      borderRightWidth: 1,
+                      borderColor: "#000",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginBottom: 1,
+                    }}
+                  >
+                    <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+                      {piece.left}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+                      {piece.right}
+                    </Text>
+                  </View>
                 </View>
-                <View
-                  style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
-                    {piece.right}
-                  </Text>
-                </View>
-              </View>
-            ))}
+              );
+            })}
           </View>
         </Page>
       )}
