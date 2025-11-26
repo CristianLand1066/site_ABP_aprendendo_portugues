@@ -73,6 +73,14 @@ export async function handleGeneratePdf(
       instructions: string[];
     }>;
 
+    const instructionItemsPt = i18n.getFixedT("pt")("pdf.instruction_games", {
+      returnObjects: true,
+    }) as Array<{
+      title: string;
+      summary: string;
+      instructions: string[];
+    }>;
+
     const moldeSrcs = await Promise.all(moldePromises);
     const moldes = moldeSrcs.map((src) => ({ src, width: 420 }));
 
@@ -176,10 +184,14 @@ export async function handleGeneratePdf(
       coverInstructions: t("pdf.cover_instructions"),
       introInstructions: t("pdf.intro_instructions"),
       sections: filteredSections,
-      instructions: instructionItems.map((it) => ({
+      instructions: instructionItems.map((it, idx) => ({
         title: it.title,
+        content: it.summary,
+        contentPt: instructionItemsPt[idx]?.summary,
         summary: it.summary,
+        summaryPt: instructionItemsPt[idx]?.summary,
         instructions: it.instructions,
+        instructionsPt: instructionItemsPt[idx]?.instructions,
       })),
       // Jogos filtrados por nível
       bingo: { enabled: isGameEnabled('beginner'), rows: 3, cols: 3, letters: undefined, cards: 6 },
