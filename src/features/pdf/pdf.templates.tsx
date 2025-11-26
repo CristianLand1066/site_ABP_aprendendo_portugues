@@ -304,11 +304,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 - {inst}
               </Text>
             ))}
-            
+
             {data.locale !== "pt" && sec.instructions && (
               <View style={{ marginTop: 4 }}>
                 {sec.instructions.map((inst, idx2) => (
-                  <Text key={idx2} style={{ ...styles.caption, ...styles.list }}>
+                  <Text
+                    key={idx2}
+                    style={{ ...styles.caption, ...styles.list }}
+                  >
                     - {inst}
                   </Text>
                 ))}
@@ -1097,7 +1100,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-3x3-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#2196F3")}
               </View>
             ))}
           </View>
@@ -1107,7 +1110,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-4x4-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#4CAF50")}
               </View>
             ))}
           </View>
@@ -1117,7 +1120,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-4x4-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#FF9800")}
               </View>
             ))}
           </View>
@@ -1146,13 +1149,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#2196F3",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{letter}</Text>
+                <Text style={{ fontSize: 12, color: "#2196F3" }}>{letter}</Text>
               </View>
             ))}
           </View>
@@ -1171,13 +1175,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#4CAF50",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{letter}</Text>
+                <Text style={{ fontSize: 12, color: "#4CAF50" }}>{letter}</Text>
               </View>
             ))}
           </View>
@@ -1196,13 +1201,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#FF9800",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{number}</Text>
+                <Text style={{ fontSize: 12, color: "#FF9800" }}>{number}</Text>
               </View>
             ))}
           </View>
