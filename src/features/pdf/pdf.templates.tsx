@@ -304,11 +304,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 - {inst}
               </Text>
             ))}
-            
+
             {data.locale !== "pt" && sec.instructions && (
               <View style={{ marginTop: 4 }}>
                 {sec.instructions.map((inst, idx2) => (
-                  <Text key={idx2} style={{ ...styles.caption, ...styles.list }}>
+                  <Text
+                    key={idx2}
+                    style={{ ...styles.caption, ...styles.list }}
+                  >
                     - {inst}
                   </Text>
                 ))}
@@ -995,21 +998,88 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {buildPortugueseLetters().map((letter, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "10%", // ajusta quantas letras por linha
-                  margin: 4,
-                  alignItems: "center",
-                  border: "1px solid black",
-                  borderRadius: 4,
-                  padding: 4,
-                }}
-              >
-                <Text style={{ fontSize: 28, margin: 6 }}>{letter}</Text>
-              </View>
-            ))}
+            {buildPortugueseLetters().map((letter, idx) => {
+              // Cores lúdicas e vibrantes para cada letra
+              const colors = [
+                "#FFE5E5",
+                "#E5F5FF",
+                "#FFF5E5",
+                "#E5FFE5",
+                "#FFE5F5",
+                "#F5E5FF",
+                "#FFFFE5",
+                "#E5FFFF",
+                "#FFE5D9",
+                "#D9FFE5",
+                "#E5D9FF",
+                "#FFD9E5",
+                "#D9E5FF",
+                "#FFEED9",
+                "#D9FFEE",
+                "#EED9FF",
+                "#FFEEDD",
+                "#DDFFFE",
+                "#FFDDEE",
+                "#EEFFDD",
+                "#DDEEFF",
+                "#FFDDE5",
+                "#E5FFDD",
+                "#DDFFE5",
+                "#FFE5DD",
+                "#E5DDFF",
+                "#DDFFFF",
+              ];
+              const borderColors = [
+                "#FF6B6B",
+                "#4ECDC4",
+                "#FFB347",
+                "#95E1D3",
+                "#FF85B3",
+                "#B19CD9",
+                "#FFE66D",
+                "#6BDBDB",
+                "#FF9A76",
+                "#76FF9A",
+                "#9A76FF",
+                "#FF76DB",
+                "#76DBFF",
+                "#FFCC76",
+                "#76FFCC",
+                "#CC76FF",
+                "#FFDDAA",
+                "#AAFFDD",
+                "#FFAADD",
+                "#DDFFAA",
+                "#AADDFF",
+                "#FFAAC4",
+                "#C4FFAA",
+                "#AAFFC4",
+                "#FFC4AA",
+                "#C4AAFF",
+                "#AAFFFF",
+              ];
+
+              return (
+                <View
+                  key={idx}
+                  style={{
+                    width: "10%",
+                    margin: 4,
+                    alignItems: "center",
+                    border: `2px solid ${
+                      borderColors[idx % borderColors.length]
+                    }`,
+                    borderRadius: 6,
+                    padding: 4,
+                    backgroundColor: colors[idx % colors.length],
+                  }}
+                >
+                  <Text style={{ fontSize: 28, margin: 6, fontWeight: "bold" }}>
+                    {letter}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
@@ -1097,7 +1167,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-3x3-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#2196F3")}
               </View>
             ))}
           </View>
@@ -1107,7 +1177,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-4x4-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#4CAF50")}
               </View>
             ))}
           </View>
@@ -1117,7 +1187,7 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                 key={`bingo-4x4-${idx}`}
                 style={{ width: "50%", padding: 1, justifyContent: "center" }}
               >
-                {renderGrid(grid, styles)}
+                {renderGrid(grid, styles, "#FF9800")}
               </View>
             ))}
           </View>
@@ -1146,13 +1216,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#2196F3",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{letter}</Text>
+                <Text style={{ fontSize: 12, color: "#2196F3" }}>{letter}</Text>
               </View>
             ))}
           </View>
@@ -1171,13 +1242,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#4CAF50",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{letter}</Text>
+                <Text style={{ fontSize: 12, color: "#4CAF50" }}>{letter}</Text>
               </View>
             ))}
           </View>
@@ -1196,13 +1268,14 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
                   width: 50,
                   height: 50,
                   borderRadius: 25,
-                  borderWidth: 1,
+                  borderWidth: 2,
+                  borderColor: "#FF9800",
                   margin: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Text style={{ fontSize: 12 }}>{number}</Text>
+                <Text style={{ fontSize: 12, color: "#FF9800" }}>{number}</Text>
               </View>
             ))}
           </View>
@@ -1226,33 +1299,38 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {data.objectHunt.objects.map((obj, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "30%", // 3 cartões por linha
-                  minHeight: 50,
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  padding: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
-                }}
-              >
-                <Text
+            {data.objectHunt.objects.map((obj, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
+                <View
+                  key={idx}
                   style={{
-                    fontSize: 14,
-                    fontWeight: "bold",
-                    textAlign: "center",
+                    width: "30%", // 3 cartões por linha
+                    minHeight: 50,
+                    borderWidth: 1,
+                    borderColor: "#000",
+                    borderRadius: 8,
+                    padding: 8,
+                    margin: 6,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: bgColor,
                   }}
                 >
-                  {obj}
-                </Text>
-              </View>
-            ))}
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                    }}
+                  >
+                    {obj}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
@@ -1272,46 +1350,52 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {buildDominoPieces(data.domino.syllables).map((piece, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "15%", // 4 peças por linha
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 6,
-                  margin: 1,
-                  flexDirection: "row",
-                  height: 45,
-                }}
-              >
+            {buildDominoPieces(data.domino.syllables).map((piece, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
                 <View
+                  key={idx}
                   style={{
-                    flex: 1,
-                    borderRightWidth: 1,
+                    width: "15%", // 4 peças por linha
+                    borderWidth: 1,
                     borderColor: "#000",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 1,
+                    borderRadius: 6,
+                    margin: 1,
+                    flexDirection: "row",
+                    height: 45,
+                    backgroundColor: bgColor,
                   }}
                 >
-                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
-                    {piece.left}
-                  </Text>
+                  <View
+                    style={{
+                      flex: 1,
+                      borderRightWidth: 1,
+                      borderColor: "#000",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginBottom: 1,
+                    }}
+                  >
+                    <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+                      {piece.left}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+                      {piece.right}
+                    </Text>
+                  </View>
                 </View>
-                <View
-                  style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text style={{ fontSize: 10, fontWeight: "bold" }}>
-                    {piece.right}
-                  </Text>
-                </View>
-              </View>
-            ))}
+              );
+            })}
           </View>
         </Page>
       )}
@@ -1393,33 +1477,38 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {data.storyGame.prompts.map((phrase, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "45%", // 2 cartões por linha
-                  minHeight: 80, // altura mínima
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  padding: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
-                }}
-              >
-                <Text
+            {data.storyGame.prompts.map((phrase, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
+                <View
+                  key={idx}
                   style={{
-                    fontSize: 12,
-                    fontWeight: "bold",
-                    textAlign: "center",
+                    width: "45%", // 2 cartões por linha
+                    minHeight: 80, // altura mínima
+                    borderWidth: 1,
+                    borderColor: "#000",
+                    borderRadius: 8,
+                    padding: 8,
+                    margin: 6,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: bgColor,
                   }}
                 >
-                  {phrase}
-                </Text>
-              </View>
-            ))}
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                    }}
+                  >
+                    {phrase}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
