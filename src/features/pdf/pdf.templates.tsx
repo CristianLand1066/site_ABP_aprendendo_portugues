@@ -998,21 +998,88 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {buildPortugueseLetters().map((letter, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "10%", // ajusta quantas letras por linha
-                  margin: 4,
-                  alignItems: "center",
-                  border: "1px solid black",
-                  borderRadius: 4,
-                  padding: 4,
-                }}
-              >
-                <Text style={{ fontSize: 28, margin: 6 }}>{letter}</Text>
-              </View>
-            ))}
+            {buildPortugueseLetters().map((letter, idx) => {
+              // Cores lúdicas e vibrantes para cada letra
+              const colors = [
+                "#FFE5E5",
+                "#E5F5FF",
+                "#FFF5E5",
+                "#E5FFE5",
+                "#FFE5F5",
+                "#F5E5FF",
+                "#FFFFE5",
+                "#E5FFFF",
+                "#FFE5D9",
+                "#D9FFE5",
+                "#E5D9FF",
+                "#FFD9E5",
+                "#D9E5FF",
+                "#FFEED9",
+                "#D9FFEE",
+                "#EED9FF",
+                "#FFEEDD",
+                "#DDFFFE",
+                "#FFDDEE",
+                "#EEFFDD",
+                "#DDEEFF",
+                "#FFDDE5",
+                "#E5FFDD",
+                "#DDFFE5",
+                "#FFE5DD",
+                "#E5DDFF",
+                "#DDFFFF",
+              ];
+              const borderColors = [
+                "#FF6B6B",
+                "#4ECDC4",
+                "#FFB347",
+                "#95E1D3",
+                "#FF85B3",
+                "#B19CD9",
+                "#FFE66D",
+                "#6BDBDB",
+                "#FF9A76",
+                "#76FF9A",
+                "#9A76FF",
+                "#FF76DB",
+                "#76DBFF",
+                "#FFCC76",
+                "#76FFCC",
+                "#CC76FF",
+                "#FFDDAA",
+                "#AAFFDD",
+                "#FFAADD",
+                "#DDFFAA",
+                "#AADDFF",
+                "#FFAAC4",
+                "#C4FFAA",
+                "#AAFFC4",
+                "#FFC4AA",
+                "#C4AAFF",
+                "#AAFFFF",
+              ];
+
+              return (
+                <View
+                  key={idx}
+                  style={{
+                    width: "10%",
+                    margin: 4,
+                    alignItems: "center",
+                    border: `2px solid ${
+                      borderColors[idx % borderColors.length]
+                    }`,
+                    borderRadius: 6,
+                    padding: 4,
+                    backgroundColor: colors[idx % colors.length],
+                  }}
+                >
+                  <Text style={{ fontSize: 28, margin: 6, fontWeight: "bold" }}>
+                    {letter}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
