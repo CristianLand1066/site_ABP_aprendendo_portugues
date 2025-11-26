@@ -1232,33 +1232,38 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {data.objectHunt.objects.map((obj, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "30%", // 3 cartões por linha
-                  minHeight: 50,
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  padding: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: idx % 2 === 0 ? "#fff9c4" : "#c8e6c9", // alterna cores
-                }}
-              >
-                <Text
+            {data.objectHunt.objects.map((obj, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
+                <View
+                  key={idx}
                   style={{
-                    fontSize: 14,
-                    fontWeight: "bold",
-                    textAlign: "center",
+                    width: "30%", // 3 cartões por linha
+                    minHeight: 50,
+                    borderWidth: 1,
+                    borderColor: "#000",
+                    borderRadius: 8,
+                    padding: 8,
+                    margin: 6,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: bgColor,
                   }}
                 >
-                  {obj}
-                </Text>
-              </View>
-            ))}
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                    }}
+                  >
+                    {obj}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
@@ -1405,33 +1410,38 @@ export function PdfDocument(data: PdfData): React.ReactElement<DocumentProps> {
               justifyContent: "center",
             }}
           >
-            {data.storyGame.prompts.map((phrase, idx) => (
-              <View
-                key={idx}
-                style={{
-                  width: "45%", // 2 cartões por linha
-                  minHeight: 80, // altura mínima
-                  borderWidth: 1,
-                  borderColor: "#000",
-                  borderRadius: 8,
-                  padding: 8,
-                  margin: 6,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: idx % 2 === 0 ? "#f5f5f5" : "#e0f7fa", // alterna cores
-                }}
-              >
-                <Text
+            {data.storyGame.prompts.map((phrase, idx) => {
+              const colors = ["#D7CCC8", "#C8E6C9", "#BCAAA4", "#A5D6A7"];
+              const bgColor = colors[idx % colors.length];
+
+              return (
+                <View
+                  key={idx}
                   style={{
-                    fontSize: 12,
-                    fontWeight: "bold",
-                    textAlign: "center",
+                    width: "45%", // 2 cartões por linha
+                    minHeight: 80, // altura mínima
+                    borderWidth: 1,
+                    borderColor: "#000",
+                    borderRadius: 8,
+                    padding: 8,
+                    margin: 6,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: bgColor,
                   }}
                 >
-                  {phrase}
-                </Text>
-              </View>
-            ))}
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                    }}
+                  >
+                    {phrase}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </Page>
       )}
